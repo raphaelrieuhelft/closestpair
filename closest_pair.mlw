@@ -181,17 +181,40 @@ predicate points_on_x_axis (a:array point) =
 (** [linear_search a] returns the solution to the closest pair problem
     for the set of points [a], assuming that [a] is sorted. Worst-case
     time complexity is O(n) *)
+
+let lemma triangular_equality (a:array point) (i j k:int) :unit
+  requires { sorted proj_x a }
+  requires { a.length >= 3 }
+  requires { 0 <= i < j < k < a.length }
+  ensures { dist a[i] a[k] = dist a[i] a[j] +. dist a[j] a[k] }
+= assert { a[i].x <=. a[j].x <=. a[k].x }
+
+let lemma neighbours_are_closer (a:array point) (i j:int) :unit
+  requires { sorted proj_x a }
+  requires { a.length >= 2 }
+  requires { 0 <= i < j < a.length }
+  ensures { dist a[i] a[i+1] <=. dist a[i] a[j] }
+= if (i+1) = j then ()
+  else (
+    assert {i+1 < j};
+    triangular_equality a i (i+1) j
+  )
+
 let linear_search (a:array point) : closest_pair_result
-  requires { _TO_BE_COMPLETED }
-  ensures { _TO_BE_COMPLETED }
+  requires { a.length >=2 }
+  requires { sorted proj_x a }
+  ensures { closest_pair_post a result }
 = let f = ref 0 in
   let min = ref (dist a[0] a[1]) in
   for i = 1 to a.length - 2 do
-    invariant { _TO_BE_COMPLETED }
+    invariant { forall k. 0 < k < i -> dist a[k] a[k+1] >=. !min }
+    invariant { distinct_indices_in_range !f (!f+1) 0 a.length }
+    invariant { dist a[!f] a[!f+1] = !min }
+    invariant { forall k l. distinct_indices_in_range k l 0 (i+1) -> dist a[k] a[l] >=. !min }
     let d = dist a[i] a[i+1] in
       if d <. !min then (min := d; f := i)
   done;
-  { delta = !min ; first = _VALUE_TO_BE_COMPLETED; second = _VALUE_TO_BE_COMPLETED }
+  { delta = !min ; first = !f; second = !f + 1 }
 
 (* QUESTION 6 *)
 
