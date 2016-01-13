@@ -1,0 +1,123 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE why3session PUBLIC "-//Why3//proof session v5//EN"
+"http://why3.lri.fr/why3session.dtd">
+<why3session shape_version="4">
+<prover id="0" name="Alt-Ergo" version="0.99.1" timelimit="5" memlimit="1000"/>
+<prover id="1" name="CVC3" version="2.4.1" timelimit="5" memlimit="1000"/>
+<prover id="2" name="Z3" version="4.4.1" timelimit="5" memlimit="1000"/>
+<file name="../closest_pair.mlw" expanded="true">
+<theory name="Closest_Pair_Problem" sum="4d1b959532b4adc31fe707ada5188156" expanded="true">
+ <goal name="WP_parameter brute_force_search_sub_array" expl="VC for brute_force_search_sub_array" expanded="true">
+ <proof prover="0" edited="closest_pair-Closest_Pair_Problem-WP_parameter_brute_force_search_sub_array_1.why" obsolete="true"><result status="unknown" time="0.67"/></proof>
+ <proof prover="1" obsolete="true"><result status="unknown" time="0.06"/></proof>
+ <proof prover="2" edited="closest_pair-Closest_Pair_Problem-WP_parameter_brute_force_search_sub_array_1.smt2" obsolete="true"><result status="timeout" time="4.92"/></proof>
+ <transf name="split_goal_wp" expanded="true">
+  <goal name="WP_parameter brute_force_search_sub_array.1" expl="1. index in array bounds" expanded="true">
+  <proof prover="0"><result status="unknown" time="0.01"/></proof>
+  <proof prover="1"><result status="unknown" time="1.95"/></proof>
+  <proof prover="2"><result status="timeout" time="5.72"/></proof>
+  </goal>
+  <goal name="WP_parameter brute_force_search_sub_array.2" expl="2. index in array bounds" expanded="true">
+  <proof prover="0"><result status="valid" time="0.00" steps="6"/></proof>
+  <proof prover="1"><result status="valid" time="0.00"/></proof>
+  </goal>
+  <goal name="WP_parameter brute_force_search_sub_array.3" expl="3. postcondition" expanded="true">
+  <proof prover="0"><result status="unknown" time="0.01"/></proof>
+  <proof prover="1"><result status="unknown" time="0.09"/></proof>
+  <proof prover="2"><result status="timeout" time="4.85"/></proof>
+  </goal>
+  <goal name="WP_parameter brute_force_search_sub_array.4" expl="4. loop invariant init">
+  <proof prover="0"><result status="valid" time="0.00" steps="8"/></proof>
+  </goal>
+  <goal name="WP_parameter brute_force_search_sub_array.5" expl="5. loop invariant init">
+  <proof prover="0"><result status="valid" time="0.01" steps="0"/></proof>
+  <proof prover="1"><result status="valid" time="0.01"/></proof>
+  </goal>
+  <goal name="WP_parameter brute_force_search_sub_array.6" expl="6. loop invariant init" expanded="true">
+  <proof prover="0"><result status="valid" time="0.02" steps="8"/></proof>
+  <proof prover="1" obsolete="true"><result status="unknown" time="0.69"/></proof>
+  </goal>
+  <goal name="WP_parameter brute_force_search_sub_array.7" expl="7. loop invariant preservation">
+  <proof prover="0"><result status="valid" time="0.01" steps="12"/></proof>
+  </goal>
+  <goal name="WP_parameter brute_force_search_sub_array.8" expl="8. loop invariant preservation">
+  <proof prover="0"><result status="valid" time="0.00" steps="12"/></proof>
+  <proof prover="1"><result status="valid" time="0.01"/></proof>
+  </goal>
+  <goal name="WP_parameter brute_force_search_sub_array.9" expl="9. loop invariant preservation">
+  <proof prover="0"><result status="valid" time="0.03" steps="12"/></proof>
+  <proof prover="1"><result status="valid" time="0.02"/></proof>
+  </goal>
+  <goal name="WP_parameter brute_force_search_sub_array.10" expl="10. loop invariant init">
+  <proof prover="0"><result status="valid" time="0.00" steps="13"/></proof>
+  <proof prover="1"><result status="valid" time="0.03"/></proof>
+  </goal>
+  <goal name="WP_parameter brute_force_search_sub_array.11" expl="11. index in array bounds">
+  <proof prover="0"><result status="valid" time="0.00" steps="15"/></proof>
+  <proof prover="1" obsolete="true"><result status="valid" time="0.02"/></proof>
+  </goal>
+  <goal name="WP_parameter brute_force_search_sub_array.12" expl="12. index in array bounds">
+  <proof prover="0"><result status="valid" time="0.00" steps="17"/></proof>
+  <proof prover="1" obsolete="true"><result status="valid" time="0.02"/></proof>
+  </goal>
+  <goal name="WP_parameter brute_force_search_sub_array.13" expl="13. loop invariant preservation">
+  <proof prover="0"><result status="unknown" time="0.01"/></proof>
+  <proof prover="1" obsolete="true"><result status="valid" time="0.01"/></proof>
+  </goal>
+  <goal name="WP_parameter brute_force_search_sub_array.14" expl="14. loop invariant preservation" expanded="true">
+  <proof prover="0"><result status="unknown" time="0.02"/></proof>
+  <proof prover="1"><result status="timeout" time="4.84"/></proof>
+  <proof prover="2"><result status="unknown" time="0.18"/></proof>
+  </goal>
+  <goal name="WP_parameter brute_force_search_sub_array.15" expl="15. loop invariant preservation">
+  <proof prover="0"><result status="valid" time="0.00" steps="13"/></proof>
+  <proof prover="1" obsolete="true"><result status="valid" time="0.01"/></proof>
+  </goal>
+  <goal name="WP_parameter brute_force_search_sub_array.16" expl="16. loop invariant preservation">
+  <proof prover="0"><result status="valid" time="0.01" steps="16"/></proof>
+  <proof prover="1" obsolete="true"><result status="valid" time="0.02"/></proof>
+  </goal>
+  <goal name="WP_parameter brute_force_search_sub_array.17" expl="17. loop invariant preservation">
+  <proof prover="0"><result status="valid" time="0.00" steps="16"/></proof>
+  <proof prover="1" obsolete="true"><result status="valid" time="0.02"/></proof>
+  </goal>
+  <goal name="WP_parameter brute_force_search_sub_array.18" expl="18. postcondition">
+  <proof prover="0"><result status="valid" time="0.03" steps="9"/></proof>
+  <proof prover="1"><result status="valid" time="0.01"/></proof>
+  </goal>
+ </transf>
+ </goal>
+ <goal name="WP_parameter brute_force_search" expl="VC for brute_force_search" expanded="true">
+ <proof prover="0"><result status="valid" time="0.00" steps="4"/></proof>
+ </goal>
+</theory>
+<theory name="Dimension1" sum="9a45966c13056f3379801994b070bf70" expanded="true">
+ <goal name="WP_parameter linear_search" expl="VC for linear_search" expanded="true">
+ </goal>
+ <goal name="WP_parameter divide_and_conquer" expl="VC for divide_and_conquer" expanded="true">
+ </goal>
+ <goal name="WP_parameter full_divide_and_conquer" expl="VC for full_divide_and_conquer" expanded="true">
+ </goal>
+</theory>
+<theory name="Dimension2" sum="c84b11c03b0f4fb1608a6c7ecb13609f" expanded="true">
+ <goal name="WP_parameter search_strip" expl="VC for search_strip" expanded="true">
+ </goal>
+ <goal name="WP_parameter left_border" expl="VC for left_border" expanded="true">
+ </goal>
+ <goal name="WP_parameter right_border" expl="VC for right_border" expanded="true">
+ </goal>
+ <goal name="WP_parameter divide_and_conquer" expl="VC for divide_and_conquer" expanded="true">
+ </goal>
+ <goal name="WP_parameter main_algorithm" expl="VC for main_algorithm" expanded="true">
+ </goal>
+ <goal name="WP_parameter too_many_points_in_square" expl="VC for too_many_points_in_square" expanded="true">
+ </goal>
+ <goal name="WP_parameter pigeon_hole" expl="VC for pigeon_hole" expanded="true">
+ </goal>
+ <goal name="WP_parameter too_many_points_in_rectangle" expl="VC for too_many_points_in_rectangle" expanded="true">
+ </goal>
+ <goal name="WP_parameter search_strip_complexity" expl="VC for search_strip_complexity" expanded="true">
+ </goal>
+</theory>
+</file>
+</why3session>

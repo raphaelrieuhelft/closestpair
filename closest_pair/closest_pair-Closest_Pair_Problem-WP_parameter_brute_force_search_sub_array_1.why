@@ -1,0 +1,170 @@
+(* this is the prelude for Alt-Ergo, any versions *)
+(* this is a prelude for Alt-Ergo integer arithmetic *)
+(* this is a prelude for Alt-Ergo real arithmetic *)
+logic match_bool : bool, 'a, 'a -> 'a
+
+axiom match_bool_True :
+  (forall z:'a. forall z1:'a. (match_bool(true, z, z1) = z))
+
+axiom match_bool_False :
+  (forall z:'a. forall z1:'a. (match_bool(false, z, z1) = z1))
+
+type qtmark
+
+logic usTO_BE_COMPLETED6 : prop
+
+logic usVALUE_TO_BE_COMPLETED6 : 'a
+
+logic usVARIANT_TO_BE_COMPLETED6 : int
+
+axiom CompatOrderMult :
+  (forall x6:int. forall y6:int. forall z:int. ((x6 <= y6) -> ((0 <= z) ->
+  ((x6 * z) <= (y6 * z)))))
+
+axiom add_div :
+  (forall x6:real. forall y6:real. forall z:real. ((not (z = 0.0)) ->
+  (((x6 + y6) / z) = ((x6 / z) + (y6 / z)))))
+
+axiom sub_div :
+  (forall x6:real. forall y6:real. forall z:real. ((not (z = 0.0)) ->
+  (((x6 - y6) / z) = ((x6 / z) - (y6 / z)))))
+
+axiom neg_div :
+  (forall x6:real. forall y6:real. ((not (y6 = 0.0)) ->
+  (((-x6) / y6) = (-(x6 / y6)))))
+
+axiom assoc_mul_div :
+  (forall x6:real. forall y6:real. forall z:real. ((not (z = 0.0)) ->
+  (((x6 * y6) / z) = (x6 * (y6 / z)))))
+
+axiom assoc_div_mul :
+  (forall x6:real. forall y6:real. forall z:real. (((not (y6 = 0.0)) and
+  (not (z = 0.0))) -> (((x6 / y6) / z) = (x6 / (y6 * z)))))
+
+axiom assoc_div_div :
+  (forall x6:real. forall y6:real. forall z:real. (((not (y6 = 0.0)) and
+  (not (z = 0.0))) -> ((x6 / (y6 / z)) = ((x6 * z) / y6))))
+
+axiom CompatOrderMult1 :
+  (forall x6:real. forall y6:real. forall z:real. ((x6 <= y6) ->
+  ((0.0 <= z) -> ((x6 * z) <= (y6 * z)))))
+
+logic abs : real -> real
+
+axiom abs_def18 : (forall x7:real. ((0.0 <= x7) -> (abs(x7) = x7)))
+
+axiom abs_def19 : (forall x7:real. ((not (0.0 <= x7)) -> (abs(x7) = (-x7))))
+
+axiom Abs_le27 :
+  (forall x7:real. forall y7:real. ((abs(x7) <= y7) -> ((-y7) <= x7)))
+
+axiom Abs_le28 :
+  (forall x7:real. forall y7:real. ((abs(x7) <= y7) -> (x7 <= y7)))
+
+axiom Abs_le29 :
+  (forall x7:real. forall y7:real. ((((-y7) <= x7) and (x7 <= y7)) ->
+  (abs(x7) <= y7)))
+
+axiom Abs_pos : (forall x7:real. (0.0 <= abs(x7)))
+
+axiom Abs_sum :
+  (forall x7:real. forall y7:real. (abs((x7 + y7)) <= (abs(x7) + abs(y7))))
+
+axiom Abs_prod :
+  (forall x7:real. forall y7:real. (abs((x7 * y7)) = (abs(x7) * abs(y7))))
+
+axiom triangular_inequality :
+  (forall x7:real. forall y7:real. forall z:real.
+  (abs((x7 - z)) <= (abs((x7 - y7)) + abs((y7 - z)))))
+
+logic const : 'b -> ('a,'b) farray
+
+axiom Const :
+  (forall b:'b1. forall a:'a1. (((const(b) : ('a1,'b1) farray)[a]) = b))
+
+type 'a array1 = { length : int; elts : (int,'a) farray
+}
+
+function get(a1: 'a array1, i: int) : 'a = ((a1).elts[i])
+
+function set(a: 'a1 array1, i: int, v: 'a1) : 'a1 array1 = { length =
+  (a).length; elts = ((a).elts[i <- v]) }
+
+function make(n: int, v: 'a) : 'a array1 = { length = n; elts =
+  (const(v) : (int,'a) farray) }
+
+type 'a ref = { contents : 'a
+}
+
+type point6 = { x6 : real; y6 : real
+}
+
+logic dist6 : point6, point6 -> real
+
+axiom dist_pos6 : (forall a:point6. forall b:point6. (0.0 <= dist6(a, b)))
+
+axiom dist_sym6 :
+  (forall a:point6. forall b:point6. (dist6(a, b) = dist6(b, a)))
+
+type closest_pair_result6 = { delta6 : real; first6 : int; second6 : int
+}
+
+predicate distinct_indices_in_range6(i: int, j: int, low: int, high: int) =
+  ((low <= i) and ((low <= j) and ((i <  high) and ((j <  high) and
+  (not (i = j))))))
+
+predicate closest_pair_post_for6(a: point6 array1, low: int, high: int,
+  r: closest_pair_result6) = (distinct_indices_in_range6((r).first6,
+  (r).second6, low, high) and
+  (forall i:int. forall j:int. (distinct_indices_in_range6(i, j, low,
+  high) -> ((r).delta6 <= dist6(get(a, i), get(a, j))))))
+
+predicate closest_pair_post6(a: point6 array1, r: closest_pair_result6) =
+  closest_pair_post_for6(a, 0, (a).length, r)
+
+goal WP_parameter_brute_force_search_sub_array6 :
+  (forall a:int. forall a1:(int,point6) farray. forall low:int.
+  forall high:int. (((0 <= a) and ((0 <= low) and ((low <  high) and
+  (high <= a)))) -> (((0 <= (low + 1)) and ((low + 1) <  a)) and
+  (((0 <= low) and (low <  a)) and ((((high - 2) <  low) ->
+  closest_pair_post_for6({ length = a; elts = a1 }, low, high, { delta6 =
+  dist6((a1[low]), (a1[(low + 1)])); first6 = low; second6 = (low + 1)
+  })) and ((low <= (high - 2)) -> (((low <= (high - 2)) and
+  (forall j:int. ((((low + 1) <= j) and (j <= (high - 1))) ->
+  (dist6((a1[low]), (a1[(low + 1)])) <= dist6((a1[low]), (a1[j])))))) and
+  (forall min:real. forall s:int. forall f:int.
+  ((forall i:int. (((low <= i) and (i <= (high - 2))) ->
+   ((((low <= (high - 2)) and
+   (forall j:int. ((((i + 1) <= j) and (j <= (high - 1))) ->
+   (min <= dist6((a1[i]), (a1[j])))))) and (dist6((a1[f]),
+   (a1[s])) = min)) -> ((((high - 1) <  (i + 1)) -> (((low <= (high - 2)) and
+   (forall j:int. (((((i + 1) + 1) <= j) and (j <= (high - 1))) ->
+   (min <= dist6((a1[(i + 1)]), (a1[j])))))) and (dist6((a1[f]),
+   (a1[s])) = min))) and (((i + 1) <= (high - 1)) ->
+   (((((i + 1) <= (high - 1)) and (min <= dist6((a1[i]), (a1[(i + 1)])))) and
+   distinct_indices_in_range6(i, (i + 1), low, high)) and
+   (forall min1:real. forall s1:int. forall f1:int.
+   ((forall j:int. ((((i + 1) <= j) and (j <= (high - 1))) ->
+    (((((i + 1) <= (high - 1)) and (min1 <= dist6((a1[i]), (a1[j])))) and
+    distinct_indices_in_range6(i, j, low, high)) -> (((0 <= j) and
+    (j <  a)) and (((0 <= i) and (i <  a)) and (((dist6((a1[i]),
+    (a1[j])) <  min1) ->
+    (forall f2:int. ((f2 = i) ->
+    (forall s2:int. ((s2 = j) ->
+    (forall min2:real. ((min2 = dist6((a1[i]), (a1[j]))) ->
+    ((((i + 1) <= (high - 1)) and (min2 <= dist6((a1[i]),
+    (a1[(j + 1)])))) and distinct_indices_in_range6(i, (j + 1), low, high))))))))) and
+    ((not (dist6((a1[i]), (a1[j])) <  min1)) -> ((((i + 1) <= (high - 1)) and
+    (min1 <= dist6((a1[i]), (a1[(j + 1)])))) and
+    distinct_indices_in_range6(i, (j + 1), low, high))))))))) and
+   (((((i + 1) <= (high - 1)) and (min1 <= dist6((a1[i]),
+   (a1[((high - 1) + 1)])))) and distinct_indices_in_range6(i,
+   ((high - 1) + 1), low, high)) -> (((low <= (high - 2)) and
+   (forall j:int. (((((i + 1) + 1) <= j) and (j <= (high - 1))) ->
+   (min1 <= dist6((a1[(i + 1)]), (a1[j])))))) and (dist6((a1[f1]),
+   (a1[s1])) = min1))))))))))) and
+  ((((low <= (high - 2)) and
+  (forall j:int. ((((((high - 2) + 1) + 1) <= j) and (j <= (high - 1))) ->
+  (min <= dist6((a1[((high - 2) + 1)]), (a1[j])))))) and (dist6((a1[f]),
+  (a1[s])) = min)) -> closest_pair_post_for6({ length = a; elts = a1 }, low,
+  high, { delta6 = min; first6 = f; second6 = s })))))))))))
