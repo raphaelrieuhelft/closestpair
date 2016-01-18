@@ -98,7 +98,7 @@
  <proof prover="0"><result status="valid" time="0.00" steps="4"/></proof>
  </goal>
 </theory>
-<theory name="Dimension1" sum="7ed6199f10b8e99f2ae9eb4f2328a3e7" expanded="true">
+<theory name="Dimension1" sum="27fdc321e1e87292fe2b6036b9842fd3" expanded="true">
  <goal name="WP_parameter triangular_equality" expl="VC for triangular_equality">
  <transf name="split_goal_wp">
   <goal name="WP_parameter triangular_equality.1" expl="1. assertion">
@@ -308,26 +308,242 @@
   <proof prover="0"><result status="valid" time="0.07" steps="6"/></proof>
   </goal>
   <goal name="WP_parameter full_divide_and_conquer.3" expl="3. assertion">
-  <proof prover="0"><result status="valid" time="0.00" steps="11"/></proof>
+  <proof prover="0"><result status="valid" time="0.00" steps="12"/></proof>
   </goal>
   <goal name="WP_parameter full_divide_and_conquer.4" expl="4. assertion">
-  <proof prover="0"><result status="valid" time="0.06" steps="42"/></proof>
+  <proof prover="0"><result status="valid" time="0.61" steps="194"/></proof>
+  <proof prover="1"><result status="valid" time="0.24"/></proof>
   </goal>
-  <goal name="WP_parameter full_divide_and_conquer.5" expl="5. assertion">
-  <proof prover="0"><result status="valid" time="0.61" steps="224"/></proof>
-  </goal>
-  <goal name="WP_parameter full_divide_and_conquer.6" expl="6. postcondition">
+  <goal name="WP_parameter full_divide_and_conquer.5" expl="5. postcondition">
+  <proof prover="0"><result status="timeout" time="3.78"/></proof>
   <proof prover="1"><result status="valid" time="0.26"/></proof>
   </goal>
  </transf>
  </goal>
 </theory>
-<theory name="Dimension2" sum="d52f05a31452e6d8900975034115c79e" expanded="true">
- <goal name="WP_parameter search_strip" expl="VC for search_strip" expanded="true">
+<theory name="Dimension2" sum="3b2b891afd8d7c5fba2cd192f5032b6f" expanded="true">
+ <goal name="WP_parameter search_strip" expl="VC for search_strip">
+ <transf name="split_goal_wp">
+  <goal name="WP_parameter search_strip.1" expl="1. postcondition">
+  <proof prover="0"><result status="valid" time="0.00" steps="2"/></proof>
+  </goal>
+  <goal name="WP_parameter search_strip.2" expl="2. postcondition">
+  <proof prover="0"><result status="valid" time="0.01" steps="2"/></proof>
+  </goal>
+  <goal name="WP_parameter search_strip.3" expl="3. postcondition">
+  <proof prover="0"><result status="valid" time="0.01" steps="2"/></proof>
+  </goal>
+  <goal name="WP_parameter search_strip.4" expl="4. assertion">
+  <proof prover="0"><result status="valid" time="0.02" steps="6"/></proof>
+  </goal>
+  <goal name="WP_parameter search_strip.5" expl="5. assertion">
+  <proof prover="0"><result status="valid" time="0.01" steps="8"/></proof>
+  </goal>
+  <goal name="WP_parameter search_strip.6" expl="6. postcondition">
+  <proof prover="0"><result status="valid" time="0.01" steps="7"/></proof>
+  </goal>
+  <goal name="WP_parameter search_strip.7" expl="7. postcondition">
+  <proof prover="0"><result status="valid" time="0.01" steps="7"/></proof>
+  </goal>
+  <goal name="WP_parameter search_strip.8" expl="8. postcondition">
+  <proof prover="0"><result status="valid" time="0.00" steps="7"/></proof>
+  </goal>
+  <goal name="WP_parameter search_strip.9" expl="9. postcondition">
+  <proof prover="0"><result status="valid" time="0.01" steps="7"/></proof>
+  </goal>
+  <goal name="WP_parameter search_strip.10" expl="10. postcondition">
+  <proof prover="0"><result status="valid" time="0.01" steps="7"/></proof>
+  </goal>
+  <goal name="WP_parameter search_strip.11" expl="11. postcondition">
+  <proof prover="0"><result status="valid" time="0.01" steps="7"/></proof>
+  </goal>
+  <goal name="WP_parameter search_strip.12" expl="12. loop invariant init">
+  <proof prover="0"><result status="valid" time="0.01" steps="9"/></proof>
+  </goal>
+  <goal name="WP_parameter search_strip.13" expl="13. loop invariant init">
+  <proof prover="0"><result status="valid" time="0.02" steps="11"/></proof>
+  </goal>
+  <goal name="WP_parameter search_strip.14" expl="14. loop invariant init">
+  <proof prover="0"><result status="valid" time="0.01" steps="7"/></proof>
+  </goal>
+  <goal name="WP_parameter search_strip.15" expl="15. loop invariant preservation">
+  <proof prover="0"><result status="valid" time="0.01" steps="11"/></proof>
+  </goal>
+  <goal name="WP_parameter search_strip.16" expl="16. loop invariant preservation">
+  <proof prover="0"><result status="valid" time="0.01" steps="12"/></proof>
+  </goal>
+  <goal name="WP_parameter search_strip.17" expl="17. loop invariant preservation">
+  <proof prover="0"><result status="valid" time="0.02" steps="12"/></proof>
+  </goal>
+  <goal name="WP_parameter search_strip.18" expl="18. loop invariant init">
+  <proof prover="0"><result status="valid" time="0.02" steps="12"/></proof>
+  </goal>
+  <goal name="WP_parameter search_strip.19" expl="19. loop invariant init">
+  <proof prover="0"><result status="valid" time="0.02" steps="27"/></proof>
+  </goal>
+  <goal name="WP_parameter search_strip.20" expl="20. loop invariant init">
+  <proof prover="0"><result status="valid" time="0.02" steps="13"/></proof>
+  </goal>
+  <goal name="WP_parameter search_strip.21" expl="21. index in array bounds">
+  <proof prover="0"><result status="valid" time="0.02" steps="12"/></proof>
+  </goal>
+  <goal name="WP_parameter search_strip.22" expl="22. index in array bounds">
+  <proof prover="0"><result status="valid" time="0.02" steps="13"/></proof>
+  </goal>
+  <goal name="WP_parameter search_strip.23" expl="23. assertion">
+  <proof prover="0"><result status="valid" time="0.03" steps="48"/></proof>
+  </goal>
+  <goal name="WP_parameter search_strip.24" expl="24. loop invariant preservation">
+  <proof prover="0"><result status="valid" time="0.01" steps="18"/></proof>
+  </goal>
+  <goal name="WP_parameter search_strip.25" expl="25. loop invariant preservation">
+  <proof prover="0"><result status="valid" time="1.51" steps="363"/></proof>
+  </goal>
+  <goal name="WP_parameter search_strip.26" expl="26. loop invariant preservation">
+  <proof prover="0"><result status="valid" time="0.02" steps="19"/></proof>
+  </goal>
+  <goal name="WP_parameter search_strip.27" expl="27. index in array bounds">
+  <proof prover="0"><result status="valid" time="0.02" steps="15"/></proof>
+  </goal>
+  <goal name="WP_parameter search_strip.28" expl="28. index in array bounds">
+  <proof prover="0"><result status="valid" time="0.02" steps="15"/></proof>
+  </goal>
+  <goal name="WP_parameter search_strip.29" expl="29. loop invariant preservation">
+  <proof prover="0"><result status="valid" time="0.00" steps="20"/></proof>
+  </goal>
+  <goal name="WP_parameter search_strip.30" expl="30. loop invariant preservation">
+  <proof prover="0"><result status="valid" time="0.02" steps="37"/></proof>
+  </goal>
+  <goal name="WP_parameter search_strip.31" expl="31. loop invariant preservation">
+  <proof prover="0"><result status="valid" time="0.02" steps="22"/></proof>
+  </goal>
+  <goal name="WP_parameter search_strip.32" expl="32. loop invariant preservation">
+  <proof prover="0"><result status="valid" time="0.02" steps="18"/></proof>
+  </goal>
+  <goal name="WP_parameter search_strip.33" expl="33. loop invariant preservation">
+  <proof prover="0"><result status="valid" time="0.02" steps="34"/></proof>
+  </goal>
+  <goal name="WP_parameter search_strip.34" expl="34. loop invariant preservation">
+  <proof prover="0"><result status="valid" time="0.02" steps="19"/></proof>
+  </goal>
+  <goal name="WP_parameter search_strip.35" expl="35. loop invariant preservation">
+  <proof prover="0"><result status="valid" time="0.01" steps="12"/></proof>
+  </goal>
+  <goal name="WP_parameter search_strip.36" expl="36. loop invariant preservation">
+  <proof prover="0"><result status="valid" time="0.02" steps="27"/></proof>
+  </goal>
+  <goal name="WP_parameter search_strip.37" expl="37. loop invariant preservation">
+  <proof prover="0"><result status="valid" time="0.01" steps="13"/></proof>
+  </goal>
+  <goal name="WP_parameter search_strip.38" expl="38. assertion">
+  <proof prover="0"><result status="valid" time="0.18" steps="93"/></proof>
+  </goal>
+  <goal name="WP_parameter search_strip.39" expl="39. assertion">
+  <proof prover="0"><result status="valid" time="0.73" steps="299"/></proof>
+  </goal>
+  <goal name="WP_parameter search_strip.40" expl="40. postcondition">
+  <proof prover="0"><result status="valid" time="0.01" steps="11"/></proof>
+  </goal>
+  <goal name="WP_parameter search_strip.41" expl="41. postcondition">
+  <proof prover="1"><result status="valid" time="0.06"/></proof>
+  </goal>
+  <goal name="WP_parameter search_strip.42" expl="42. postcondition">
+  <proof prover="1"><result status="valid" time="1.62"/></proof>
+  </goal>
+  <goal name="WP_parameter search_strip.43" expl="43. postcondition">
+  <proof prover="0"><result status="valid" time="0.01" steps="8"/></proof>
+  </goal>
+  <goal name="WP_parameter search_strip.44" expl="44. postcondition">
+  <proof prover="0"><result status="valid" time="0.02" steps="8"/></proof>
+  </goal>
+  <goal name="WP_parameter search_strip.45" expl="45. postcondition">
+  <proof prover="0"><result status="valid" time="0.01" steps="8"/></proof>
+  </goal>
+ </transf>
  </goal>
- <goal name="WP_parameter left_border" expl="VC for left_border" expanded="true">
+ <goal name="WP_parameter left_border" expl="VC for left_border">
+ <transf name="split_goal_wp">
+  <goal name="WP_parameter left_border.1" expl="1. loop invariant init">
+  <proof prover="0"><result status="valid" time="0.01" steps="6"/></proof>
+  </goal>
+  <goal name="WP_parameter left_border.2" expl="2. loop invariant init">
+  <proof prover="0"><result status="valid" time="0.01" steps="6"/></proof>
+  </goal>
+  <goal name="WP_parameter left_border.3" expl="3. index in array bounds">
+  <proof prover="0"><result status="valid" time="0.01" steps="10"/></proof>
+  </goal>
+  <goal name="WP_parameter left_border.4" expl="4. loop invariant preservation">
+  <proof prover="0"><result status="valid" time="0.02" steps="14"/></proof>
+  </goal>
+  <goal name="WP_parameter left_border.5" expl="5. loop invariant preservation">
+  <proof prover="0"><result status="valid" time="0.02" steps="14"/></proof>
+  </goal>
+  <goal name="WP_parameter left_border.6" expl="6. loop variant decrease">
+  <proof prover="0"><result status="valid" time="0.01" steps="14"/></proof>
+  </goal>
+  <goal name="WP_parameter left_border.7" expl="7. postcondition">
+  <proof prover="0"><result status="valid" time="0.01" steps="13"/></proof>
+  </goal>
+  <goal name="WP_parameter left_border.8" expl="8. postcondition">
+  <proof prover="0"><result status="valid" time="0.03" steps="24"/></proof>
+  </goal>
+  <goal name="WP_parameter left_border.9" expl="9. postcondition">
+  <proof prover="0"><result status="valid" time="0.03" steps="24"/></proof>
+  </goal>
+  <goal name="WP_parameter left_border.10" expl="10. postcondition">
+  <proof prover="0"><result status="valid" time="0.01" steps="10"/></proof>
+  <proof prover="1" obsolete="true"><result status="unknown" time="0.18"/></proof>
+  <proof prover="2" obsolete="true"><result status="timeout" time="4.91"/></proof>
+  </goal>
+  <goal name="WP_parameter left_border.11" expl="11. postcondition">
+  <proof prover="0"><result status="valid" time="0.02" steps="19"/></proof>
+  <proof prover="1" obsolete="true"><result status="unknown" time="0.77"/></proof>
+  <proof prover="2" obsolete="true"><result status="timeout" time="4.96"/></proof>
+  </goal>
+  <goal name="WP_parameter left_border.12" expl="12. postcondition">
+  <proof prover="0"><result status="valid" time="0.01" steps="11"/></proof>
+  </goal>
+ </transf>
  </goal>
- <goal name="WP_parameter right_border" expl="VC for right_border" expanded="true">
+ <goal name="WP_parameter right_border" expl="VC for right_border">
+ <transf name="split_goal_wp">
+  <goal name="WP_parameter right_border.1" expl="1. loop invariant init">
+  <proof prover="0"><result status="valid" time="0.01" steps="6"/></proof>
+  </goal>
+  <goal name="WP_parameter right_border.2" expl="2. loop invariant init">
+  <proof prover="0"><result status="valid" time="0.01" steps="6"/></proof>
+  </goal>
+  <goal name="WP_parameter right_border.3" expl="3. index in array bounds">
+  <proof prover="0"><result status="valid" time="0.01" steps="10"/></proof>
+  </goal>
+  <goal name="WP_parameter right_border.4" expl="4. loop invariant preservation">
+  <proof prover="0"><result status="valid" time="0.01" steps="14"/></proof>
+  </goal>
+  <goal name="WP_parameter right_border.5" expl="5. loop invariant preservation">
+  <proof prover="0"><result status="valid" time="0.01" steps="14"/></proof>
+  </goal>
+  <goal name="WP_parameter right_border.6" expl="6. loop variant decrease">
+  <proof prover="0"><result status="valid" time="0.02" steps="14"/></proof>
+  </goal>
+  <goal name="WP_parameter right_border.7" expl="7. postcondition">
+  <proof prover="0"><result status="valid" time="0.01" steps="13"/></proof>
+  </goal>
+  <goal name="WP_parameter right_border.8" expl="8. postcondition">
+  <proof prover="0"><result status="valid" time="0.03" steps="24"/></proof>
+  </goal>
+  <goal name="WP_parameter right_border.9" expl="9. postcondition">
+  <proof prover="0"><result status="valid" time="0.08" steps="24"/></proof>
+  </goal>
+  <goal name="WP_parameter right_border.10" expl="10. postcondition">
+  <proof prover="0"><result status="valid" time="0.01" steps="10"/></proof>
+  </goal>
+  <goal name="WP_parameter right_border.11" expl="11. postcondition">
+  <proof prover="0"><result status="valid" time="0.05" steps="19"/></proof>
+  </goal>
+  <goal name="WP_parameter right_border.12" expl="12. postcondition">
+  <proof prover="0"><result status="valid" time="0.01" steps="11"/></proof>
+  </goal>
+ </transf>
  </goal>
  <goal name="WP_parameter divide_and_conquer" expl="VC for divide_and_conquer" expanded="true">
  </goal>

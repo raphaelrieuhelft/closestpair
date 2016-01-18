@@ -283,11 +283,9 @@ let full_divide_and_conquer (a:array point) : closest_pair_result
 = let b = Array.copy a in
   let p = sort proj_x b in
   let r = divide_and_conquer b 0 a.length in
-  assert { closest_pair_post_for b 0 a.length r } ;
-  assert { forall i j . distinct_indices_in_range i j 0 a.length -> dist b[i] b[j] >=. r.delta };
+  assert { closest_pair_post b r } ;
   assert { forall i j . distinct_indices_in_range i j 0 a.length -> dist a[i] a[j] = dist b[p.reciprocal i] b[p.reciprocal j] >=. r.delta };
   { delta = r.delta ; first = p.direct r.first ; second = p.direct r.second }
-
 end
 
 
@@ -322,10 +320,10 @@ exception Break
      to the [mu - delta, mu + delta].  If the minimal distance is not
      less than [delta], this function just returns [delta]. *)
 let search_strip (a:array point) (delta:real) : closest_pair_result
-  requires { _TO_BE_COMPLETED }
+  requires { exists mu. forall i. 0 <= i < a.length -> mu -. delta <. a[i].x <. mu +. delta}
   ensures { result.delta <=. delta }
-  ensures { result.delta <. delta -> _TO_BE_COMPLETED }
-  ensures { _TO_BE_COMPLETED }
+  ensures { result.delta <. delta -> distinct_indices_in_range result.first result.second 0 a.length }
+  ensures { result.delta <. delta -> closest_pair_post a result }
 = if a.length < 2 then
     (* dummy values for first and second *)
     { delta = delta ; first = 0; second = 0 }
@@ -336,13 +334,18 @@ let search_strip (a:array point) (delta:real) : closest_pair_result
   let s = ref 0 in
   let m = ref delta in
   for i = 0 to b.length - 2 do
-    invariant { _TO_BE_COMPLETED }
+    invariant { distinct_indices_in_range !f !s 0 a.length -> dist b[!f] b[!s] = !m }
+    invariant { forall k l . distinct_indices_in_range k l 0 a.length /\ k < i /\ k < l -> dist b[k] b[l] >=. !m }
+    invariant { !m <. delta -> distinct_indices_in_range !f !s 0 a.length }
     try
       for j = i+1 to b.length - 1 do
-        invariant { _TO_BE_COMPLETED }
+        invariant { distinct_indices_in_range !f !s 0 a.length -> dist b[!f] b[!s] = !m }
+        invariant { forall k l . distinct_indices_in_range k l 0 a.length /\ (k < i \/ (k = i /\ (l < j))) /\ k < l 
+		  -> dist b[k] b[l] >=. !m }
+        invariant { !m <. delta -> distinct_indices_in_range !f !s 0 a.length }
         if b[j].y >=. b[i].y +. !m then
           begin
-            assert { _TO_BE_COMPLETED };
+            assert { dist b[i] b[j] >=. !m };
             raise Break;
           end;
         let d = dist b[i] b[j] in
@@ -352,8 +355,12 @@ let search_strip (a:array point) (delta:real) : closest_pair_result
     end
   done; 
   if !m <. delta then
-     let f' = _VALUE_TO_BE_COMPLETED in let s' = _VALUE_TO_BE_COMPLETED in 
+     begin
+     assert { closest_pair_post b { delta = !m; first = !f; second = !s } }; 
+     assert { forall i j. distinct_indices_in_range i j 0 a.length ->  dist a[i] a[j] = dist b[p.reciprocal i] b[p.reciprocal j] >=. !m };
+     let f' = p.direct !f in let s' = p.direct !s in 
      { delta = !m ; first = f'; second = s' }
+     end
   else { delta = delta ; first = 0; second = 0 }
 
 
@@ -367,14 +374,17 @@ let search_strip (a:array point) (delta:real) : closest_pair_result
     assumes [a] sorted in x. *)
 let left_border (a:array point) (low middle : int)
               (mu delta : real) : int
-  requires { _TO_BE_COMPLETED }
+  requires { sorted proj_x a }
+  requires { 0 <= low <  middle <  a.length }
+  requires { a[middle].x  >. mu -. delta }
   ensures { low <= result <= middle }
   ensures { forall i. result <= i < middle -> mu -. delta <. a[i].x }
   ensures { forall i. low <= i < result -> a[i].x <=. mu -. delta }
 = let l = ref middle in
   while !l >= low+1 && a[!l-1].x >. mu -. delta do
-    variant { _VARIANT_TO_BE_COMPLETED }
-    invariant { _TO_BE_COMPLETED }
+    variant { !l }
+    invariant { low <= !l <= middle }
+    invariant { a[!l].x >. mu -. delta }
     l := !l - 1
   done;
   !l
@@ -385,10 +395,20 @@ let left_border (a:array point) (low middle : int)
     greater or equal [mu+delta]. It assumes [a] sorted in x. *)
 let right_border (a:array point) (middle high : int)
               (mu delta : real) : int
-  requires { _TO_BE_COMPLETED }
-  ensures { _TO_BE_COMPLETED }
-= _VALUE_TO_BE_COMPLETED
-
+  requires { sorted proj_x a }
+  requires { 0 < middle < high <= a.length }
+  requires { a[middle].x <. mu +. delta }
+  ensures { middle <= result <= high }
+  ensures { forall i. middle <= i < result -> mu +. delta >. a[i].x }
+  ensures { forall i. result <= i < high -> mu +. delta <=. a[i].x }
+= let r = ref middle in
+  while !r < high-1 && a[!r+1].x <. mu +. delta do
+    variant { high - !r }
+    invariant { middle <= !r < high }
+    invariant { a[!r].x <. mu +. delta }
+    r := !r + 1 
+  done;
+  !r+1
 
 
 
