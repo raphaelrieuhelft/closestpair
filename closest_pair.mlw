@@ -376,7 +376,7 @@ let left_border (a:array point) (low middle : int)
               (mu delta : real) : int
   requires { sorted proj_x a }
   requires { 0 <= low <  middle <  a.length }
-  requires { a[middle].x  >. mu -. delta }
+  requires { a[middle-1].x  >=. mu -. delta }
   ensures { low <= result <= middle }
   ensures { forall i. result <= i < middle -> mu -. delta <. a[i].x }
   ensures { forall i. low <= i < result -> a[i].x <=. mu -. delta }
@@ -384,7 +384,8 @@ let left_border (a:array point) (low middle : int)
   while !l >= low+1 && a[!l-1].x >. mu -. delta do
     variant { !l }
     invariant { low <= !l <= middle }
-    invariant { a[!l].x >. mu -. delta }
+    invariant { !l < middle -> a[!l].x >. mu -. delta }
+    invariant { !l = middle -> a[!l-1].x >=. mu -. delta}
     l := !l - 1
   done;
   !l
@@ -397,20 +398,18 @@ let right_border (a:array point) (middle high : int)
               (mu delta : real) : int
   requires { sorted proj_x a }
   requires { 0 < middle < high <= a.length }
-  requires { a[middle].x <. mu +. delta }
+  requires { a[middle].x <=. mu +. delta }
   ensures { middle <= result <= high }
   ensures { forall i. middle <= i < result -> mu +. delta >. a[i].x }
   ensures { forall i. result <= i < high -> mu +. delta <=. a[i].x }
-= let r = ref middle in
-  while !r < high-1 && a[!r+1].x <. mu +. delta do
-    variant { high - !r }
-    invariant { middle <= !r < high }
-    invariant { a[!r].x <. mu +. delta }
-    r := !r + 1 
+= let r = ref high in
+  while !r >= middle + 1 && a[!r-1].x >=. mu +. delta do
+    variant { !r }
+    invariant { middle <= !r <= high }
+    invariant { !r < high -> a[!r].x >=. mu +. delta }
+    r := !r-1
   done;
-  !r+1
-
-
+  !r
 
 (** {3 Divide and Conquer approach} *)
 
@@ -421,9 +420,11 @@ let right_border (a:array point) (middle high : int)
     assumes [a] of length at least 2 and sorted in increasing order
     with respect to the x-coordinate. *)
 let rec divide_and_conquer (a:array point) (low high:int) : closest_pair_result
-  requires { _TO_BE_COMPLETED }
-  variant { _VARIANT_TO_BE_COMPLETED }
-  ensures { _TO_BE_COMPLETED }
+  requires { high - low  >= 2 }
+  requires { sorted proj_x a }
+  requires { 0 <= low < high <= a.length }
+  variant { high - low }
+  ensures { closest_pair_post_for a low high result }
 = let len = high - low in
   if len <= 7 then brute_force_search_sub_array a low high else
     begin
@@ -440,7 +441,7 @@ let rec divide_and_conquer (a:array point) (low high:int) : closest_pair_result
       let res = search_strip temp d in  
       if res.delta <. d then
         begin
-          { res with first = _VALUE_TO_BE_COMPLETED; second = _VALUE_TO_BE_COMPLETED }
+          { res with first = left + res.first; second = left + res.second }
         end
       else r
     end
