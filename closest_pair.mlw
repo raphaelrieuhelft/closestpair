@@ -578,6 +578,20 @@ let ghost too_many_points_in_square (delta:real) (a b c d : point) : unit
     indices of [side]. It returns a 5-uple [(i1,i2,i3,i4,r)] such that
     [i1] to [i4] are four distinct indices in the range [k,k+6], and
     [r] is the 'common side' of them. *)
+
+let ghost check_order_2 (a:array int) (bound i j:int)
+  requires { 0 <= i < j < bound <= a.length }
+  requires { forall u v. distinct_indices_in_range u v 0 bound /\ u < v -> a[u] < a[v] }
+  ensures { a[i] < a[j] }
+= assert { distinct_indices_in_range i j 0 bound }; ()
+
+let ghost check_order_4 (a:array int) (bound i j k l:int)
+  requires { 0 <= i < j < k < l < bound <= a.length }
+  requires { forall u v. distinct_indices_in_range u v 0 bound /\ u < v -> a[u] < a[v] }
+  ensures { a[i] < a[j] < a[k] < a[l] }
+= check_order_2 a bound i j; check_order_2 a bound j k; check_order_2 a bound k l; ()
+
+
 let ghost pigeon_hole (side:array bool) (k:int) : (int,int,int,int,bool)
   requires { 0 <= k }
   requires { k + 6 < side.length }
@@ -590,12 +604,41 @@ let ghost pigeon_hole (side:array bool) (k:int) : (int,int,int,int,bool)
   let nl = ref 0 in
   let nr = ref 0 in
   for i = k to k+6 do
-    invariant { _TO_BE_COMPLETED }
-    if side[i] then (left[!nl] <- i; nl := !nl + 1)
-               else (right[!nr] <- i; nr := !nr + 1)
+    invariant { 0 <= !nl <= 7 }
+    invariant { 0 <= !nr <= 7 }
+    invariant { k + !nl + !nr = i }
+    invariant { forall j. 0 <= j < !nl -> side[left[j]] }
+    invariant { forall j. 0 <= j < !nr -> not side[right[j]] }
+    invariant { forall u v. distinct_indices_in_range u v 0 !nl /\ u < v -> left[u] < left[v] }
+    invariant { forall u v. distinct_indices_in_range u v 0 !nr /\ u < v -> right[u] < right[v] }
+    invariant { forall j. 0 <= j < !nl -> k <= left[j] < i }
+    invariant { forall j. 0 <= j < !nr -> k <= right[j] < i }
+    if side[i] then begin
+		    assert { forall u v. distinct_indices_in_range u v 0 (!nl + 1) /\ u < v -> distinct_indices_in_range u v 0 !nl \/ v = !nl };
+		    left[!nl] <- i; 
+		    nl := !nl + 1
+		    end
+               else begin
+		    assert { forall u v. distinct_indices_in_range u v 0 (!nr + 1) /\ u < v -> distinct_indices_in_range u v 0 !nr \/ v = !nr };
+	       	    right[!nr] <- i; 
+		    nr := !nr + 1
+		    end
   done;
-  if !nl > !nr then (left[0],left[1],left[2],left[3],True)
-               else (right[0],right[1],right[2],right[3],False)
+  assert { !nl + !nr = 7 };
+  if !nl > !nr then begin
+     	       	    assert { !nl >= 4 };
+		    assert { forall u v. distinct_indices_in_range u v 0 4 /\ u < v -> distinct_indices_in_range u v 0 !nl /\ u < v };
+		    assert { forall u v. distinct_indices_in_range u v 0 4 /\ u < v -> left[u] < left[v] };
+		    check_order_4 left !nl 0 1 2 3;
+     	       	    (left[0],left[1],left[2],left[3],True)
+		    end
+               else begin
+	       	    assert { !nr >= 4 };
+		    assert { forall u v. distinct_indices_in_range u v 0 4 /\ u < v -> distinct_indices_in_range u v 0 !nr /\ u < v };
+		    assert { forall u v. distinct_indices_in_range u v 0 4 /\ u < v -> right[u] < right[v] };
+		    check_order_4 right !nr 0 1 2 3;
+	       	    (right[0],right[1],right[2],right[3],False)
+		    end
 
 (* QUESTION 13 *)
 

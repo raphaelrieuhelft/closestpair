@@ -234,8 +234,8 @@
   </goal>
  </transf>
  </goal>
- <goal name="WP_parameter divide_and_conquer" expl="VC for divide_and_conquer" expanded="true">
- <transf name="split_goal_wp" expanded="true">
+ <goal name="WP_parameter divide_and_conquer" expl="VC for divide_and_conquer">
+ <transf name="split_goal_wp">
   <goal name="WP_parameter divide_and_conquer.1" expl="1. precondition">
   <proof prover="0"><result status="valid" time="0.02" steps="7"/></proof>
   </goal>
@@ -321,7 +321,7 @@
  </transf>
  </goal>
 </theory>
-<theory name="Dimension2" sum="a6767e669763699d3cab26e885d1680e" expanded="true">
+<theory name="Dimension2" sum="993da962ec6fb562855f6e899a97c97b" expanded="true">
  <goal name="WP_parameter search_strip" expl="VC for search_strip">
  <transf name="split_goal_wp">
   <goal name="WP_parameter search_strip.1" expl="1. postcondition">
@@ -539,7 +539,7 @@
   </goal>
  </transf>
  </goal>
- <goal name="WP_parameter right_border" expl="VC for right_border" expanded="true">
+ <goal name="WP_parameter right_border" expl="VC for right_border">
  <transf name="split_goal_wp">
   <goal name="WP_parameter right_border.1" expl="1. loop invariant init">
   <proof prover="0"><result status="valid" time="0.05" steps="5"/></proof>
@@ -804,13 +804,342 @@
   </goal>
  </transf>
  </goal>
- <goal name="WP_parameter too_many_points_in_square" expl="VC for too_many_points_in_square" expanded="true">
+ <goal name="WP_parameter too_many_points_in_square" expl="VC for too_many_points_in_square">
  <proof prover="0"><result status="timeout" time="4.97"/></proof>
  <proof prover="1"><result status="timeout" time="4.82"/></proof>
  <proof prover="2"><result status="timeout" time="5.04"/></proof>
  </goal>
- <goal name="WP_parameter pigeon_hole" expl="VC for pigeon_hole" expanded="true">
- <proof prover="0"><result status="unknown" time="0.01"/></proof>
+ <goal name="WP_parameter check_order_2" expl="VC for check_order_2">
+ <transf name="split_goal_wp">
+  <goal name="WP_parameter check_order_2.1" expl="1. assertion">
+  <proof prover="0"><result status="valid" time="0.01" steps="6"/></proof>
+  </goal>
+  <goal name="WP_parameter check_order_2.2" expl="2. postcondition">
+  <proof prover="0"><result status="valid" time="0.01" steps="10"/></proof>
+  </goal>
+ </transf>
+ </goal>
+ <goal name="WP_parameter check_order_4" expl="VC for check_order_4">
+ <transf name="split_goal_wp">
+  <goal name="WP_parameter check_order_4.1" expl="1. precondition">
+  <proof prover="0"><result status="valid" time="0.00" steps="7"/></proof>
+  </goal>
+  <goal name="WP_parameter check_order_4.2" expl="2. precondition">
+  <proof prover="0"><result status="valid" time="0.02" steps="15"/></proof>
+  </goal>
+  <goal name="WP_parameter check_order_4.3" expl="3. precondition">
+  <proof prover="0"><result status="valid" time="0.01" steps="9"/></proof>
+  </goal>
+  <goal name="WP_parameter check_order_4.4" expl="4. precondition">
+  <proof prover="0"><result status="valid" time="0.01" steps="17"/></proof>
+  </goal>
+  <goal name="WP_parameter check_order_4.5" expl="5. precondition">
+  <proof prover="0"><result status="valid" time="0.00" steps="12"/></proof>
+  </goal>
+  <goal name="WP_parameter check_order_4.6" expl="6. precondition">
+  <proof prover="0"><result status="valid" time="0.01" steps="20"/></proof>
+  </goal>
+  <goal name="WP_parameter check_order_4.7" expl="7. postcondition">
+  <proof prover="0"><result status="valid" time="0.01" steps="14"/></proof>
+  </goal>
+ </transf>
+ </goal>
+ <goal name="WP_parameter pigeon_hole" expl="VC for pigeon_hole">
+ <transf name="split_goal_wp">
+  <goal name="WP_parameter pigeon_hole.1" expl="1. array creation size">
+  <proof prover="0"><result status="valid" time="0.01" steps="3"/></proof>
+  </goal>
+  <goal name="WP_parameter pigeon_hole.2" expl="2. array creation size">
+  <proof prover="0"><result status="valid" time="0.01" steps="4"/></proof>
+  </goal>
+  <goal name="WP_parameter pigeon_hole.3" expl="3. assertion">
+  <proof prover="0"><result status="valid" time="0.01" steps="4"/></proof>
+  </goal>
+  <goal name="WP_parameter pigeon_hole.4" expl="4. assertion">
+  <proof prover="0"><result status="valid" time="0.01" steps="4"/></proof>
+  </goal>
+  <goal name="WP_parameter pigeon_hole.5" expl="5. assertion">
+  <proof prover="0"><result status="valid" time="0.01" steps="6"/></proof>
+  </goal>
+  <goal name="WP_parameter pigeon_hole.6" expl="6. assertion">
+  <proof prover="0"><result status="valid" time="0.02" steps="6"/></proof>
+  </goal>
+  <goal name="WP_parameter pigeon_hole.7" expl="7. precondition">
+  <proof prover="0"><result status="valid" time="0.02" steps="4"/></proof>
+  </goal>
+  <goal name="WP_parameter pigeon_hole.8" expl="8. precondition">
+  <proof prover="0"><result status="valid" time="0.02" steps="6"/></proof>
+  </goal>
+  <goal name="WP_parameter pigeon_hole.9" expl="9. index in array bounds">
+  <proof prover="0"><result status="valid" time="0.01" steps="11"/></proof>
+  </goal>
+  <goal name="WP_parameter pigeon_hole.10" expl="10. index in array bounds">
+  <proof prover="0"><result status="valid" time="0.01" steps="13"/></proof>
+  </goal>
+  <goal name="WP_parameter pigeon_hole.11" expl="11. index in array bounds">
+  <proof prover="0"><result status="valid" time="0.01" steps="15"/></proof>
+  </goal>
+  <goal name="WP_parameter pigeon_hole.12" expl="12. index in array bounds">
+  <proof prover="0"><result status="valid" time="0.02" steps="17"/></proof>
+  </goal>
+  <goal name="WP_parameter pigeon_hole.13" expl="13. postcondition">
+  <proof prover="0"><result status="valid" time="0.02" steps="19"/></proof>
+  </goal>
+  <goal name="WP_parameter pigeon_hole.14" expl="14. assertion">
+  <proof prover="0"><result status="valid" time="0.02" steps="5"/></proof>
+  </goal>
+  <goal name="WP_parameter pigeon_hole.15" expl="15. assertion">
+  <proof prover="0"><result status="valid" time="0.02" steps="7"/></proof>
+  </goal>
+  <goal name="WP_parameter pigeon_hole.16" expl="16. assertion">
+  <proof prover="0"><result status="valid" time="0.01" steps="7"/></proof>
+  </goal>
+  <goal name="WP_parameter pigeon_hole.17" expl="17. precondition">
+  <proof prover="0"><result status="valid" time="0.01" steps="5"/></proof>
+  </goal>
+  <goal name="WP_parameter pigeon_hole.18" expl="18. precondition">
+  <proof prover="0"><result status="valid" time="0.01" steps="7"/></proof>
+  </goal>
+  <goal name="WP_parameter pigeon_hole.19" expl="19. index in array bounds">
+  <proof prover="0"><result status="valid" time="0.01" steps="12"/></proof>
+  </goal>
+  <goal name="WP_parameter pigeon_hole.20" expl="20. index in array bounds">
+  <proof prover="0"><result status="valid" time="0.02" steps="14"/></proof>
+  </goal>
+  <goal name="WP_parameter pigeon_hole.21" expl="21. index in array bounds">
+  <proof prover="0"><result status="valid" time="0.02" steps="16"/></proof>
+  </goal>
+  <goal name="WP_parameter pigeon_hole.22" expl="22. index in array bounds">
+  <proof prover="0"><result status="valid" time="0.01" steps="18"/></proof>
+  </goal>
+  <goal name="WP_parameter pigeon_hole.23" expl="23. postcondition">
+  <proof prover="0"><result status="valid" time="0.01" steps="20"/></proof>
+  </goal>
+  <goal name="WP_parameter pigeon_hole.24" expl="24. loop invariant init">
+  <proof prover="0"><result status="valid" time="0.02" steps="5"/></proof>
+  </goal>
+  <goal name="WP_parameter pigeon_hole.25" expl="25. loop invariant init">
+  <proof prover="0"><result status="valid" time="0.01" steps="5"/></proof>
+  </goal>
+  <goal name="WP_parameter pigeon_hole.26" expl="26. loop invariant init">
+  <proof prover="0"><result status="valid" time="0.01" steps="5"/></proof>
+  </goal>
+  <goal name="WP_parameter pigeon_hole.27" expl="27. loop invariant init">
+  <proof prover="0"><result status="valid" time="0.01" steps="6"/></proof>
+  </goal>
+  <goal name="WP_parameter pigeon_hole.28" expl="28. loop invariant init">
+  <proof prover="0"><result status="valid" time="0.02" steps="6"/></proof>
+  </goal>
+  <goal name="WP_parameter pigeon_hole.29" expl="29. loop invariant init">
+  <proof prover="0"><result status="valid" time="0.02" steps="10"/></proof>
+  </goal>
+  <goal name="WP_parameter pigeon_hole.30" expl="30. loop invariant init">
+  <proof prover="0"><result status="valid" time="0.02" steps="10"/></proof>
+  </goal>
+  <goal name="WP_parameter pigeon_hole.31" expl="31. loop invariant init">
+  <proof prover="0"><result status="valid" time="0.01" steps="6"/></proof>
+  </goal>
+  <goal name="WP_parameter pigeon_hole.32" expl="32. index in array bounds">
+  <proof prover="0"><result status="valid" time="0.01" steps="12"/></proof>
+  </goal>
+  <goal name="WP_parameter pigeon_hole.33" expl="33. assertion">
+  <proof prover="0"><result status="valid" time="0.02" steps="24"/></proof>
+  </goal>
+  <goal name="WP_parameter pigeon_hole.34" expl="34. type invariant">
+  <proof prover="0"><result status="valid" time="0.02" steps="15"/></proof>
+  </goal>
+  <goal name="WP_parameter pigeon_hole.35" expl="35. index in array bounds">
+  <proof prover="0"><result status="valid" time="0.01" steps="15"/></proof>
+  </goal>
+  <goal name="WP_parameter pigeon_hole.36" expl="36. loop invariant preservation">
+  <proof prover="0"><result status="valid" time="0.02" steps="18"/></proof>
+  </goal>
+  <goal name="WP_parameter pigeon_hole.37" expl="37. loop invariant preservation">
+  <proof prover="0"><result status="valid" time="0.01" steps="18"/></proof>
+  </goal>
+  <goal name="WP_parameter pigeon_hole.38" expl="38. loop invariant preservation">
+  <proof prover="0"><result status="valid" time="0.02" steps="18"/></proof>
+  </goal>
+  <goal name="WP_parameter pigeon_hole.39" expl="39. loop invariant preservation">
+  <proof prover="0"><result status="valid" time="0.04" steps="24"/></proof>
+  </goal>
+  <goal name="WP_parameter pigeon_hole.40" expl="40. loop invariant preservation">
+  <proof prover="0"><result status="valid" time="0.02" steps="21"/></proof>
+  </goal>
+  <goal name="WP_parameter pigeon_hole.41" expl="41. loop invariant preservation">
+  <proof prover="0"><result status="valid" time="0.34" steps="38"/></proof>
+  </goal>
+  <goal name="WP_parameter pigeon_hole.42" expl="42. loop invariant preservation">
+  <proof prover="0"><result status="valid" time="0.02" steps="32"/></proof>
+  </goal>
+  <goal name="WP_parameter pigeon_hole.43" expl="43. loop invariant preservation">
+  <proof prover="0"><result status="valid" time="0.09" steps="24"/></proof>
+  </goal>
+  <goal name="WP_parameter pigeon_hole.44" expl="44. loop invariant preservation">
+  <proof prover="0"><result status="valid" time="0.01" steps="23"/></proof>
+  </goal>
+  <goal name="WP_parameter pigeon_hole.45" expl="45. assertion">
+  <proof prover="0"><result status="valid" time="0.03" steps="24"/></proof>
+  </goal>
+  <goal name="WP_parameter pigeon_hole.46" expl="46. type invariant">
+  <proof prover="0"><result status="valid" time="0.01" steps="15"/></proof>
+  </goal>
+  <goal name="WP_parameter pigeon_hole.47" expl="47. index in array bounds">
+  <proof prover="0"><result status="valid" time="0.01" steps="15"/></proof>
+  </goal>
+  <goal name="WP_parameter pigeon_hole.48" expl="48. loop invariant preservation">
+  <proof prover="0"><result status="valid" time="0.01" steps="18"/></proof>
+  </goal>
+  <goal name="WP_parameter pigeon_hole.49" expl="49. loop invariant preservation">
+  <proof prover="0"><result status="valid" time="0.02" steps="18"/></proof>
+  </goal>
+  <goal name="WP_parameter pigeon_hole.50" expl="50. loop invariant preservation">
+  <proof prover="0"><result status="valid" time="0.02" steps="18"/></proof>
+  </goal>
+  <goal name="WP_parameter pigeon_hole.51" expl="51. loop invariant preservation">
+  <proof prover="0"><result status="valid" time="0.02" steps="21"/></proof>
+  </goal>
+  <goal name="WP_parameter pigeon_hole.52" expl="52. loop invariant preservation">
+  <proof prover="0"><result status="valid" time="0.04" steps="24"/></proof>
+  </goal>
+  <goal name="WP_parameter pigeon_hole.53" expl="53. loop invariant preservation">
+  <proof prover="0"><result status="valid" time="0.03" steps="32"/></proof>
+  </goal>
+  <goal name="WP_parameter pigeon_hole.54" expl="54. loop invariant preservation">
+  <proof prover="0"><result status="valid" time="0.26" steps="38"/></proof>
+  </goal>
+  <goal name="WP_parameter pigeon_hole.55" expl="55. loop invariant preservation">
+  <proof prover="0"><result status="valid" time="0.02" steps="23"/></proof>
+  </goal>
+  <goal name="WP_parameter pigeon_hole.56" expl="56. loop invariant preservation">
+  <proof prover="0"><result status="valid" time="0.10" steps="24"/></proof>
+  </goal>
+  <goal name="WP_parameter pigeon_hole.57" expl="57. assertion">
+  <proof prover="0"><result status="valid" time="0.02" steps="10"/></proof>
+  </goal>
+  <goal name="WP_parameter pigeon_hole.58" expl="58. assertion">
+  <proof prover="0"><result status="valid" time="0.02" steps="12"/></proof>
+  </goal>
+  <goal name="WP_parameter pigeon_hole.59" expl="59. assertion">
+  <proof prover="0"><result status="valid" time="0.02" steps="21"/></proof>
+  </goal>
+  <goal name="WP_parameter pigeon_hole.60" expl="60. assertion">
+  <proof prover="0"><result status="valid" time="0.03" steps="30"/></proof>
+  </goal>
+  <goal name="WP_parameter pigeon_hole.61" expl="61. type invariant">
+  <proof prover="0"><result status="valid" time="0.01" steps="13"/></proof>
+  </goal>
+  <goal name="WP_parameter pigeon_hole.62" expl="62. precondition">
+  <proof prover="0"><result status="valid" time="0.02" steps="13"/></proof>
+  </goal>
+  <goal name="WP_parameter pigeon_hole.63" expl="63. precondition">
+  <proof prover="0"><result status="valid" time="0.02" steps="27"/></proof>
+  </goal>
+  <goal name="WP_parameter pigeon_hole.64" expl="64. index in array bounds">
+  <proof prover="0"><result status="valid" time="0.02" steps="21"/></proof>
+  </goal>
+  <goal name="WP_parameter pigeon_hole.65" expl="65. index in array bounds">
+  <proof prover="0"><result status="valid" time="0.01" steps="23"/></proof>
+  </goal>
+  <goal name="WP_parameter pigeon_hole.66" expl="66. index in array bounds">
+  <proof prover="0"><result status="valid" time="0.01" steps="25"/></proof>
+  </goal>
+  <goal name="WP_parameter pigeon_hole.67" expl="67. index in array bounds">
+  <proof prover="0"><result status="valid" time="0.01" steps="27"/></proof>
+  </goal>
+  <goal name="WP_parameter pigeon_hole.68" expl="68. postcondition">
+  <transf name="split_goal_wp">
+   <goal name="WP_parameter pigeon_hole.68.1" expl="1. postcondition">
+   <proof prover="0"><result status="valid" time="0.02" steps="38"/></proof>
+   </goal>
+   <goal name="WP_parameter pigeon_hole.68.2" expl="2. postcondition">
+   <proof prover="0"><result status="valid" time="0.02" steps="28"/></proof>
+   </goal>
+   <goal name="WP_parameter pigeon_hole.68.3" expl="3. postcondition">
+   <proof prover="0"><result status="valid" time="0.03" steps="28"/></proof>
+   </goal>
+   <goal name="WP_parameter pigeon_hole.68.4" expl="4. postcondition">
+   <proof prover="0"><result status="valid" time="0.01" steps="28"/></proof>
+   </goal>
+   <goal name="WP_parameter pigeon_hole.68.5" expl="5. postcondition">
+   <proof prover="0"><result status="valid" time="0.01" steps="37"/></proof>
+   </goal>
+   <goal name="WP_parameter pigeon_hole.68.6" expl="6. postcondition">
+   <proof prover="0"><result status="valid" time="0.02" steps="32"/></proof>
+   </goal>
+   <goal name="WP_parameter pigeon_hole.68.7" expl="7. postcondition">
+   <proof prover="0"><result status="valid" time="0.02" steps="32"/></proof>
+   </goal>
+   <goal name="WP_parameter pigeon_hole.68.8" expl="8. postcondition">
+   <proof prover="0"><result status="valid" time="0.02" steps="32"/></proof>
+   </goal>
+   <goal name="WP_parameter pigeon_hole.68.9" expl="9. postcondition">
+   <proof prover="0"><result status="valid" time="0.02" steps="31"/></proof>
+   </goal>
+  </transf>
+  </goal>
+  <goal name="WP_parameter pigeon_hole.69" expl="69. assertion">
+  <proof prover="0"><result status="valid" time="0.02" steps="12"/></proof>
+  </goal>
+  <goal name="WP_parameter pigeon_hole.70" expl="70. assertion">
+  <proof prover="0"><result status="valid" time="0.03" steps="21"/></proof>
+  </goal>
+  <goal name="WP_parameter pigeon_hole.71" expl="71. assertion">
+  <proof prover="0"><result status="valid" time="0.02" steps="30"/></proof>
+  </goal>
+  <goal name="WP_parameter pigeon_hole.72" expl="72. type invariant">
+  <proof prover="0"><result status="valid" time="0.01" steps="13"/></proof>
+  </goal>
+  <goal name="WP_parameter pigeon_hole.73" expl="73. precondition">
+  <proof prover="0"><result status="valid" time="0.02" steps="13"/></proof>
+  </goal>
+  <goal name="WP_parameter pigeon_hole.74" expl="74. precondition">
+  <proof prover="0"><result status="valid" time="0.02" steps="27"/></proof>
+  </goal>
+  <goal name="WP_parameter pigeon_hole.75" expl="75. index in array bounds">
+  <proof prover="0"><result status="valid" time="0.01" steps="21"/></proof>
+  </goal>
+  <goal name="WP_parameter pigeon_hole.76" expl="76. index in array bounds">
+  <proof prover="0"><result status="valid" time="0.02" steps="23"/></proof>
+  </goal>
+  <goal name="WP_parameter pigeon_hole.77" expl="77. index in array bounds">
+  <proof prover="0"><result status="valid" time="0.02" steps="25"/></proof>
+  </goal>
+  <goal name="WP_parameter pigeon_hole.78" expl="78. index in array bounds">
+  <proof prover="0"><result status="valid" time="0.00" steps="27"/></proof>
+  </goal>
+  <goal name="WP_parameter pigeon_hole.79" expl="79. postcondition">
+  <transf name="split_goal_wp">
+   <goal name="WP_parameter pigeon_hole.79.1" expl="1. postcondition">
+   <proof prover="0"><result status="valid" time="0.03" steps="38"/></proof>
+   </goal>
+   <goal name="WP_parameter pigeon_hole.79.2" expl="2. postcondition">
+   <proof prover="0"><result status="valid" time="0.02" steps="28"/></proof>
+   </goal>
+   <goal name="WP_parameter pigeon_hole.79.3" expl="3. postcondition">
+   <proof prover="0"><result status="valid" time="0.02" steps="28"/></proof>
+   </goal>
+   <goal name="WP_parameter pigeon_hole.79.4" expl="4. postcondition">
+   <proof prover="0"><result status="valid" time="0.02" steps="28"/></proof>
+   </goal>
+   <goal name="WP_parameter pigeon_hole.79.5" expl="5. postcondition">
+   <proof prover="0"><result status="valid" time="0.02" steps="37"/></proof>
+   </goal>
+   <goal name="WP_parameter pigeon_hole.79.6" expl="6. postcondition">
+   <proof prover="0"><result status="valid" time="0.02" steps="32"/></proof>
+   </goal>
+   <goal name="WP_parameter pigeon_hole.79.7" expl="7. postcondition">
+   <proof prover="0"><result status="valid" time="0.02" steps="32"/></proof>
+   </goal>
+   <goal name="WP_parameter pigeon_hole.79.8" expl="8. postcondition">
+   <proof prover="0"><result status="valid" time="0.02" steps="32"/></proof>
+   </goal>
+   <goal name="WP_parameter pigeon_hole.79.9" expl="9. postcondition">
+   <proof prover="0"><result status="valid" time="0.01" steps="31"/></proof>
+   </goal>
+  </transf>
+  </goal>
+ </transf>
  </goal>
  <goal name="WP_parameter too_many_points_in_rectangle" expl="VC for too_many_points_in_rectangle" expanded="true">
  <proof prover="0"><result status="unknown" time="0.05"/></proof>
