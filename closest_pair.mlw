@@ -649,6 +649,32 @@ let ghost pigeon_hole (side:array bool) (k:int) : (int,int,int,int,bool)
     [side[i]] is True when [a[i]] is on the right of [mu] and
     False if it is on the left. It is assumed that when two points are
     on the same side, then their distance is at least [delta].  *)
+(*
+let translate (p:point) (dx dy:real) (delta:real)
+    requires { in_square { x = p.x +. dx ; y = p.y +. dy } delta  }
+    ensures { in_square result delta }
+  = { x = p.x +. dx; y = p.y +. dy }
+
+let sym (p:point) (mu delta:real)
+    requires { in_square { x = p.x -. 2.0 *. ( p.x -. mu ); y = p.y } delta }
+    ensures { in_square result delta }
+ = { x = p.x -. 2.0 *. ( p.x -. mu ); y = p.y }
+
+
+let ghost sym_square (p1 p2 p3 p4 s1 s2 s3 s4 : point) (mu delta: real)
+  requires { s1 = { x = p1.x -. 2.0 *. (p1.x -. mu) ; y = p1.y } }
+  requires { s2 = { x = p2.x -. 2.0 *. (p2.x -. mu) ; y = p2.y } }
+  requires { s3 = { x = p3.x -. 2.0 *. (p3.x -. mu) ; y = p3.y } }
+  requires { s4 = { x = p4.x -. 2.0 *. (p4.x -. mu) ; y = p4.y } }
+  ensures { dist s1 s2 = dist p1 p2 }
+  ensures { dist s1 s3 = dist p1 p3 }
+  ensures { dist s1 s4 = dist p1 p4 }
+  ensures { dist s2 s3 = dist p2 p3 }
+  ensures { dist s2 s4 = dist p2 p4 }
+  ensures { dist s3 s4 = dist p3 p4 }
+  =  ()*)
+
+
 let ghost too_many_points_in_rectangle (a:array point) (mu delta:real)
                           (k:int) (side:array bool)
   requires { 0.0 <=. delta }
@@ -660,17 +686,21 @@ let ghost too_many_points_in_rectangle (a:array point) (mu delta:real)
                mu -. delta <. a[i].x <. mu +. delta }
   requires { side.length = a.length }
   requires { forall i. 0 <= i < a.length ->
-     if side[i] then a[i].x >=. mu else a[i].x <=. mu }
+     if side[i] then a[i].x <=. mu else a[i].x >=. mu }
   requires { forall i j. distinct_indices_in_range i j 0 a.length ->
      side[i] = side[j] -> delta <=. dist a[i] a[j] }
   ensures { false }
 = let base = a[k].y in
   let (i1,i2,i3,i4,s) = pigeon_hole side k in
   (* call too_many_points_in_square with appropriate symmetry and translation *)
-  if s then
-      _VALUE_TO_BE_COMPLETED
+  if s then (
+     let ts1 = { x = mu -. a[i1].x ; y = a[i1].y -. base } in
+     let ts2 = { x = mu -. a[i2].x ; y = a[i2].y -. base } in
+     let ts3 = { x = mu -. a[i3].x ; y = a[i3].y -. base } in
+     let ts4 = { x = mu -. a[i4].x ; y = a[i4].y -. base } in
+     too_many_points_in_square delta ts1 ts2 ts3 ts4 )
   else
-      _VALUE_TO_BE_COMPLETED
+     ( too_many_points_in_square delta { x = a[i1].x -. mu; y = a[i1].y -. base } { x = a[i2].x -. mu; y = a[i2].y -. base } { x = a[i3].x -. mu; y = a[i3].y -. base } { x = a[i4].x -. mu; y = a[i4].y -. base } )
 
 
 (* QUESTION 14 *)
