@@ -410,7 +410,7 @@
  </transf>
  </goal>
 </theory>
-<theory name="Dimension2" sum="a1f408e9d4f744ed9f53e4f22dae59c5" expanded="true">
+<theory name="Dimension2" sum="dcc2e48557bcc96c95cbc147cfe57b6e" expanded="true">
  <goal name="WP_parameter search_strip" expl="VC for search_strip">
  <transf name="split_goal_wp">
   <goal name="WP_parameter search_strip.1" expl="1. postcondition">
@@ -1469,127 +1469,677 @@
  <goal name="WP_parameter too_many_points_in_rectangle" expl="VC for too_many_points_in_rectangle">
  <transf name="split_goal_wp">
   <goal name="WP_parameter too_many_points_in_rectangle.1" expl="1. index in array bounds">
-  <proof prover="1"><result status="valid" time="0.02"/></proof>
+  <proof prover="0" timelimit="30"><result status="valid" time="0.02" steps="6"/></proof>
+  <proof prover="1" obsolete="true"><result status="valid" time="0.02"/></proof>
   </goal>
   <goal name="WP_parameter too_many_points_in_rectangle.2" expl="2. precondition">
-  <proof prover="1"><result status="valid" time="0.04"/></proof>
+  <proof prover="0" timelimit="30"><result status="valid" time="0.01" steps="7"/></proof>
+  <proof prover="1" obsolete="true"><result status="valid" time="0.04"/></proof>
   </goal>
   <goal name="WP_parameter too_many_points_in_rectangle.3" expl="3. precondition">
-  <proof prover="1"><result status="valid" time="0.02"/></proof>
+  <proof prover="0" timelimit="30"><result status="valid" time="0.02" steps="7"/></proof>
+  <proof prover="1" obsolete="true"><result status="valid" time="0.02"/></proof>
   </goal>
   <goal name="WP_parameter too_many_points_in_rectangle.4" expl="4. index in array bounds">
-  <proof prover="1"><result status="valid" time="0.03"/></proof>
+  <proof prover="0" timelimit="30"><result status="valid" time="0.11" steps="18"/></proof>
   </goal>
   <goal name="WP_parameter too_many_points_in_rectangle.5" expl="5. index in array bounds">
-  <proof prover="1"><result status="valid" time="0.04"/></proof>
+  <proof prover="0" timelimit="30"><result status="valid" time="0.02" steps="20"/></proof>
   </goal>
   <goal name="WP_parameter too_many_points_in_rectangle.6" expl="6. index in array bounds">
-  <proof prover="1"><result status="valid" time="0.04"/></proof>
+  <proof prover="0" timelimit="30"><result status="valid" time="0.06" steps="20"/></proof>
   </goal>
   <goal name="WP_parameter too_many_points_in_rectangle.7" expl="7. index in array bounds">
-  <proof prover="1"><result status="valid" time="0.03"/></proof>
+  <proof prover="0" timelimit="30"><result status="valid" time="0.01" steps="22"/></proof>
   </goal>
   <goal name="WP_parameter too_many_points_in_rectangle.8" expl="8. index in array bounds">
-  <proof prover="1"><result status="valid" time="0.03"/></proof>
+  <proof prover="0" timelimit="30"><result status="valid" time="0.03" steps="22"/></proof>
   </goal>
   <goal name="WP_parameter too_many_points_in_rectangle.9" expl="9. index in array bounds">
-  <proof prover="1"><result status="valid" time="0.04"/></proof>
+  <proof prover="0" timelimit="30"><result status="valid" time="0.02" steps="24"/></proof>
   </goal>
   <goal name="WP_parameter too_many_points_in_rectangle.10" expl="10. index in array bounds">
-  <proof prover="1"><result status="valid" time="0.03"/></proof>
+  <proof prover="0" timelimit="30"><result status="valid" time="0.07" steps="24"/></proof>
   </goal>
   <goal name="WP_parameter too_many_points_in_rectangle.11" expl="11. index in array bounds">
-  <proof prover="1"><result status="valid" time="0.02"/></proof>
+  <proof prover="0" timelimit="30"><result status="valid" time="0.02" steps="26"/></proof>
   </goal>
   <goal name="WP_parameter too_many_points_in_rectangle.12" expl="12. precondition">
-  <proof prover="1"><result status="valid" time="0.05"/></proof>
+  <proof prover="0" timelimit="30"><result status="valid" time="0.02" steps="59"/></proof>
   </goal>
   <goal name="WP_parameter too_many_points_in_rectangle.13" expl="13. precondition">
-  <proof prover="1"><result status="valid" time="0.04"/></proof>
+  <proof prover="0" timelimit="30"><result status="valid" time="0.02" steps="59"/></proof>
   </goal>
   <goal name="WP_parameter too_many_points_in_rectangle.14" expl="14. precondition">
-  <proof prover="1"><result status="valid" time="0.04"/></proof>
+  <proof prover="0" timelimit="30"><result status="valid" time="0.02" steps="59"/></proof>
   </goal>
   <goal name="WP_parameter too_many_points_in_rectangle.15" expl="15. precondition">
-  <proof prover="1"><result status="valid" time="0.04"/></proof>
+  <proof prover="0" timelimit="30"><result status="valid" time="0.03" steps="56"/></proof>
   </goal>
   <goal name="WP_parameter too_many_points_in_rectangle.16" expl="16. precondition">
-  <proof prover="0"><result status="valid" time="0.43" steps="133"/></proof>
+  <proof prover="0" timelimit="30"><result status="valid" time="0.64" steps="150"/></proof>
   </goal>
   <goal name="WP_parameter too_many_points_in_rectangle.17" expl="17. precondition">
-  <proof prover="0"><result status="valid" time="0.41" steps="133"/></proof>
+  <proof prover="0" timelimit="30"><result status="valid" time="0.65" steps="150"/></proof>
   </goal>
   <goal name="WP_parameter too_many_points_in_rectangle.18" expl="18. precondition">
-  <proof prover="0"><result status="valid" time="0.38" steps="132"/></proof>
+  <proof prover="0" timelimit="30"><result status="valid" time="0.62" steps="149"/></proof>
   </goal>
   <goal name="WP_parameter too_many_points_in_rectangle.19" expl="19. precondition">
-  <proof prover="0"><result status="valid" time="0.20" steps="95"/></proof>
+  <proof prover="0" timelimit="30"><result status="valid" time="0.41" steps="112"/></proof>
   </goal>
   <goal name="WP_parameter too_many_points_in_rectangle.20" expl="20. precondition">
-  <proof prover="0"><result status="valid" time="0.21" steps="94"/></proof>
+  <proof prover="0" timelimit="30"><result status="valid" time="0.36" steps="111"/></proof>
   </goal>
   <goal name="WP_parameter too_many_points_in_rectangle.21" expl="21. precondition">
-  <proof prover="0"><result status="valid" time="0.20" steps="94"/></proof>
+  <proof prover="0" timelimit="30"><result status="valid" time="0.36" steps="111"/></proof>
   </goal>
   <goal name="WP_parameter too_many_points_in_rectangle.22" expl="22. index in array bounds">
-  <proof prover="0"><result status="valid" time="0.11" steps="18"/></proof>
+  <proof prover="0" timelimit="30"><result status="valid" time="0.02" steps="18"/></proof>
+  <proof prover="1" obsolete="true"><result status="valid" time="0.03"/></proof>
   </goal>
   <goal name="WP_parameter too_many_points_in_rectangle.23" expl="23. index in array bounds">
-  <proof prover="0"><result status="valid" time="0.02" steps="20"/></proof>
+  <proof prover="0" timelimit="30"><result status="valid" time="0.02" steps="20"/></proof>
+  <proof prover="1" obsolete="true"><result status="valid" time="0.04"/></proof>
   </goal>
   <goal name="WP_parameter too_many_points_in_rectangle.24" expl="24. index in array bounds">
-  <proof prover="0"><result status="valid" time="0.06" steps="20"/></proof>
+  <proof prover="0" timelimit="30"><result status="valid" time="0.01" steps="20"/></proof>
+  <proof prover="1" obsolete="true"><result status="valid" time="0.04"/></proof>
   </goal>
   <goal name="WP_parameter too_many_points_in_rectangle.25" expl="25. index in array bounds">
-  <proof prover="0"><result status="valid" time="0.01" steps="22"/></proof>
+  <proof prover="0" timelimit="30"><result status="valid" time="0.02" steps="22"/></proof>
+  <proof prover="1" obsolete="true"><result status="valid" time="0.03"/></proof>
   </goal>
   <goal name="WP_parameter too_many_points_in_rectangle.26" expl="26. index in array bounds">
-  <proof prover="0"><result status="valid" time="0.03" steps="22"/></proof>
+  <proof prover="0" timelimit="30"><result status="valid" time="0.02" steps="22"/></proof>
+  <proof prover="1" obsolete="true"><result status="valid" time="0.03"/></proof>
   </goal>
   <goal name="WP_parameter too_many_points_in_rectangle.27" expl="27. index in array bounds">
-  <proof prover="0"><result status="valid" time="0.02" steps="24"/></proof>
+  <proof prover="0" timelimit="30"><result status="valid" time="0.04" steps="24"/></proof>
+  <proof prover="1" obsolete="true"><result status="valid" time="0.04"/></proof>
   </goal>
   <goal name="WP_parameter too_many_points_in_rectangle.28" expl="28. index in array bounds">
-  <proof prover="0"><result status="valid" time="0.07" steps="24"/></proof>
+  <proof prover="0" timelimit="30"><result status="valid" time="0.02" steps="24"/></proof>
+  <proof prover="1" obsolete="true"><result status="valid" time="0.03"/></proof>
   </goal>
   <goal name="WP_parameter too_many_points_in_rectangle.29" expl="29. index in array bounds">
-  <proof prover="0"><result status="valid" time="0.02" steps="26"/></proof>
+  <proof prover="0" timelimit="30"><result status="valid" time="0.02" steps="26"/></proof>
+  <proof prover="1" obsolete="true"><result status="valid" time="0.02"/></proof>
   </goal>
   <goal name="WP_parameter too_many_points_in_rectangle.30" expl="30. precondition">
-  <proof prover="0"><result status="valid" time="0.02" steps="59"/></proof>
+  <proof prover="0" timelimit="30"><result status="valid" time="0.03" steps="57"/></proof>
+  <proof prover="1" obsolete="true"><result status="valid" time="0.05"/></proof>
   </goal>
   <goal name="WP_parameter too_many_points_in_rectangle.31" expl="31. precondition">
-  <proof prover="0"><result status="valid" time="0.02" steps="59"/></proof>
+  <proof prover="0" timelimit="30"><result status="valid" time="0.04" steps="58"/></proof>
+  <proof prover="1" obsolete="true"><result status="valid" time="0.04"/></proof>
   </goal>
   <goal name="WP_parameter too_many_points_in_rectangle.32" expl="32. precondition">
-  <proof prover="0"><result status="valid" time="0.02" steps="59"/></proof>
+  <proof prover="0" timelimit="30"><result status="valid" time="0.04" steps="58"/></proof>
+  <proof prover="1" obsolete="true"><result status="valid" time="0.04"/></proof>
   </goal>
   <goal name="WP_parameter too_many_points_in_rectangle.33" expl="33. precondition">
-  <proof prover="0"><result status="valid" time="0.03" steps="56"/></proof>
+  <proof prover="0" timelimit="30"><result status="valid" time="0.03" steps="55"/></proof>
+  <proof prover="1" obsolete="true"><result status="valid" time="0.04"/></proof>
   </goal>
   <goal name="WP_parameter too_many_points_in_rectangle.34" expl="34. precondition">
-  <proof prover="0"><result status="valid" time="0.64" steps="150"/></proof>
+  <proof prover="0" timelimit="30"><result status="valid" time="0.43" steps="133"/></proof>
   </goal>
   <goal name="WP_parameter too_many_points_in_rectangle.35" expl="35. precondition">
-  <proof prover="0"><result status="valid" time="0.65" steps="150"/></proof>
+  <proof prover="0" timelimit="30"><result status="valid" time="0.41" steps="133"/></proof>
   </goal>
   <goal name="WP_parameter too_many_points_in_rectangle.36" expl="36. precondition">
-  <proof prover="0"><result status="valid" time="0.62" steps="149"/></proof>
+  <proof prover="0" timelimit="30"><result status="valid" time="0.38" steps="132"/></proof>
   </goal>
   <goal name="WP_parameter too_many_points_in_rectangle.37" expl="37. precondition">
-  <proof prover="0"><result status="valid" time="0.41" steps="112"/></proof>
+  <proof prover="0" timelimit="30"><result status="valid" time="0.20" steps="95"/></proof>
   </goal>
   <goal name="WP_parameter too_many_points_in_rectangle.38" expl="38. precondition">
-  <proof prover="0"><result status="valid" time="0.36" steps="111"/></proof>
+  <proof prover="0" timelimit="30"><result status="valid" time="0.21" steps="94"/></proof>
   </goal>
   <goal name="WP_parameter too_many_points_in_rectangle.39" expl="39. precondition">
-  <proof prover="0"><result status="valid" time="0.36" steps="111"/></proof>
+  <proof prover="0" timelimit="30"><result status="valid" time="0.20" steps="94"/></proof>
   </goal>
  </transf>
  </goal>
  <goal name="WP_parameter search_strip_complexity" expl="VC for search_strip_complexity">
- <proof prover="0" obsolete="true"><result status="valid" time="0.01" steps="4"/></proof>
- <proof prover="1"><result status="valid" time="0.02"/></proof>
+ <transf name="split_goal_wp">
+  <goal name="WP_parameter search_strip_complexity.1" expl="1. postcondition">
+  <proof prover="0"><result status="valid" time="0.01" steps="4"/></proof>
+  </goal>
+  <goal name="WP_parameter search_strip_complexity.2" expl="2. postcondition">
+  <proof prover="0"><result status="valid" time="0.01" steps="4"/></proof>
+  </goal>
+  <goal name="WP_parameter search_strip_complexity.3" expl="3. postcondition">
+  <proof prover="0"><result status="valid" time="0.02" steps="4"/></proof>
+  </goal>
+  <goal name="WP_parameter search_strip_complexity.4" expl="4. postcondition">
+  <proof prover="0"><result status="valid" time="0.04" steps="10"/></proof>
+  </goal>
+  <goal name="WP_parameter search_strip_complexity.5" expl="5. assertion">
+  <proof prover="0"><result status="valid" time="0.01" steps="10"/></proof>
+  </goal>
+  <goal name="WP_parameter search_strip_complexity.6" expl="6. assertion">
+  <proof prover="0"><result status="valid" time="0.02" steps="12"/></proof>
+  </goal>
+  <goal name="WP_parameter search_strip_complexity.7" expl="7. postcondition">
+  <proof prover="0"><result status="valid" time="0.02" steps="11"/></proof>
+  </goal>
+  <goal name="WP_parameter search_strip_complexity.8" expl="8. postcondition">
+  <proof prover="0"><result status="valid" time="0.01" steps="11"/></proof>
+  </goal>
+  <goal name="WP_parameter search_strip_complexity.9" expl="9. postcondition">
+  <proof prover="0"><result status="valid" time="0.02" steps="11"/></proof>
+  </goal>
+  <goal name="WP_parameter search_strip_complexity.10" expl="10. postcondition">
+  <proof prover="0"><result status="valid" time="0.03" steps="12"/></proof>
+  </goal>
+  <goal name="WP_parameter search_strip_complexity.11" expl="11. assertion">
+  <proof prover="0"><result status="valid" time="0.02" steps="14"/></proof>
+  </goal>
+  <goal name="WP_parameter search_strip_complexity.12" expl="12. assertion">
+  <proof prover="0"><result status="valid" time="0.02" steps="13"/></proof>
+  </goal>
+  <goal name="WP_parameter search_strip_complexity.13" expl="13. assertion">
+  <proof prover="0"><result status="valid" time="0.02" steps="12"/></proof>
+  </goal>
+  <goal name="WP_parameter search_strip_complexity.14" expl="14. postcondition">
+  <proof prover="0"><result status="valid" time="0.02" steps="11"/></proof>
+  </goal>
+  <goal name="WP_parameter search_strip_complexity.15" expl="15. postcondition">
+  <proof prover="0"><result status="valid" time="0.01" steps="11"/></proof>
+  </goal>
+  <goal name="WP_parameter search_strip_complexity.16" expl="16. postcondition">
+  <proof prover="0"><result status="valid" time="0.01" steps="11"/></proof>
+  </goal>
+  <goal name="WP_parameter search_strip_complexity.17" expl="17. postcondition">
+  <proof prover="0"><result status="valid" time="0.02" steps="12"/></proof>
+  </goal>
+  <goal name="WP_parameter search_strip_complexity.18" expl="18. loop invariant init">
+  <proof prover="0"><result status="valid" time="0.02" steps="12"/></proof>
+  </goal>
+  <goal name="WP_parameter search_strip_complexity.19" expl="19. loop invariant init">
+  <proof prover="0"><result status="valid" time="0.01" steps="14"/></proof>
+  </goal>
+  <goal name="WP_parameter search_strip_complexity.20" expl="20. loop invariant init">
+  <proof prover="0"><result status="valid" time="0.02" steps="11"/></proof>
+  </goal>
+  <goal name="WP_parameter search_strip_complexity.21" expl="21. loop invariant init">
+  <proof prover="0"><result status="valid" time="0.01" steps="11"/></proof>
+  </goal>
+  <goal name="WP_parameter search_strip_complexity.22" expl="22. loop invariant preservation">
+  <proof prover="0"><result status="valid" time="0.03" steps="16"/></proof>
+  </goal>
+  <goal name="WP_parameter search_strip_complexity.23" expl="23. loop invariant preservation">
+  <proof prover="0"><result status="valid" time="0.02" steps="17"/></proof>
+  </goal>
+  <goal name="WP_parameter search_strip_complexity.24" expl="24. loop invariant preservation">
+  <proof prover="0"><result status="valid" time="0.03" steps="17"/></proof>
+  </goal>
+  <goal name="WP_parameter search_strip_complexity.25" expl="25. loop invariant preservation">
+  <proof prover="0"><result status="valid" time="0.01" steps="14"/></proof>
+  </goal>
+  <goal name="WP_parameter search_strip_complexity.26" expl="26. loop invariant init">
+  <proof prover="0"><result status="valid" time="0.02" steps="17"/></proof>
+  </goal>
+  <goal name="WP_parameter search_strip_complexity.27" expl="27. loop invariant init">
+  <proof prover="0"><result status="valid" time="0.02" steps="17"/></proof>
+  </goal>
+  <goal name="WP_parameter search_strip_complexity.28" expl="28. loop invariant init">
+  <proof prover="0"><result status="valid" time="0.02" steps="18"/></proof>
+  </goal>
+  <goal name="WP_parameter search_strip_complexity.29" expl="29. loop invariant init">
+  <proof prover="0"><result status="valid" time="0.02" steps="15"/></proof>
+  </goal>
+  <goal name="WP_parameter search_strip_complexity.30" expl="30. loop invariant init">
+  <proof prover="0"><result status="valid" time="0.02" steps="15"/></proof>
+  </goal>
+  <goal name="WP_parameter search_strip_complexity.31" expl="31. loop invariant init">
+  <proof prover="0" timelimit="10"><result status="valid" time="0.02" steps="16"/></proof>
+  </goal>
+  <goal name="WP_parameter search_strip_complexity.32" expl="32. index in array bounds">
+  <proof prover="0" timelimit="10"><result status="valid" time="0.02" steps="19"/></proof>
+  </goal>
+  <goal name="WP_parameter search_strip_complexity.33" expl="33. index in array bounds">
+  <proof prover="0" timelimit="10"><result status="valid" time="0.02" steps="20"/></proof>
+  </goal>
+  <goal name="WP_parameter search_strip_complexity.34" expl="34. assertion">
+  <proof prover="0" timelimit="10"><result status="valid" time="0.02" steps="22"/></proof>
+  </goal>
+  <goal name="WP_parameter search_strip_complexity.35" expl="35. loop invariant preservation">
+  <proof prover="0" timelimit="10"><result status="valid" time="0.02" steps="25"/></proof>
+  </goal>
+  <goal name="WP_parameter search_strip_complexity.36" expl="36. loop invariant preservation">
+  <proof prover="0" timelimit="10"><result status="valid" time="0.03" steps="26"/></proof>
+  </goal>
+  <goal name="WP_parameter search_strip_complexity.37" expl="37. loop invariant preservation">
+  <proof prover="0" timelimit="10"><result status="valid" time="0.02" steps="26"/></proof>
+  </goal>
+  <goal name="WP_parameter search_strip_complexity.38" expl="38. loop invariant preservation">
+  <proof prover="0" timelimit="10"><result status="valid" time="0.02" steps="23"/></proof>
+  </goal>
+  <goal name="WP_parameter search_strip_complexity.39" expl="39. assertion">
+  <proof prover="0" timelimit="10"><result status="valid" time="0.04" steps="22"/></proof>
+  </goal>
+  <goal name="WP_parameter search_strip_complexity.40" expl="40. assertion">
+  <proof prover="0" timelimit="10"><result status="valid" time="0.03" steps="27"/></proof>
+  </goal>
+  <goal name="WP_parameter search_strip_complexity.41" expl="41. assertion">
+  <proof prover="0" timelimit="10"><result status="valid" time="0.03" steps="27"/></proof>
+  </goal>
+  <goal name="WP_parameter search_strip_complexity.42" expl="42. assertion">
+  <proof prover="0" timelimit="20"><result status="valid" time="0.02" steps="27"/></proof>
+  </goal>
+  <goal name="WP_parameter search_strip_complexity.43" expl="43. assertion">
+  <proof prover="0" timelimit="20"><result status="valid" time="0.02" steps="27"/></proof>
+  </goal>
+  <goal name="WP_parameter search_strip_complexity.44" expl="44. assertion">
+  <proof prover="0" timelimit="20"><result status="valid" time="0.02" steps="26"/></proof>
+  </goal>
+  <goal name="WP_parameter search_strip_complexity.45" expl="45. assertion">
+  <proof prover="0" timelimit="20"><result status="valid" time="0.02" steps="26"/></proof>
+  </goal>
+  <goal name="WP_parameter search_strip_complexity.46" expl="46. assertion">
+  <proof prover="0" timelimit="20"><result status="valid" time="0.02" steps="26"/></proof>
+  </goal>
+  <goal name="WP_parameter search_strip_complexity.47" expl="47. assertion">
+  <proof prover="0" timelimit="20"><result status="valid" time="0.03" steps="26"/></proof>
+  </goal>
+  <goal name="WP_parameter search_strip_complexity.48" expl="48. precondition">
+  <proof prover="0" timelimit="20"><result status="valid" time="0.02" steps="26"/></proof>
+  </goal>
+  <goal name="WP_parameter search_strip_complexity.49" expl="49. precondition">
+  <proof prover="0" timelimit="20"><result status="valid" time="0.02" steps="26"/></proof>
+  </goal>
+  <goal name="WP_parameter search_strip_complexity.50" expl="50. precondition">
+  <proof prover="0" timelimit="20"><result status="valid" time="0.02" steps="26"/></proof>
+  </goal>
+  <goal name="WP_parameter search_strip_complexity.51" expl="51. precondition">
+  <proof prover="0" timelimit="20"><result status="valid" time="0.03" steps="28"/></proof>
+  </goal>
+  <goal name="WP_parameter search_strip_complexity.52" expl="52. precondition">
+  <proof prover="0" timelimit="20"><result status="valid" time="0.03" steps="28"/></proof>
+  </goal>
+  <goal name="WP_parameter search_strip_complexity.53" expl="53. precondition">
+  <proof prover="0" timelimit="20"><result status="valid" time="0.02" steps="26"/></proof>
+  </goal>
+  <goal name="WP_parameter search_strip_complexity.54" expl="54. precondition">
+  <proof prover="0" timelimit="20"><result status="valid" time="0.02" steps="28"/></proof>
+  </goal>
+  <goal name="WP_parameter search_strip_complexity.55" expl="55. precondition">
+  <proof prover="0" timelimit="20"><result status="valid" time="0.03" steps="27"/></proof>
+  </goal>
+  <goal name="WP_parameter search_strip_complexity.56" expl="56. index in array bounds">
+  <proof prover="0" timelimit="20"><result status="valid" time="0.02" steps="26"/></proof>
+  </goal>
+  <goal name="WP_parameter search_strip_complexity.57" expl="57. index in array bounds">
+  <proof prover="0" timelimit="20"><result status="valid" time="0.02" steps="26"/></proof>
+  </goal>
+  <goal name="WP_parameter search_strip_complexity.58" expl="58. loop invariant preservation">
+  <proof prover="0" timelimit="20"><result status="valid" time="0.02" steps="31"/></proof>
+  </goal>
+  <goal name="WP_parameter search_strip_complexity.59" expl="59. loop invariant preservation">
+  <proof prover="0" timelimit="20"><result status="valid" time="0.04" steps="32"/></proof>
+  </goal>
+  <goal name="WP_parameter search_strip_complexity.60" expl="60. loop invariant preservation">
+  <proof prover="0" timelimit="20"><result status="valid" time="0.03" steps="31"/></proof>
+  </goal>
+  <goal name="WP_parameter search_strip_complexity.61" expl="61. loop invariant preservation">
+  <proof prover="0" timelimit="20"><result status="valid" time="0.03" steps="30"/></proof>
+  </goal>
+  <goal name="WP_parameter search_strip_complexity.62" expl="62. loop invariant preservation">
+  <proof prover="0" timelimit="20"><result status="valid" time="0.02" steps="30"/></proof>
+  </goal>
+  <goal name="WP_parameter search_strip_complexity.63" expl="63. loop invariant preservation">
+  <proof prover="0" timelimit="20"><result status="valid" time="0.04" steps="32"/></proof>
+  </goal>
+  <goal name="WP_parameter search_strip_complexity.64" expl="64. loop invariant preservation">
+  <proof prover="0" timelimit="20"><result status="valid" time="0.03" steps="29"/></proof>
+  </goal>
+  <goal name="WP_parameter search_strip_complexity.65" expl="65. loop invariant preservation">
+  <proof prover="0" timelimit="20"><result status="valid" time="0.03" steps="29"/></proof>
+  </goal>
+  <goal name="WP_parameter search_strip_complexity.66" expl="66. loop invariant preservation">
+  <proof prover="0" timelimit="20"><result status="valid" time="0.03" steps="30"/></proof>
+  </goal>
+  <goal name="WP_parameter search_strip_complexity.67" expl="67. loop invariant preservation">
+  <proof prover="0" timelimit="20"><result status="valid" time="0.03" steps="27"/></proof>
+  </goal>
+  <goal name="WP_parameter search_strip_complexity.68" expl="68. loop invariant preservation">
+  <proof prover="0" timelimit="20"><result status="valid" time="0.03" steps="27"/></proof>
+  </goal>
+  <goal name="WP_parameter search_strip_complexity.69" expl="69. loop invariant preservation">
+  <proof prover="0" timelimit="20"><result status="valid" time="0.04" steps="29"/></proof>
+  </goal>
+  <goal name="WP_parameter search_strip_complexity.70" expl="70. loop invariant preservation">
+  <proof prover="0" timelimit="10"><result status="valid" time="0.02" steps="19"/></proof>
+  </goal>
+  <goal name="WP_parameter search_strip_complexity.71" expl="71. loop invariant preservation">
+  <proof prover="0" timelimit="10"><result status="valid" time="0.02" steps="20"/></proof>
+  </goal>
+  <goal name="WP_parameter search_strip_complexity.72" expl="72. loop invariant preservation">
+  <proof prover="0" timelimit="10"><result status="valid" time="0.02" steps="20"/></proof>
+  </goal>
+  <goal name="WP_parameter search_strip_complexity.73" expl="73. loop invariant preservation">
+  <proof prover="0" timelimit="10"><result status="valid" time="0.02" steps="17"/></proof>
+  </goal>
+  <goal name="WP_parameter search_strip_complexity.74" expl="74. assertion">
+  <proof prover="0"><result status="valid" time="0.02" steps="15"/></proof>
+  </goal>
+  <goal name="WP_parameter search_strip_complexity.75" expl="75. assertion">
+  <proof prover="0"><result status="valid" time="0.02" steps="17"/></proof>
+  </goal>
+  <goal name="WP_parameter search_strip_complexity.76" expl="76. postcondition">
+  <proof prover="0"><result status="valid" time="0.00" steps="16"/></proof>
+  </goal>
+  <goal name="WP_parameter search_strip_complexity.77" expl="77. postcondition">
+  <proof prover="0"><result status="valid" time="0.02" steps="16"/></proof>
+  </goal>
+  <goal name="WP_parameter search_strip_complexity.78" expl="78. postcondition">
+  <proof prover="0"><result status="valid" time="0.02" steps="16"/></proof>
+  </goal>
+  <goal name="WP_parameter search_strip_complexity.79" expl="79. postcondition">
+  <proof prover="0"><result status="valid" time="0.02" steps="17"/></proof>
+  </goal>
+  <goal name="WP_parameter search_strip_complexity.80" expl="80. assertion">
+  <proof prover="0"><result status="valid" time="0.02" steps="16"/></proof>
+  </goal>
+  <goal name="WP_parameter search_strip_complexity.81" expl="81. assertion">
+  <proof prover="0"><result status="valid" time="0.02" steps="15"/></proof>
+  </goal>
+  <goal name="WP_parameter search_strip_complexity.82" expl="82. assertion">
+  <proof prover="0"><result status="valid" time="0.02" steps="14"/></proof>
+  </goal>
+  <goal name="WP_parameter search_strip_complexity.83" expl="83. postcondition">
+  <proof prover="0"><result status="valid" time="0.01" steps="13"/></proof>
+  </goal>
+  <goal name="WP_parameter search_strip_complexity.84" expl="84. postcondition">
+  <proof prover="0"><result status="valid" time="0.02" steps="13"/></proof>
+  </goal>
+  <goal name="WP_parameter search_strip_complexity.85" expl="85. postcondition">
+  <proof prover="0"><result status="valid" time="0.02" steps="13"/></proof>
+  </goal>
+  <goal name="WP_parameter search_strip_complexity.86" expl="86. postcondition">
+  <proof prover="0"><result status="valid" time="0.02" steps="14"/></proof>
+  </goal>
+  <goal name="WP_parameter search_strip_complexity.87" expl="87. loop invariant init">
+  <proof prover="0"><result status="valid" time="0.02" steps="12"/></proof>
+  </goal>
+  <goal name="WP_parameter search_strip_complexity.88" expl="88. loop invariant init">
+  <proof prover="0"><result status="valid" time="0.02" steps="12"/></proof>
+  </goal>
+  <goal name="WP_parameter search_strip_complexity.89" expl="89. index in array bounds">
+  <proof prover="0"><result status="valid" time="0.03" steps="28"/></proof>
+  </goal>
+  <goal name="WP_parameter search_strip_complexity.90" expl="90. type invariant">
+  <proof prover="0"><result status="valid" time="0.02" steps="15"/></proof>
+  </goal>
+  <goal name="WP_parameter search_strip_complexity.91" expl="91. index in array bounds">
+  <proof prover="0"><result status="valid" time="0.02" steps="15"/></proof>
+  </goal>
+  <goal name="WP_parameter search_strip_complexity.92" expl="92. assertion">
+  <proof prover="0"><result status="valid" time="0.03" steps="46"/></proof>
+  </goal>
+  <goal name="WP_parameter search_strip_complexity.93" expl="93. loop invariant preservation">
+  <proof prover="0"><result status="valid" time="0.01" steps="41"/></proof>
+  </goal>
+  <goal name="WP_parameter search_strip_complexity.94" expl="94. loop invariant preservation">
+  <proof prover="0"><result status="valid" time="0.03" steps="50"/></proof>
+  </goal>
+  <goal name="WP_parameter search_strip_complexity.95" expl="95. assertion">
+  <proof prover="0"><result status="valid" time="0.02" steps="11"/></proof>
+  </goal>
+  <goal name="WP_parameter search_strip_complexity.96" expl="96. assertion">
+  <proof prover="0"><result status="valid" time="0.01" steps="13"/></proof>
+  </goal>
+  <goal name="WP_parameter search_strip_complexity.97" expl="97. postcondition">
+  <proof prover="0"><result status="valid" time="0.01" steps="12"/></proof>
+  </goal>
+  <goal name="WP_parameter search_strip_complexity.98" expl="98. postcondition">
+  <proof prover="0"><result status="valid" time="0.01" steps="12"/></proof>
+  </goal>
+  <goal name="WP_parameter search_strip_complexity.99" expl="99. postcondition">
+  <proof prover="0"><result status="valid" time="0.01" steps="12"/></proof>
+  </goal>
+  <goal name="WP_parameter search_strip_complexity.100" expl="100. postcondition">
+  <proof prover="0"><result status="valid" time="0.02" steps="13"/></proof>
+  </goal>
+  <goal name="WP_parameter search_strip_complexity.101" expl="101. assertion">
+  <proof prover="0"><result status="valid" time="0.02" steps="15"/></proof>
+  </goal>
+  <goal name="WP_parameter search_strip_complexity.102" expl="102. assertion">
+  <proof prover="0"><result status="valid" time="0.02" steps="14"/></proof>
+  </goal>
+  <goal name="WP_parameter search_strip_complexity.103" expl="103. assertion">
+  <proof prover="0"><result status="valid" time="0.02" steps="13"/></proof>
+  </goal>
+  <goal name="WP_parameter search_strip_complexity.104" expl="104. postcondition">
+  <proof prover="0"><result status="valid" time="0.01" steps="12"/></proof>
+  </goal>
+  <goal name="WP_parameter search_strip_complexity.105" expl="105. postcondition">
+  <proof prover="0"><result status="valid" time="0.02" steps="12"/></proof>
+  </goal>
+  <goal name="WP_parameter search_strip_complexity.106" expl="106. postcondition">
+  <proof prover="0"><result status="valid" time="0.02" steps="12"/></proof>
+  </goal>
+  <goal name="WP_parameter search_strip_complexity.107" expl="107. postcondition">
+  <proof prover="0"><result status="valid" time="0.02" steps="13"/></proof>
+  </goal>
+  <goal name="WP_parameter search_strip_complexity.108" expl="108. loop invariant init">
+  <proof prover="0"><result status="valid" time="0.02" steps="14"/></proof>
+  </goal>
+  <goal name="WP_parameter search_strip_complexity.109" expl="109. loop invariant init">
+  <proof prover="0"><result status="valid" time="0.02" steps="16"/></proof>
+  </goal>
+  <goal name="WP_parameter search_strip_complexity.110" expl="110. loop invariant init">
+  <proof prover="0"><result status="valid" time="0.02" steps="12"/></proof>
+  </goal>
+  <goal name="WP_parameter search_strip_complexity.111" expl="111. loop invariant init">
+  <proof prover="0"><result status="valid" time="0.01" steps="12"/></proof>
+  </goal>
+  <goal name="WP_parameter search_strip_complexity.112" expl="112. loop invariant preservation">
+  <proof prover="0"><result status="valid" time="0.02" steps="17"/></proof>
+  </goal>
+  <goal name="WP_parameter search_strip_complexity.113" expl="113. loop invariant preservation">
+  <proof prover="0"><result status="valid" time="0.01" steps="18"/></proof>
+  </goal>
+  <goal name="WP_parameter search_strip_complexity.114" expl="114. loop invariant preservation">
+  <proof prover="0"><result status="valid" time="0.02" steps="18"/></proof>
+  </goal>
+  <goal name="WP_parameter search_strip_complexity.115" expl="115. loop invariant preservation">
+  <proof prover="0"><result status="valid" time="0.02" steps="15"/></proof>
+  </goal>
+  <goal name="WP_parameter search_strip_complexity.116" expl="116. loop invariant init">
+  <proof prover="0"><result status="valid" time="0.02" steps="18"/></proof>
+  </goal>
+  <goal name="WP_parameter search_strip_complexity.117" expl="117. loop invariant init">
+  <proof prover="0"><result status="valid" time="0.01" steps="34"/></proof>
+  </goal>
+  <goal name="WP_parameter search_strip_complexity.118" expl="118. loop invariant init">
+  <proof prover="0"><result status="valid" time="0.02" steps="19"/></proof>
+  </goal>
+  <goal name="WP_parameter search_strip_complexity.119" expl="119. loop invariant init">
+  <proof prover="0"><result status="valid" time="0.02" steps="16"/></proof>
+  </goal>
+  <goal name="WP_parameter search_strip_complexity.120" expl="120. loop invariant init">
+  <proof prover="0"><result status="valid" time="0.02" steps="16"/></proof>
+  </goal>
+  <goal name="WP_parameter search_strip_complexity.121" expl="121. loop invariant init">
+  <proof prover="0" timelimit="10"><result status="valid" time="0.02" steps="17"/></proof>
+  </goal>
+  <goal name="WP_parameter search_strip_complexity.122" expl="122. index in array bounds">
+  <proof prover="0" timelimit="10"><result status="valid" time="0.02" steps="20"/></proof>
+  </goal>
+  <goal name="WP_parameter search_strip_complexity.123" expl="123. index in array bounds">
+  <proof prover="0" timelimit="10"><result status="valid" time="0.04" steps="21"/></proof>
+  </goal>
+  <goal name="WP_parameter search_strip_complexity.124" expl="124. assertion">
+  <proof prover="0" timelimit="10"><result status="valid" time="0.24" steps="265"/></proof>
+  </goal>
+  <goal name="WP_parameter search_strip_complexity.125" expl="125. loop invariant preservation">
+  <proof prover="0" timelimit="10"><result status="valid" time="0.02" steps="26"/></proof>
+  </goal>
+  <goal name="WP_parameter search_strip_complexity.126" expl="126. loop invariant preservation">
+  <proof prover="0" timelimit="60"><result status="valid" time="41.46" steps="2814"/></proof>
+  </goal>
+  <goal name="WP_parameter search_strip_complexity.127" expl="127. loop invariant preservation">
+  <proof prover="0" timelimit="10"><result status="valid" time="0.02" steps="27"/></proof>
+  </goal>
+  <goal name="WP_parameter search_strip_complexity.128" expl="128. loop invariant preservation">
+  <proof prover="0" timelimit="10"><result status="valid" time="0.02" steps="24"/></proof>
+  </goal>
+  <goal name="WP_parameter search_strip_complexity.129" expl="129. assertion">
+  <proof prover="0" timelimit="10"><result status="valid" time="0.01" steps="51"/></proof>
+  </goal>
+  <goal name="WP_parameter search_strip_complexity.130" expl="130. assertion">
+  <proof prover="0" timelimit="10"><result status="valid" time="0.02" steps="30"/></proof>
+  </goal>
+  <goal name="WP_parameter search_strip_complexity.131" expl="131. assertion">
+  <proof prover="0" timelimit="10"><result status="valid" time="0.44" steps="150"/></proof>
+  </goal>
+  <goal name="WP_parameter search_strip_complexity.132" expl="132. assertion">
+  <proof prover="0" timelimit="20"><result status="valid" time="0.40" steps="160"/></proof>
+  </goal>
+  <goal name="WP_parameter search_strip_complexity.133" expl="133. assertion">
+  <proof prover="1" timelimit="20"><result status="valid" time="5.08"/></proof>
+  </goal>
+  <goal name="WP_parameter search_strip_complexity.134" expl="134. assertion">
+  <proof prover="0" timelimit="20"><result status="valid" time="0.07" steps="55"/></proof>
+  </goal>
+  <goal name="WP_parameter search_strip_complexity.135" expl="135. assertion">
+  <proof prover="0" timelimit="20"><result status="valid" time="0.13" steps="94"/></proof>
+  </goal>
+  <goal name="WP_parameter search_strip_complexity.136" expl="136. assertion">
+  <proof prover="0" timelimit="20"><result status="valid" time="6.76" steps="525"/></proof>
+  </goal>
+  <goal name="WP_parameter search_strip_complexity.137" expl="137. assertion">
+  <proof prover="0" timelimit="20"><result status="valid" time="0.28" steps="151"/></proof>
+  </goal>
+  <goal name="WP_parameter search_strip_complexity.138" expl="138. type invariant">
+  <proof prover="0" timelimit="20"><result status="valid" time="0.02" steps="27"/></proof>
+  </goal>
+  <goal name="WP_parameter search_strip_complexity.139" expl="139. precondition">
+  <proof prover="0" timelimit="20"><result status="valid" time="0.04" steps="27"/></proof>
+  </goal>
+  <goal name="WP_parameter search_strip_complexity.140" expl="140. precondition">
+  <proof prover="0" timelimit="20"><result status="valid" time="0.02" steps="27"/></proof>
+  </goal>
+  <goal name="WP_parameter search_strip_complexity.141" expl="141. precondition">
+  <proof prover="0" timelimit="20"><result status="valid" time="0.02" steps="27"/></proof>
+  </goal>
+  <goal name="WP_parameter search_strip_complexity.142" expl="142. precondition">
+  <proof prover="0" timelimit="20"><result status="valid" time="0.04" steps="33"/></proof>
+  </goal>
+  <goal name="WP_parameter search_strip_complexity.143" expl="143. precondition">
+  <proof prover="0" timelimit="20"><result status="valid" time="0.04" steps="32"/></proof>
+  </goal>
+  <goal name="WP_parameter search_strip_complexity.144" expl="144. precondition">
+  <proof prover="0" timelimit="20"><result status="valid" time="0.01" steps="27"/></proof>
+  </goal>
+  <goal name="WP_parameter search_strip_complexity.145" expl="145. precondition">
+  <proof prover="0" timelimit="20"><result status="valid" time="0.04" steps="44"/></proof>
+  </goal>
+  <goal name="WP_parameter search_strip_complexity.146" expl="146. precondition">
+  <proof prover="0" timelimit="20"><result status="valid" time="0.04" steps="46"/></proof>
+  </goal>
+  <goal name="WP_parameter search_strip_complexity.147" expl="147. index in array bounds">
+  <proof prover="0" timelimit="20"><result status="valid" time="0.02" steps="27"/></proof>
+  </goal>
+  <goal name="WP_parameter search_strip_complexity.148" expl="148. index in array bounds">
+  <proof prover="0" timelimit="20"><result status="valid" time="0.02" steps="27"/></proof>
+  </goal>
+  <goal name="WP_parameter search_strip_complexity.149" expl="149. loop invariant preservation">
+  <proof prover="0" timelimit="20"><result status="valid" time="0.02" steps="32"/></proof>
+  </goal>
+  <goal name="WP_parameter search_strip_complexity.150" expl="150. loop invariant preservation">
+  <proof prover="0" timelimit="20"><result status="valid" time="0.04" steps="50"/></proof>
+  </goal>
+  <goal name="WP_parameter search_strip_complexity.151" expl="151. loop invariant preservation">
+  <proof prover="0" timelimit="20"><result status="valid" time="0.04" steps="34"/></proof>
+  </goal>
+  <goal name="WP_parameter search_strip_complexity.152" expl="152. loop invariant preservation">
+  <proof prover="0" timelimit="20"><result status="valid" time="0.04" steps="31"/></proof>
+  </goal>
+  <goal name="WP_parameter search_strip_complexity.153" expl="153. loop invariant preservation">
+  <proof prover="0" timelimit="20"><result status="valid" time="0.03" steps="31"/></proof>
+  </goal>
+  <goal name="WP_parameter search_strip_complexity.154" expl="154. loop invariant preservation">
+  <proof prover="0" timelimit="20"><result status="valid" time="0.04" steps="37"/></proof>
+  </goal>
+  <goal name="WP_parameter search_strip_complexity.155" expl="155. loop invariant preservation">
+  <proof prover="0" timelimit="20"><result status="valid" time="0.02" steps="30"/></proof>
+  </goal>
+  <goal name="WP_parameter search_strip_complexity.156" expl="156. loop invariant preservation">
+  <proof prover="0" timelimit="20"><result status="valid" time="0.05" steps="47"/></proof>
+  </goal>
+  <goal name="WP_parameter search_strip_complexity.157" expl="157. loop invariant preservation">
+  <proof prover="0" timelimit="20"><result status="valid" time="0.03" steps="31"/></proof>
+  </goal>
+  <goal name="WP_parameter search_strip_complexity.158" expl="158. loop invariant preservation">
+  <proof prover="0" timelimit="20"><result status="valid" time="0.03" steps="28"/></proof>
+  </goal>
+  <goal name="WP_parameter search_strip_complexity.159" expl="159. loop invariant preservation">
+  <proof prover="0" timelimit="20"><result status="valid" time="0.02" steps="28"/></proof>
+  </goal>
+  <goal name="WP_parameter search_strip_complexity.160" expl="160. loop invariant preservation">
+  <proof prover="0" timelimit="20"><result status="valid" time="0.03" steps="34"/></proof>
+  </goal>
+  <goal name="WP_parameter search_strip_complexity.161" expl="161. loop invariant preservation">
+  <proof prover="0" timelimit="10"><result status="valid" time="0.03" steps="20"/></proof>
+  </goal>
+  <goal name="WP_parameter search_strip_complexity.162" expl="162. loop invariant preservation">
+  <proof prover="0" timelimit="10"><result status="valid" time="0.02" steps="36"/></proof>
+  </goal>
+  <goal name="WP_parameter search_strip_complexity.163" expl="163. loop invariant preservation">
+  <proof prover="0" timelimit="10"><result status="valid" time="0.02" steps="21"/></proof>
+  </goal>
+  <goal name="WP_parameter search_strip_complexity.164" expl="164. loop invariant preservation">
+  <proof prover="0" timelimit="10"><result status="valid" time="0.02" steps="18"/></proof>
+  </goal>
+  <goal name="WP_parameter search_strip_complexity.165" expl="165. assertion">
+  <proof prover="0"><result status="valid" time="1.87" steps="284"/></proof>
+  </goal>
+  <goal name="WP_parameter search_strip_complexity.166" expl="166. assertion">
+  <proof prover="0"><result status="valid" time="1.06" steps="372"/></proof>
+  </goal>
+  <goal name="WP_parameter search_strip_complexity.167" expl="167. postcondition">
+  <proof prover="0"><result status="valid" time="0.02" steps="17"/></proof>
+  </goal>
+  <goal name="WP_parameter search_strip_complexity.168" expl="168. postcondition">
+  <proof prover="1"><result status="valid" time="0.03"/></proof>
+  </goal>
+  <goal name="WP_parameter search_strip_complexity.169" expl="169. postcondition">
+  <transf name="inline_goal">
+   <goal name="WP_parameter search_strip_complexity.169.1" expl="1. postcondition">
+   <proof prover="1"><result status="valid" time="2.49"/></proof>
+   </goal>
+  </transf>
+  </goal>
+  <goal name="WP_parameter search_strip_complexity.170" expl="170. postcondition">
+  <proof prover="0"><result status="valid" time="0.03" steps="18"/></proof>
+  </goal>
+  <goal name="WP_parameter search_strip_complexity.171" expl="171. assertion">
+  <proof prover="0"><result status="valid" time="0.03" steps="31"/></proof>
+  </goal>
+  <goal name="WP_parameter search_strip_complexity.172" expl="172. assertion">
+  <proof prover="0"><result status="valid" time="0.01" steps="20"/></proof>
+  </goal>
+  <goal name="WP_parameter search_strip_complexity.173" expl="173. assertion">
+  <proof prover="0"><result status="valid" time="2.37" steps="581"/></proof>
+  </goal>
+  <goal name="WP_parameter search_strip_complexity.174" expl="174. postcondition">
+  <proof prover="0"><result status="valid" time="0.02" steps="14"/></proof>
+  </goal>
+  <goal name="WP_parameter search_strip_complexity.175" expl="175. postcondition">
+  <proof prover="0"><result status="valid" time="0.02" steps="14"/></proof>
+  </goal>
+  <goal name="WP_parameter search_strip_complexity.176" expl="176. postcondition">
+  <proof prover="0"><result status="valid" time="0.02" steps="14"/></proof>
+  </goal>
+  <goal name="WP_parameter search_strip_complexity.177" expl="177. postcondition">
+  <proof prover="0"><result status="valid" time="0.02" steps="52"/></proof>
+  </goal>
+ </transf>
  </goal>
 </theory>
 </file>

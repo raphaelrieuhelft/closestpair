@@ -649,30 +649,6 @@ let ghost pigeon_hole (side:array bool) (k:int) : (int,int,int,int,bool)
     [side[i]] is True when [a[i]] is on the right of [mu] and
     False if it is on the left. It is assumed that when two points are
     on the same side, then their distance is at least [delta].  *)
-(*
-let translate (p:point) (dx dy:real) (delta:real)
-    requires { in_square { x = p.x +. dx ; y = p.y +. dy } delta  }
-    ensures { in_square result delta }
-  = { x = p.x +. dx; y = p.y +. dy }
-
-let sym (p:point) (mu delta:real)
-    requires { in_square { x = p.x -. 2.0 *. ( p.x -. mu ); y = p.y } delta }
-    ensures { in_square result delta }
- = { x = p.x -. 2.0 *. ( p.x -. mu ); y = p.y }
-
-
-let ghost sym_square (p1 p2 p3 p4 s1 s2 s3 s4 : point) (mu delta: real)
-  requires { s1 = { x = p1.x -. 2.0 *. (p1.x -. mu) ; y = p1.y } }
-  requires { s2 = { x = p2.x -. 2.0 *. (p2.x -. mu) ; y = p2.y } }
-  requires { s3 = { x = p3.x -. 2.0 *. (p3.x -. mu) ; y = p3.y } }
-  requires { s4 = { x = p4.x -. 2.0 *. (p4.x -. mu) ; y = p4.y } }
-  ensures { dist s1 s2 = dist p1 p2 }
-  ensures { dist s1 s3 = dist p1 p3 }
-  ensures { dist s1 s4 = dist p1 p4 }
-  ensures { dist s2 s3 = dist p2 p3 }
-  ensures { dist s2 s4 = dist p2 p4 }
-  ensures { dist s3 s4 = dist p3 p4 }
-  =  ()*)
 
 
 let ghost too_many_points_in_rectangle (a:array point) (mu delta:real)
@@ -686,21 +662,22 @@ let ghost too_many_points_in_rectangle (a:array point) (mu delta:real)
                mu -. delta <. a[i].x <. mu +. delta }
   requires { side.length = a.length }
   requires { forall i. 0 <= i < a.length ->
-     if side[i] then a[i].x <=. mu else a[i].x >=. mu }
+     if side[i] then a[i].x >=. mu else a[i].x <=. mu }
   requires { forall i j. distinct_indices_in_range i j 0 a.length ->
      side[i] = side[j] -> delta <=. dist a[i] a[j] }
   ensures { false }
 = let base = a[k].y in
   let (i1,i2,i3,i4,s) = pigeon_hole side k in
   (* call too_many_points_in_square with appropriate symmetry and translation *)
-  if s then (
+  if s 
+  then
+     ( too_many_points_in_square delta { x = a[i1].x -. mu; y = a[i1].y -. base } { x = a[i2].x -. mu; y = a[i2].y -. base } { x = a[i3].x -. mu; y = a[i3].y -. base } { x = a[i4].x -. mu; y = a[i4].y -. base } )
+  else (
      let ts1 = { x = mu -. a[i1].x ; y = a[i1].y -. base } in
      let ts2 = { x = mu -. a[i2].x ; y = a[i2].y -. base } in
      let ts3 = { x = mu -. a[i3].x ; y = a[i3].y -. base } in
      let ts4 = { x = mu -. a[i4].x ; y = a[i4].y -. base } in
      too_many_points_in_square delta ts1 ts2 ts3 ts4 )
-  else
-     ( too_many_points_in_square delta { x = a[i1].x -. mu; y = a[i1].y -. base } { x = a[i2].x -. mu; y = a[i2].y -. base } { x = a[i3].x -. mu; y = a[i3].y -. base } { x = a[i4].x -. mu; y = a[i4].y -. base } )
 
 
 (* QUESTION 14 *)
@@ -718,9 +695,76 @@ let search_strip_complexity (a:array point) (delta : real)
      if side[i] then a[i].x >=. mu else a[i].x <=. mu }
   requires { forall i j. distinct_indices_in_range i j 0 a.length ->
      side[i] = side[j] -> delta <=. dist a[i] a[j] }
-  requires { _TO_BE_COMPLETED }
-  ensures { _TO_BE_COMPLETED }
-= _VALUE_TO_BE_COMPLETED
+  requires { forall i. 0 <= i < a.length -> mu -. delta <. a[i].x <. mu +. delta}
+  ensures { result.delta <=. delta }
+  ensures { result.delta <. delta -> distinct_indices_in_range result.first result.second 0 a.length }
+  ensures { result.delta <. delta -> closest_pair_post a result }
+  ensures { result.delta = delta -> forall i j. distinct_indices_in_range i j 0 a.length -> dist a[i] a[j] >=. delta }
+= if a.length < 2 then
+    (* dummy values for first and second *)
+    { delta = delta ; first = 0; second = 0 }
+  else
+  let b = Array.copy a in
+  let p = sort proj_y b in
+  let bside = Array.copy side in
+  for i = 0 to b.length-1 do
+    invariant { forall j. 0 <= j < i -> if bside[j] then b[j].x >=. mu else b[j].x <=. mu }
+    invariant { forall j. 0 <= j < i -> bside[j] = side[p.direct j] }
+    bside[i] <- side [p.direct i];
+    assert { b[i] = a[p.direct i] /\ if bside[i] then b[i].x >=. mu else b[i].x <=. mu }
+  done;
+  let f = ref 0 in
+  let s = ref 0 in
+  let m = ref delta in
+  for i = 0 to b.length - 2 do
+    invariant { distinct_indices_in_range !f !s 0 a.length -> dist b[!f] b[!s] = !m }
+    invariant { forall k l . distinct_indices_in_range k l 0 a.length /\ k < i /\ k < l -> dist b[k] b[l] >=. !m }
+    invariant { !m <. delta -> distinct_indices_in_range !f !s 0 a.length }
+    invariant { !m <=. delta }
+    try
+      for j = i+1 to b.length - 1 do
+        invariant { distinct_indices_in_range !f !s 0 a.length -> dist b[!f] b[!s] = !m }
+        invariant { forall k l . distinct_indices_in_range k l 0 a.length /\ (k < i \/ (k = i /\ (l < j))) /\ k < l 
+		  -> dist b[k] b[l] >=. !m }
+        invariant { !m <. delta -> distinct_indices_in_range !f !s 0 a.length }
+	invariant { !m <=. delta }
+	invariant { j <= i + 6 }
+	invariant { forall k. i+1 <= k < j -> b[i].y <=. b[k].y <. b[i].y +. delta }
+        if b[j].y >=. b[i].y +. !m then
+          begin
+            assert { dist b[i] b[j] >=. !m };
+            raise Break;
+          end;
+	assert { b[i].y <=. b[j].y <. b[i].y +. !m <=. b[i].y +. delta };
+	assert { forall k. 0 <= k < a.length -> mu -. delta <. a[k].x <. mu +. delta };
+	assert { forall k. 0 <= k < b.length -> b[k] = a[p.direct k] };
+	assert { forall k. 0 <= k < b.length -> 0 <= p.direct k < a.length };
+	assert { forall k. 0 <= k < b.length -> mu -. delta <. b[k].x <. mu +. delta };
+	assert { forall i j. distinct_indices_in_range i j 0 b.length -> dist b[i] b[j] = dist a[p.direct i] a[p.direct j] };
+	assert { forall i j. distinct_indices_in_range i j 0 b.length -> bside[i] = bside[j] -> side[p.direct i] = bside[i] = bside[j] = side[p.direct j] };
+	assert { forall i j. distinct_indices_in_range i j 0 b.length -> bside[i] = bside[j] -> delta <=. dist  a[p.direct i] a[p.direct j] };
+	assert { forall i j. distinct_indices_in_range i j 0 b.length -> bside[i] = bside[j] -> delta <=. dist b[i] b[j] };
+        if j = i + 6 then too_many_points_in_rectangle b mu delta i bside;
+        let d = dist b[i] b[j] in
+        if d <. !m then (m := d; f := i; s := j);
+     done
+    with Break -> ()
+    end
+  done; 
+  if !m <. delta then
+     begin
+     assert { closest_pair_post b { delta = !m; first = !f; second = !s } }; 
+     assert { forall i j. distinct_indices_in_range i j 0 a.length ->  dist a[i] a[j] = dist b[p.reciprocal i] b[p.reciprocal j] >=. !m };
+     let f' = p.direct !f in let s' = p.direct !s in 
+     { delta = !m ; first = f'; second = s' }
+     end
+  else begin
+     assert { forall k l. distinct_indices_in_range k l 0 a.length /\ k < b.length -1 /\ k < l -> dist b[k] b[l] >=. delta };
+     assert { forall k l. distinct_indices_in_range k l 0 a.length /\ k < l -> k < b.length - 1 };
+     assert { forall k l. distinct_indices_in_range k l 0 a.length -> dist a[k] a[l] = dist b[p.reciprocal k] b[p.reciprocal l] >=. delta };
+     { delta = delta ; first = 0; second = 0 }
+     end
+
 
 (* take code from search_strip and insert :
 
