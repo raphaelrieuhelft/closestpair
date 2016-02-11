@@ -5,6 +5,7 @@
 <prover id="0" name="Alt-Ergo" version="0.99.1" timelimit="5" memlimit="1000"/>
 <prover id="1" name="CVC3" version="2.4.1" timelimit="5" memlimit="1000"/>
 <prover id="2" name="Z3" version="4.4.1" timelimit="5" memlimit="1000"/>
+<prover id="3" name="CVC4" version="1.4" timelimit="5" memlimit="1000"/>
 <file name="../closest_pair.mlw" expanded="true">
 <theory name="Closest_Pair_Problem" sum="116d8fa732ff179fa75aa44f66c13be6">
  <goal name="WP_parameter brute_force_search_sub_array" expl="VC for brute_force_search_sub_array">
@@ -410,231 +411,176 @@
  </transf>
  </goal>
 </theory>
-<theory name="Dimension2" sum="dcc2e48557bcc96c95cbc147cfe57b6e" expanded="true">
- <goal name="WP_parameter search_strip" expl="VC for search_strip">
+<theory name="Dimension2" sum="48f6f55e4ad0eb1e377c1b543ed896fb" expanded="true">
+ <goal name="WP_parameter search_strip" expl="VC for search_strip" expanded="true">
  <transf name="split_goal_wp">
   <goal name="WP_parameter search_strip.1" expl="1. postcondition">
-  <proof prover="0" obsolete="true"><result status="valid" time="0.00" steps="2"/></proof>
   <proof prover="1"><result status="valid" time="0.02"/></proof>
   </goal>
   <goal name="WP_parameter search_strip.2" expl="2. postcondition">
-  <proof prover="0" obsolete="true"><result status="valid" time="0.01" steps="2"/></proof>
   <proof prover="1"><result status="valid" time="0.02"/></proof>
   </goal>
   <goal name="WP_parameter search_strip.3" expl="3. postcondition">
-  <proof prover="0" obsolete="true"><result status="valid" time="0.01" steps="2"/></proof>
   <proof prover="1"><result status="valid" time="0.03"/></proof>
   </goal>
   <goal name="WP_parameter search_strip.4" expl="4. postcondition">
-  <proof prover="0" obsolete="true"><result status="valid" time="0.01" steps="8"/></proof>
   <proof prover="1"><result status="valid" time="0.03"/></proof>
   </goal>
   <goal name="WP_parameter search_strip.5" expl="5. assertion">
-  <proof prover="0" obsolete="true"><result status="valid" time="0.02" steps="6"/></proof>
   <proof prover="1"><result status="valid" time="0.03"/></proof>
   </goal>
   <goal name="WP_parameter search_strip.6" expl="6. assertion">
-  <proof prover="0" obsolete="true"><result status="valid" time="0.01" steps="8"/></proof>
   <proof prover="1"><result status="valid" time="0.02"/></proof>
   </goal>
   <goal name="WP_parameter search_strip.7" expl="7. postcondition">
-  <proof prover="0" obsolete="true"><result status="valid" time="0.01" steps="7"/></proof>
   <proof prover="1"><result status="valid" time="0.03"/></proof>
   </goal>
   <goal name="WP_parameter search_strip.8" expl="8. postcondition">
-  <proof prover="0" obsolete="true"><result status="valid" time="0.01" steps="7"/></proof>
   <proof prover="1"><result status="valid" time="0.03"/></proof>
   </goal>
   <goal name="WP_parameter search_strip.9" expl="9. postcondition">
-  <proof prover="0" obsolete="true"><result status="valid" time="0.00" steps="7"/></proof>
   <proof prover="1"><result status="valid" time="0.02"/></proof>
   </goal>
   <goal name="WP_parameter search_strip.10" expl="10. postcondition">
-  <proof prover="0" obsolete="true"><result status="valid" time="0.00" steps="8"/></proof>
   <proof prover="1"><result status="valid" time="0.01"/></proof>
   </goal>
   <goal name="WP_parameter search_strip.11" expl="11. assertion">
-  <proof prover="0" obsolete="true"><result status="valid" time="0.01" steps="10"/></proof>
   <proof prover="1"><result status="valid" time="0.02"/></proof>
   </goal>
   <goal name="WP_parameter search_strip.12" expl="12. assertion">
-  <proof prover="0" obsolete="true"><result status="valid" time="0.01" steps="9"/></proof>
   <proof prover="1"><result status="valid" time="0.04"/></proof>
   </goal>
   <goal name="WP_parameter search_strip.13" expl="13. assertion">
-  <proof prover="0" obsolete="true"><result status="valid" time="0.02" steps="8"/></proof>
   <proof prover="1"><result status="valid" time="0.03"/></proof>
   </goal>
   <goal name="WP_parameter search_strip.14" expl="14. postcondition">
-  <proof prover="0" obsolete="true"><result status="valid" time="0.01" steps="7"/></proof>
   <proof prover="1"><result status="valid" time="0.04"/></proof>
   </goal>
   <goal name="WP_parameter search_strip.15" expl="15. postcondition">
-  <proof prover="0" obsolete="true"><result status="valid" time="0.01" steps="7"/></proof>
   <proof prover="1"><result status="valid" time="0.02"/></proof>
   </goal>
   <goal name="WP_parameter search_strip.16" expl="16. postcondition">
-  <proof prover="0" obsolete="true"><result status="valid" time="0.01" steps="7"/></proof>
   <proof prover="1"><result status="valid" time="0.03"/></proof>
   </goal>
   <goal name="WP_parameter search_strip.17" expl="17. postcondition">
-  <proof prover="0" obsolete="true"><result status="valid" time="0.01" steps="8"/></proof>
   <proof prover="1"><result status="valid" time="0.03"/></proof>
   </goal>
   <goal name="WP_parameter search_strip.18" expl="18. loop invariant init">
-  <proof prover="0" obsolete="true"><result status="valid" time="0.01" steps="9"/></proof>
   <proof prover="1"><result status="valid" time="0.03"/></proof>
   </goal>
   <goal name="WP_parameter search_strip.19" expl="19. loop invariant init">
-  <proof prover="0" obsolete="true"><result status="valid" time="0.02" steps="11"/></proof>
   <proof prover="1"><result status="valid" time="0.02"/></proof>
   </goal>
   <goal name="WP_parameter search_strip.20" expl="20. loop invariant init">
-  <proof prover="0" obsolete="true"><result status="valid" time="0.01" steps="7"/></proof>
   <proof prover="1"><result status="valid" time="0.03"/></proof>
   </goal>
   <goal name="WP_parameter search_strip.21" expl="21. loop invariant preservation">
-  <proof prover="0" obsolete="true"><result status="valid" time="0.01" steps="11"/></proof>
   <proof prover="1"><result status="valid" time="0.02"/></proof>
   </goal>
   <goal name="WP_parameter search_strip.22" expl="22. loop invariant preservation">
-  <proof prover="0" obsolete="true"><result status="valid" time="0.01" steps="12"/></proof>
   <proof prover="1"><result status="valid" time="0.03"/></proof>
   </goal>
   <goal name="WP_parameter search_strip.23" expl="23. loop invariant preservation">
-  <proof prover="0" obsolete="true"><result status="valid" time="0.02" steps="12"/></proof>
   <proof prover="1"><result status="valid" time="0.02"/></proof>
   </goal>
   <goal name="WP_parameter search_strip.24" expl="24. loop invariant init">
-  <proof prover="0" obsolete="true"><result status="valid" time="0.02" steps="12"/></proof>
   <proof prover="1"><result status="valid" time="0.03"/></proof>
   </goal>
   <goal name="WP_parameter search_strip.25" expl="25. loop invariant init">
-  <proof prover="0" obsolete="true"><result status="valid" time="0.02" steps="27"/></proof>
   <proof prover="1"><result status="valid" time="0.03"/></proof>
   </goal>
   <goal name="WP_parameter search_strip.26" expl="26. loop invariant init">
-  <proof prover="0" obsolete="true"><result status="valid" time="0.02" steps="13"/></proof>
   <proof prover="1"><result status="valid" time="0.03"/></proof>
   </goal>
   <goal name="WP_parameter search_strip.27" expl="27. index in array bounds">
-  <proof prover="0" obsolete="true"><result status="valid" time="0.02" steps="12"/></proof>
   <proof prover="1"><result status="valid" time="0.03"/></proof>
   </goal>
   <goal name="WP_parameter search_strip.28" expl="28. index in array bounds">
-  <proof prover="0" obsolete="true"><result status="valid" time="0.02" steps="13"/></proof>
   <proof prover="1"><result status="valid" time="0.03"/></proof>
   </goal>
   <goal name="WP_parameter search_strip.29" expl="29. assertion">
-  <proof prover="0" obsolete="true"><result status="valid" time="0.03" steps="48"/></proof>
   <proof prover="1"><result status="valid" time="0.07"/></proof>
   </goal>
   <goal name="WP_parameter search_strip.30" expl="30. loop invariant preservation">
-  <proof prover="0" obsolete="true"><result status="valid" time="0.01" steps="18"/></proof>
   <proof prover="1"><result status="valid" time="0.02"/></proof>
   </goal>
   <goal name="WP_parameter search_strip.31" expl="31. loop invariant preservation">
   <proof prover="0"><result status="valid" time="1.51" steps="363"/></proof>
-  <proof prover="1"><result status="timeout" time="4.93"/></proof>
   </goal>
   <goal name="WP_parameter search_strip.32" expl="32. loop invariant preservation">
-  <proof prover="0" obsolete="true"><result status="valid" time="0.02" steps="19"/></proof>
   <proof prover="1"><result status="valid" time="0.02"/></proof>
   </goal>
   <goal name="WP_parameter search_strip.33" expl="33. index in array bounds">
-  <proof prover="0" obsolete="true"><result status="valid" time="0.02" steps="15"/></proof>
   <proof prover="1"><result status="valid" time="0.02"/></proof>
   </goal>
   <goal name="WP_parameter search_strip.34" expl="34. index in array bounds">
-  <proof prover="0" obsolete="true"><result status="valid" time="0.02" steps="15"/></proof>
   <proof prover="1"><result status="valid" time="0.02"/></proof>
   </goal>
   <goal name="WP_parameter search_strip.35" expl="35. loop invariant preservation">
-  <proof prover="0" obsolete="true"><result status="valid" time="0.00" steps="20"/></proof>
   <proof prover="1"><result status="valid" time="0.03"/></proof>
   </goal>
   <goal name="WP_parameter search_strip.36" expl="36. loop invariant preservation">
-  <proof prover="0" obsolete="true"><result status="valid" time="0.02" steps="37"/></proof>
   <proof prover="1"><result status="valid" time="0.05"/></proof>
   </goal>
   <goal name="WP_parameter search_strip.37" expl="37. loop invariant preservation">
-  <proof prover="0" obsolete="true"><result status="valid" time="0.02" steps="22"/></proof>
   <proof prover="1"><result status="valid" time="0.03"/></proof>
   </goal>
   <goal name="WP_parameter search_strip.38" expl="38. loop invariant preservation">
-  <proof prover="0" obsolete="true"><result status="valid" time="0.02" steps="18"/></proof>
   <proof prover="1"><result status="valid" time="0.02"/></proof>
   </goal>
   <goal name="WP_parameter search_strip.39" expl="39. loop invariant preservation">
-  <proof prover="0" obsolete="true"><result status="valid" time="0.02" steps="34"/></proof>
   <proof prover="1"><result status="valid" time="0.03"/></proof>
   </goal>
   <goal name="WP_parameter search_strip.40" expl="40. loop invariant preservation">
-  <proof prover="0" obsolete="true"><result status="valid" time="0.02" steps="19"/></proof>
   <proof prover="1"><result status="valid" time="0.02"/></proof>
   </goal>
   <goal name="WP_parameter search_strip.41" expl="41. loop invariant preservation">
-  <proof prover="0" obsolete="true"><result status="valid" time="0.01" steps="12"/></proof>
   <proof prover="1"><result status="valid" time="0.02"/></proof>
   </goal>
   <goal name="WP_parameter search_strip.42" expl="42. loop invariant preservation">
-  <proof prover="0" obsolete="true"><result status="valid" time="0.02" steps="27"/></proof>
   <proof prover="1"><result status="valid" time="0.03"/></proof>
   </goal>
   <goal name="WP_parameter search_strip.43" expl="43. loop invariant preservation">
-  <proof prover="0" obsolete="true"><result status="valid" time="0.01" steps="13"/></proof>
   <proof prover="1"><result status="valid" time="0.02"/></proof>
   </goal>
   <goal name="WP_parameter search_strip.44" expl="44. assertion">
-  <proof prover="0" obsolete="true"><result status="valid" time="0.18" steps="93"/></proof>
   <proof prover="1"><result status="valid" time="4.53"/></proof>
+  <proof prover="3"><result status="timeout" time="5.89"/></proof>
   </goal>
   <goal name="WP_parameter search_strip.45" expl="45. assertion">
-  <proof prover="0" obsolete="true"><result status="valid" time="0.73" steps="299"/></proof>
   <proof prover="1"><result status="valid" time="0.33"/></proof>
   </goal>
   <goal name="WP_parameter search_strip.46" expl="46. postcondition">
-  <proof prover="0" obsolete="true"><result status="valid" time="0.01" steps="11"/></proof>
   <proof prover="1"><result status="valid" time="0.02"/></proof>
   </goal>
   <goal name="WP_parameter search_strip.47" expl="47. postcondition">
-  <proof prover="0" obsolete="true"><result status="timeout" time="2.46"/></proof>
   <proof prover="1"><result status="valid" time="0.06"/></proof>
   </goal>
   <goal name="WP_parameter search_strip.48" expl="48. postcondition">
-  <proof prover="0" obsolete="true"><result status="timeout" time="2.49"/></proof>
   <proof prover="1"><result status="valid" time="1.62"/></proof>
   </goal>
   <goal name="WP_parameter search_strip.49" expl="49. postcondition">
-  <proof prover="0" obsolete="true"><result status="valid" time="0.02" steps="12"/></proof>
   <proof prover="1"><result status="valid" time="0.02"/></proof>
   </goal>
   <goal name="WP_parameter search_strip.50" expl="50. assertion">
-  <proof prover="0" obsolete="true"><result status="valid" time="0.02" steps="24"/></proof>
   <proof prover="1"><result status="valid" time="0.02"/></proof>
   </goal>
   <goal name="WP_parameter search_strip.51" expl="51. assertion">
-  <proof prover="0" obsolete="true"><result status="valid" time="0.02" steps="14"/></proof>
   <proof prover="1"><result status="valid" time="0.02"/></proof>
   </goal>
   <goal name="WP_parameter search_strip.52" expl="52. assertion">
-  <proof prover="0" obsolete="true"><result status="valid" time="1.65" steps="517"/></proof>
   <proof prover="1"><result status="valid" time="0.53"/></proof>
   </goal>
   <goal name="WP_parameter search_strip.53" expl="53. postcondition">
-  <proof prover="0" obsolete="true"><result status="valid" time="0.01" steps="8"/></proof>
   <proof prover="1"><result status="valid" time="0.02"/></proof>
   </goal>
   <goal name="WP_parameter search_strip.54" expl="54. postcondition">
-  <proof prover="0" obsolete="true"><result status="valid" time="0.02" steps="8"/></proof>
   <proof prover="1"><result status="valid" time="0.02"/></proof>
   </goal>
   <goal name="WP_parameter search_strip.55" expl="55. postcondition">
-  <proof prover="0" obsolete="true"><result status="valid" time="0.01" steps="8"/></proof>
   <proof prover="1"><result status="valid" time="0.02"/></proof>
   </goal>
   <goal name="WP_parameter search_strip.56" expl="56. postcondition">
-  <proof prover="0" obsolete="true"><result status="valid" time="0.02" steps="39"/></proof>
   <proof prover="1"><result status="valid" time="0.02"/></proof>
   </goal>
  </transf>
@@ -642,53 +588,39 @@
  <goal name="WP_parameter left_border" expl="VC for left_border">
  <transf name="split_goal_wp">
   <goal name="WP_parameter left_border.1" expl="1. loop invariant init">
-  <proof prover="0" obsolete="true"><result status="valid" time="0.01" steps="5"/></proof>
   <proof prover="1"><result status="valid" time="0.02"/></proof>
   </goal>
   <goal name="WP_parameter left_border.2" expl="2. loop invariant init">
-  <proof prover="0" obsolete="true"><result status="valid" time="0.03" steps="5"/></proof>
   <proof prover="1"><result status="valid" time="0.02"/></proof>
   </goal>
   <goal name="WP_parameter left_border.3" expl="3. index in array bounds">
-  <proof prover="0" obsolete="true"><result status="valid" time="0.01" steps="8"/></proof>
   <proof prover="1"><result status="valid" time="0.02"/></proof>
   </goal>
   <goal name="WP_parameter left_border.4" expl="4. loop invariant preservation">
-  <proof prover="0" obsolete="true"><result status="valid" time="0.02" steps="12"/></proof>
   <proof prover="1"><result status="valid" time="0.03"/></proof>
   </goal>
   <goal name="WP_parameter left_border.5" expl="5. loop invariant preservation">
-  <proof prover="0" obsolete="true"><result status="valid" time="0.02" steps="13"/></proof>
   <proof prover="1"><result status="valid" time="0.04"/></proof>
   </goal>
   <goal name="WP_parameter left_border.6" expl="6. loop variant decrease">
-  <proof prover="0" obsolete="true"><result status="valid" time="0.01" steps="12"/></proof>
   <proof prover="1"><result status="valid" time="0.03"/></proof>
   </goal>
   <goal name="WP_parameter left_border.7" expl="7. postcondition">
-  <proof prover="0" obsolete="true"><result status="valid" time="0.01" steps="11"/></proof>
   <proof prover="1"><result status="valid" time="0.02"/></proof>
-  <proof prover="2" obsolete="true"><result status="timeout" time="4.91"/></proof>
   </goal>
   <goal name="WP_parameter left_border.8" expl="8. postcondition">
   <proof prover="0"><result status="valid" time="0.03" steps="21"/></proof>
-  <proof prover="1"><result status="unknown" time="0.91"/></proof>
   </goal>
   <goal name="WP_parameter left_border.9" expl="9. postcondition">
   <proof prover="0"><result status="valid" time="0.03" steps="25"/></proof>
-  <proof prover="1"><result status="unknown" time="1.02"/></proof>
   </goal>
   <goal name="WP_parameter left_border.10" expl="10. postcondition">
-  <proof prover="0" obsolete="true"><result status="valid" time="0.01" steps="9"/></proof>
   <proof prover="1"><result status="valid" time="0.02"/></proof>
   </goal>
   <goal name="WP_parameter left_border.11" expl="11. postcondition">
   <proof prover="0"><result status="valid" time="0.03" steps="16"/></proof>
-  <proof prover="1"><result status="unknown" time="0.55"/></proof>
-  <proof prover="2" obsolete="true"><result status="timeout" time="4.96"/></proof>
   </goal>
   <goal name="WP_parameter left_border.12" expl="12. postcondition">
-  <proof prover="0" obsolete="true"><result status="valid" time="0.01" steps="10"/></proof>
   <proof prover="1"><result status="valid" time="0.02"/></proof>
   </goal>
  </transf>
@@ -696,348 +628,263 @@
  <goal name="WP_parameter right_border" expl="VC for right_border">
  <transf name="split_goal_wp">
   <goal name="WP_parameter right_border.1" expl="1. loop invariant init">
-  <proof prover="0" obsolete="true"><result status="valid" time="0.05" steps="5"/></proof>
   <proof prover="1"><result status="valid" time="0.01"/></proof>
   </goal>
   <goal name="WP_parameter right_border.2" expl="2. loop invariant init">
-  <proof prover="0" obsolete="true"><result status="valid" time="0.01" steps="5"/></proof>
   <proof prover="1"><result status="valid" time="0.01"/></proof>
   </goal>
   <goal name="WP_parameter right_border.3" expl="3. index in array bounds">
-  <proof prover="0" obsolete="true"><result status="valid" time="0.02" steps="8"/></proof>
   <proof prover="1"><result status="valid" time="0.04"/></proof>
   </goal>
   <goal name="WP_parameter right_border.4" expl="4. loop invariant preservation">
-  <proof prover="0" obsolete="true"><result status="valid" time="0.02" steps="12"/></proof>
   <proof prover="1"><result status="valid" time="0.04"/></proof>
   </goal>
   <goal name="WP_parameter right_border.5" expl="5. loop invariant preservation">
-  <proof prover="0" obsolete="true"><result status="valid" time="0.01" steps="13"/></proof>
   <proof prover="1"><result status="valid" time="0.03"/></proof>
   </goal>
   <goal name="WP_parameter right_border.6" expl="6. loop variant decrease">
-  <proof prover="0" obsolete="true"><result status="valid" time="0.02" steps="12"/></proof>
   <proof prover="1"><result status="valid" time="0.04"/></proof>
   </goal>
   <goal name="WP_parameter right_border.7" expl="7. postcondition">
-  <proof prover="0" obsolete="true"><result status="valid" time="0.02" steps="11"/></proof>
   <proof prover="1"><result status="valid" time="0.02"/></proof>
   </goal>
   <goal name="WP_parameter right_border.8" expl="8. postcondition">
   <proof prover="0"><result status="valid" time="0.06" steps="19"/></proof>
-  <proof prover="1"><result status="unknown" time="1.14"/></proof>
   </goal>
   <goal name="WP_parameter right_border.9" expl="9. postcondition">
   <proof prover="0"><result status="valid" time="0.12" steps="21"/></proof>
-  <proof prover="1"><result status="unknown" time="0.87"/></proof>
   </goal>
   <goal name="WP_parameter right_border.10" expl="10. postcondition">
-  <proof prover="0" obsolete="true"><result status="valid" time="0.04" steps="9"/></proof>
   <proof prover="1"><result status="valid" time="0.02"/></proof>
   </goal>
   <goal name="WP_parameter right_border.11" expl="11. postcondition">
-  <proof prover="0" obsolete="true"><result status="valid" time="0.00" steps="10"/></proof>
   <proof prover="1"><result status="valid" time="0.02"/></proof>
   </goal>
   <goal name="WP_parameter right_border.12" expl="12. postcondition">
   <proof prover="0"><result status="valid" time="0.02" steps="16"/></proof>
-  <proof prover="1"><result status="unknown" time="0.51"/></proof>
   </goal>
  </transf>
  </goal>
- <goal name="WP_parameter use_sorted_x" expl="VC for use_sorted_x">
- <proof prover="0" obsolete="true"><result status="valid" time="0.01" steps="10"/></proof>
- <proof prover="1"><result status="valid" time="0.02"/></proof>
- </goal>
- <goal name="WP_parameter divide_and_conquer" expl="VC for divide_and_conquer">
- <transf name="split_goal_wp">
+ <goal name="WP_parameter divide_and_conquer" expl="VC for divide_and_conquer" expanded="true">
+ <transf name="split_goal_wp" expanded="true">
   <goal name="WP_parameter divide_and_conquer.1" expl="1. precondition">
-  <proof prover="0" obsolete="true"><result status="valid" time="0.01" steps="7"/></proof>
   <proof prover="1"><result status="valid" time="0.01"/></proof>
   </goal>
   <goal name="WP_parameter divide_and_conquer.2" expl="2. postcondition">
-  <proof prover="0" obsolete="true"><result status="valid" time="0.01" steps="10"/></proof>
   <proof prover="1"><result status="valid" time="0.02"/></proof>
   </goal>
   <goal name="WP_parameter divide_and_conquer.3" expl="3. variant decrease">
-  <proof prover="0" obsolete="true"><result status="valid" time="0.03" steps="12"/></proof>
   <proof prover="1"><result status="valid" time="0.02"/></proof>
   </goal>
   <goal name="WP_parameter divide_and_conquer.4" expl="4. precondition">
-  <proof prover="0" obsolete="true"><result status="valid" time="0.02" steps="14"/></proof>
   <proof prover="1"><result status="valid" time="0.02"/></proof>
   </goal>
   <goal name="WP_parameter divide_and_conquer.5" expl="5. precondition">
-  <proof prover="0" obsolete="true"><result status="valid" time="0.00" steps="7"/></proof>
   <proof prover="1"><result status="valid" time="0.03"/></proof>
   </goal>
   <goal name="WP_parameter divide_and_conquer.6" expl="6. precondition">
-  <proof prover="0" obsolete="true"><result status="valid" time="0.02" steps="13"/></proof>
   <proof prover="1"><result status="valid" time="0.04"/></proof>
   </goal>
   <goal name="WP_parameter divide_and_conquer.7" expl="7. variant decrease">
-  <proof prover="0" obsolete="true"><result status="valid" time="0.02" steps="11"/></proof>
   <proof prover="1"><result status="valid" time="0.04"/></proof>
   </goal>
   <goal name="WP_parameter divide_and_conquer.8" expl="8. precondition">
-  <proof prover="0" obsolete="true"><result status="valid" time="0.02" steps="29"/></proof>
   <proof prover="1"><result status="valid" time="0.04"/></proof>
   </goal>
   <goal name="WP_parameter divide_and_conquer.9" expl="9. precondition">
-  <proof prover="0" obsolete="true"><result status="valid" time="0.02" steps="11"/></proof>
   <proof prover="1"><result status="valid" time="0.03"/></proof>
   </goal>
   <goal name="WP_parameter divide_and_conquer.10" expl="10. precondition">
-  <proof prover="0" obsolete="true"><result status="valid" time="0.02" steps="29"/></proof>
   <proof prover="1"><result status="valid" time="0.04"/></proof>
   </goal>
-  <goal name="WP_parameter divide_and_conquer.11" expl="11. postcondition">
-  <proof prover="0" obsolete="true"><result status="valid" time="0.04" steps="204"/></proof>
-  <proof prover="1"><result status="valid" time="0.09"/></proof>
+  <goal name="WP_parameter divide_and_conquer.11" expl="11. index in array bounds">
+  <proof prover="1" obsolete="true"><result status="valid" time="0.03"/></proof>
+  <proof prover="3"><result status="valid" time="0.02"/></proof>
   </goal>
-  <goal name="WP_parameter divide_and_conquer.12" expl="12. assertion">
-  <proof prover="0" obsolete="true"><result status="valid" time="0.02" steps="58"/></proof>
-  <proof prover="1"><result status="valid" time="0.04"/></proof>
+  <goal name="WP_parameter divide_and_conquer.12" expl="12. index in array bounds">
+  <proof prover="1" obsolete="true"><result status="valid" time="0.04"/></proof>
+  <proof prover="3"><result status="valid" time="0.03"/></proof>
   </goal>
-  <goal name="WP_parameter divide_and_conquer.13" expl="13. index in array bounds">
-  <proof prover="0" obsolete="true"><result status="valid" time="0.02" steps="25"/></proof>
-  <proof prover="1"><result status="valid" time="0.03"/></proof>
+  <goal name="WP_parameter divide_and_conquer.13" expl="13. precondition">
+  <proof prover="1" obsolete="true"><result status="valid" time="0.02"/></proof>
+  <proof prover="3"><result status="valid" time="0.03"/></proof>
   </goal>
-  <goal name="WP_parameter divide_and_conquer.14" expl="14. index in array bounds">
-  <proof prover="0" obsolete="true"><result status="valid" time="0.01" steps="27"/></proof>
-  <proof prover="1"><result status="valid" time="0.04"/></proof>
+  <goal name="WP_parameter divide_and_conquer.14" expl="14. precondition">
+  <proof prover="1" obsolete="true"><result status="valid" time="0.02"/></proof>
+  <proof prover="3"><result status="valid" time="0.03"/></proof>
   </goal>
   <goal name="WP_parameter divide_and_conquer.15" expl="15. precondition">
-  <proof prover="0" obsolete="true"><result status="valid" time="0.01" steps="31"/></proof>
-  <proof prover="1"><result status="valid" time="0.02"/></proof>
+  <proof prover="1" obsolete="true"><result status="valid" time="0.02"/></proof>
+  <proof prover="3"><result status="valid" time="0.03"/></proof>
   </goal>
   <goal name="WP_parameter divide_and_conquer.16" expl="16. precondition">
-  <proof prover="0" obsolete="true"><result status="valid" time="0.02" steps="31"/></proof>
-  <proof prover="1"><result status="valid" time="0.02"/></proof>
+  <proof prover="1" obsolete="true"><result status="valid" time="0.03"/></proof>
+  <proof prover="3"><result status="valid" time="0.04"/></proof>
   </goal>
-  <goal name="WP_parameter divide_and_conquer.17" expl="17. precondition">
-  <proof prover="0" obsolete="true"><result status="valid" time="0.01" steps="35"/></proof>
-  <proof prover="1"><result status="valid" time="0.02"/></proof>
+  <goal name="WP_parameter divide_and_conquer.17" expl="17. assertion">
+  <proof prover="1" obsolete="true"><result status="valid" time="0.04"/></proof>
+  <proof prover="3"><result status="valid" time="0.04"/></proof>
   </goal>
-  <goal name="WP_parameter divide_and_conquer.18" expl="18. precondition">
-  <proof prover="0" obsolete="true"><result status="valid" time="0.02" steps="39"/></proof>
-  <proof prover="1"><result status="valid" time="0.03"/></proof>
+  <goal name="WP_parameter divide_and_conquer.18" expl="18. assertion">
+  <proof prover="0" obsolete="true"><result status="valid" time="1.45" steps="174"/></proof>
+  <proof prover="3"><result status="valid" time="0.09"/></proof>
   </goal>
   <goal name="WP_parameter divide_and_conquer.19" expl="19. assertion">
-  <proof prover="0" obsolete="true"><result status="valid" time="0.03" steps="43"/></proof>
-  <proof prover="1"><result status="valid" time="0.04"/></proof>
+  <proof prover="0" obsolete="true"><result status="valid" time="1.51" steps="170"/></proof>
+  <proof prover="3"><result status="valid" time="0.12"/></proof>
   </goal>
   <goal name="WP_parameter divide_and_conquer.20" expl="20. assertion">
-  <proof prover="0"><result status="valid" time="1.45" steps="174"/></proof>
-  <proof prover="1"><result status="unknown" time="2.17"/></proof>
+  <proof prover="1" obsolete="true"><result status="valid" time="0.03"/></proof>
+  <proof prover="3"><result status="valid" time="0.05"/></proof>
   </goal>
   <goal name="WP_parameter divide_and_conquer.21" expl="21. assertion">
-  <proof prover="0"><result status="valid" time="1.51" steps="170"/></proof>
-  <proof prover="1"><result status="unknown" time="1.95"/></proof>
+  <proof prover="1" obsolete="true"><result status="valid" time="0.02"/></proof>
+  <proof prover="3"><result status="valid" time="0.06"/></proof>
   </goal>
   <goal name="WP_parameter divide_and_conquer.22" expl="22. assertion">
-  <proof prover="0" obsolete="true"><result status="valid" time="0.06" steps="73"/></proof>
-  <proof prover="1"><result status="valid" time="0.03"/></proof>
+  <proof prover="1" obsolete="true"><result status="valid" time="0.07"/></proof>
+  <proof prover="3"><result status="valid" time="0.06"/></proof>
   </goal>
-  <goal name="WP_parameter divide_and_conquer.23" expl="23. assertion">
-  <proof prover="0" obsolete="true"><result status="valid" time="0.04" steps="73"/></proof>
-  <proof prover="1"><result status="valid" time="0.02"/></proof>
+  <goal name="WP_parameter divide_and_conquer.23" expl="23. precondition">
+  <proof prover="1" obsolete="true"><result status="valid" time="0.05"/></proof>
+  <proof prover="3"><result status="valid" time="0.04"/></proof>
   </goal>
   <goal name="WP_parameter divide_and_conquer.24" expl="24. assertion">
-  <proof prover="0" obsolete="true"><result status="valid" time="0.11" steps="100"/></proof>
-  <proof prover="1"><result status="valid" time="0.04"/></proof>
+  <proof prover="1" obsolete="true"><result status="valid" time="0.04"/></proof>
+  <proof prover="3"><result status="valid" time="0.07"/></proof>
   </goal>
   <goal name="WP_parameter divide_and_conquer.25" expl="25. assertion">
-  <proof prover="0" obsolete="true"><result status="valid" time="0.16" steps="153"/></proof>
-  <proof prover="1"><result status="valid" time="0.05"/></proof>
+  <proof prover="1" obsolete="true"><result status="valid" time="0.04"/></proof>
+  <proof prover="3"><result status="valid" time="0.05"/></proof>
   </goal>
   <goal name="WP_parameter divide_and_conquer.26" expl="26. assertion">
-  <proof prover="0" obsolete="true"><result status="valid" time="1.14" steps="304"/></proof>
-  <proof prover="1"><result status="valid" time="0.07"/></proof>
+  <proof prover="1" obsolete="true"><result status="valid" time="0.11"/></proof>
+  <proof prover="3"><result status="valid" time="0.08"/></proof>
   </goal>
-  <goal name="WP_parameter divide_and_conquer.27" expl="27. precondition">
-  <proof prover="0" obsolete="true"><result status="valid" time="0.02" steps="45"/></proof>
-  <proof prover="1"><result status="valid" time="0.05"/></proof>
+  <goal name="WP_parameter divide_and_conquer.27" expl="27. assertion">
+  <proof prover="1" obsolete="true"><result status="valid" time="0.06"/></proof>
+  <proof prover="3"><result status="valid" time="0.06"/></proof>
   </goal>
-  <goal name="WP_parameter divide_and_conquer.28" expl="28. assertion">
-  <proof prover="0" obsolete="true"><result status="valid" time="0.11" steps="114"/></proof>
-  <proof prover="1"><result status="valid" time="0.04"/></proof>
+  <goal name="WP_parameter divide_and_conquer.28" expl="28. precondition">
+  <proof prover="0"><result status="valid" time="0.88" steps="149"/></proof>
+  <proof prover="3"><result status="timeout" time="5.85"/></proof>
   </goal>
   <goal name="WP_parameter divide_and_conquer.29" expl="29. assertion">
-  <proof prover="0" obsolete="true"><result status="valid" time="0.04" steps="59"/></proof>
-  <proof prover="1"><result status="valid" time="0.04"/></proof>
+  <proof prover="1" obsolete="true"><result status="valid" time="0.05"/></proof>
+  <proof prover="3"><result status="valid" time="0.25"/></proof>
   </goal>
   <goal name="WP_parameter divide_and_conquer.30" expl="30. assertion">
-  <proof prover="0" obsolete="true"><result status="timeout" time="2.37"/></proof>
-  <proof prover="1"><result status="valid" time="0.11"/></proof>
+  <proof prover="1" obsolete="true"><result status="valid" time="0.06"/></proof>
+  <proof prover="3"><result status="valid" time="0.07"/></proof>
   </goal>
   <goal name="WP_parameter divide_and_conquer.31" expl="31. assertion">
-  <proof prover="0" obsolete="true"><result status="valid" time="0.12" steps="241"/></proof>
-  <proof prover="1"><result status="valid" time="0.06"/></proof>
+  <proof prover="0" obsolete="true"><result status="valid" time="0.54" steps="213"/></proof>
+  <proof prover="3"><result status="valid" time="0.09"/></proof>
   </goal>
-  <goal name="WP_parameter divide_and_conquer.32" expl="32. precondition">
-  <proof prover="0"><result status="valid" time="1.52" steps="228"/></proof>
-  <proof prover="1"><result status="unknown" time="2.78"/></proof>
+  <goal name="WP_parameter divide_and_conquer.32" expl="32. assertion">
+  <proof prover="1" obsolete="true"><result status="valid" time="0.05"/></proof>
+  <proof prover="3"><result status="valid" time="0.06"/></proof>
   </goal>
-  <goal name="WP_parameter divide_and_conquer.33" expl="33. precondition">
-  <proof prover="0" obsolete="true"><result status="valid" time="0.03" steps="55"/></proof>
-  <proof prover="1"><result status="valid" time="0.05"/></proof>
+  <goal name="WP_parameter divide_and_conquer.33" expl="33. assertion">
+  <proof prover="1" obsolete="true"><result status="valid" time="0.06"/></proof>
+  <proof prover="3"><result status="valid" time="0.07"/></proof>
   </goal>
   <goal name="WP_parameter divide_and_conquer.34" expl="34. assertion">
-  <proof prover="0" obsolete="true"><result status="valid" time="0.06" steps="113"/></proof>
-  <proof prover="1"><result status="valid" time="0.05"/></proof>
+  <proof prover="3"><result status="valid" time="0.10"/></proof>
   </goal>
   <goal name="WP_parameter divide_and_conquer.35" expl="35. assertion">
-  <proof prover="0"><result status="valid" time="0.54" steps="213"/></proof>
-  <proof prover="1"><result status="timeout" time="4.89"/></proof>
+  <proof prover="3"><result status="valid" time="0.08"/></proof>
   </goal>
   <goal name="WP_parameter divide_and_conquer.36" expl="36. assertion">
-  <proof prover="0" obsolete="true"><result status="valid" time="0.64" steps="235"/></proof>
-  <proof prover="1"><result status="valid" time="0.06"/></proof>
+  <proof prover="1" obsolete="true"><result status="valid" time="3.05"/></proof>
+  <proof prover="3"><result status="valid" time="0.14"/></proof>
   </goal>
   <goal name="WP_parameter divide_and_conquer.37" expl="37. assertion">
-  <proof prover="0" obsolete="true"><result status="valid" time="0.24" steps="197"/></proof>
-  <proof prover="1"><result status="valid" time="0.05"/></proof>
+  <proof prover="0" obsolete="true"><result status="valid" time="0.22" steps="181"/></proof>
+  <proof prover="3"><result status="valid" time="0.10"/></proof>
   </goal>
   <goal name="WP_parameter divide_and_conquer.38" expl="38. assertion">
-  <proof prover="0" obsolete="true"><result status="valid" time="0.19" steps="152"/></proof>
-  <proof prover="1"><result status="valid" time="0.06"/></proof>
+  <proof prover="1" obsolete="true"><result status="valid" time="0.15"/></proof>
+  <proof prover="3"><result status="valid" time="0.11"/></proof>
   </goal>
   <goal name="WP_parameter divide_and_conquer.39" expl="39. assertion">
-  <proof prover="0" obsolete="true"><result status="timeout" time="2.50"/></proof>
-  <proof prover="1"><result status="valid" time="0.42"/></proof>
+  <proof prover="0" obsolete="true"><result status="valid" time="0.54" steps="206"/></proof>
+  <proof prover="1" obsolete="true"><result status="valid" time="0.07"/></proof>
+  <proof prover="3"><result status="valid" time="0.11"/></proof>
   </goal>
   <goal name="WP_parameter divide_and_conquer.40" expl="40. assertion">
-  <proof prover="0"><result status="valid" time="0.57" steps="227"/></proof>
-  <proof prover="1"><result status="timeout" time="4.89"/></proof>
+  <proof prover="0" obsolete="true"><result status="valid" time="0.15" steps="185"/></proof>
+  <proof prover="1" obsolete="true"><result status="valid" time="0.07"/></proof>
+  <proof prover="3"><result status="valid" time="0.12"/></proof>
   </goal>
   <goal name="WP_parameter divide_and_conquer.41" expl="41. assertion">
-  <proof prover="0" obsolete="true"><result status="valid" time="0.88" steps="304"/></proof>
-  <proof prover="1"><result status="valid" time="0.49"/></proof>
+  <proof prover="1" obsolete="true"><result status="valid" time="0.42"/></proof>
+  <proof prover="3"><result status="valid" time="0.26"/></proof>
   </goal>
-  <goal name="WP_parameter divide_and_conquer.42" expl="42. assertion">
-  <proof prover="0" obsolete="true"><result status="timeout" time="2.44"/></proof>
-  <proof prover="1"><result status="valid" time="0.40"/></proof>
+  <goal name="WP_parameter divide_and_conquer.42" expl="42. postcondition">
+  <transf name="inline_goal">
+   <goal name="WP_parameter divide_and_conquer.42.1" expl="1. postcondition">
+   <transf name="split_goal_wp">
+    <goal name="WP_parameter divide_and_conquer.42.1.1" expl="1. VC for divide_and_conquer">
+    <proof prover="3"><result status="valid" time="0.16"/></proof>
+    </goal>
+    <goal name="WP_parameter divide_and_conquer.42.1.2" expl="2. VC for divide_and_conquer">
+    <proof prover="1"><result status="valid" time="0.38"/></proof>
+    <proof prover="3"><result status="timeout" time="5.66"/></proof>
+    </goal>
+    <goal name="WP_parameter divide_and_conquer.42.1.3" expl="3. VC for divide_and_conquer">
+    <proof prover="3"><result status="valid" time="0.37"/></proof>
+    </goal>
+   </transf>
+   </goal>
+  </transf>
   </goal>
   <goal name="WP_parameter divide_and_conquer.43" expl="43. assertion">
-  <proof prover="0" obsolete="true"><result status="valid" time="0.08" steps="97"/></proof>
-  <proof prover="1"><result status="valid" time="0.07"/></proof>
+  <proof prover="0" obsolete="true"><result status="timeout" time="4.70"/></proof>
+  <proof prover="1" obsolete="true"><result status="timeout" time="4.98"/></proof>
+  <proof prover="3"><result status="valid" time="0.13"/></proof>
   </goal>
   <goal name="WP_parameter divide_and_conquer.44" expl="44. assertion">
-  <proof prover="0" obsolete="true"><result status="valid" time="0.05" steps="105"/></proof>
-  <proof prover="1"><result status="valid" time="0.04"/></proof>
+  <proof prover="1" obsolete="true"><result status="valid" time="0.36"/></proof>
+  <proof prover="3"><result status="valid" time="0.25"/></proof>
   </goal>
-  <goal name="WP_parameter divide_and_conquer.45" expl="45. assertion">
-  <proof prover="0" obsolete="true"><result status="valid" time="0.04" steps="75"/></proof>
-  <proof prover="1"><result status="valid" time="0.05"/></proof>
-  </goal>
-  <goal name="WP_parameter divide_and_conquer.46" expl="46. assertion">
-  <proof prover="0" obsolete="true"><result status="valid" time="0.19" steps="181"/></proof>
-  <proof prover="1"><result status="valid" time="0.10"/></proof>
-  </goal>
-  <goal name="WP_parameter divide_and_conquer.47" expl="47. assertion">
-  <proof prover="0" obsolete="true"><result status="valid" time="1.33" steps="204"/></proof>
-  <proof prover="1"><result status="valid" time="0.08"/></proof>
-  </goal>
-  <goal name="WP_parameter divide_and_conquer.48" expl="48. assertion">
-  <proof prover="0" obsolete="true"><result status="valid" time="0.06" steps="133"/></proof>
-  <proof prover="1"><result status="valid" time="0.05"/></proof>
-  </goal>
-  <goal name="WP_parameter divide_and_conquer.49" expl="49. assertion">
-  <proof prover="0" obsolete="true"><result status="valid" time="0.26" steps="189"/></proof>
-  <proof prover="1"><result status="valid" time="0.15"/></proof>
-  </goal>
-  <goal name="WP_parameter divide_and_conquer.50" expl="50. assertion">
-  <proof prover="0" obsolete="true"><result status="valid" time="0.33" steps="189"/></proof>
-  <proof prover="1"><result status="valid" time="0.07"/></proof>
-  </goal>
-  <goal name="WP_parameter divide_and_conquer.51" expl="51. assertion">
-  <proof prover="0" obsolete="true"><result status="valid" time="0.28" steps="181"/></proof>
-  <proof prover="1"><result status="valid" time="0.08"/></proof>
-  </goal>
-  <goal name="WP_parameter divide_and_conquer.52" expl="52. assertion">
-  <proof prover="0" obsolete="true"><result status="valid" time="0.27" steps="181"/></proof>
-  <proof prover="1"><result status="valid" time="0.10"/></proof>
-  </goal>
-  <goal name="WP_parameter divide_and_conquer.53" expl="53. assertion">
-  <proof prover="0" obsolete="true"><result status="valid" time="0.15" steps="185"/></proof>
-  <proof prover="1"><result status="valid" time="0.08"/></proof>
-  </goal>
-  <goal name="WP_parameter divide_and_conquer.54" expl="54. assertion">
-  <proof prover="0" obsolete="true"><result status="valid" time="0.16" steps="187"/></proof>
-  <proof prover="1"><result status="valid" time="0.08"/></proof>
-  </goal>
-  <goal name="WP_parameter divide_and_conquer.55" expl="55. assertion">
-  <proof prover="0" obsolete="true"><result status="timeout" time="2.34"/></proof>
-  <proof prover="1"><result status="valid" time="2.34"/></proof>
-  </goal>
-  <goal name="WP_parameter divide_and_conquer.56" expl="56. postcondition">
-  <proof prover="0" obsolete="true"><result status="timeout" time="2.36"/></proof>
-  <proof prover="1"><result status="valid" time="1.67"/></proof>
-  </goal>
-  <goal name="WP_parameter divide_and_conquer.57" expl="57. assertion">
-  <proof prover="0" obsolete="true"><result status="valid" time="0.25" steps="133"/></proof>
-  <proof prover="1"><result status="valid" time="0.06"/></proof>
-  </goal>
-  <goal name="WP_parameter divide_and_conquer.58" expl="58. assertion">
-  <proof prover="0" obsolete="true"><result status="valid" time="0.25" steps="133"/></proof>
-  <proof prover="1"><result status="valid" time="0.07"/></proof>
-  </goal>
-  <goal name="WP_parameter divide_and_conquer.59" expl="59. assertion">
-  <proof prover="0" obsolete="true"><result status="timeout" time="2.40"/></proof>
-  <proof prover="1"><result status="valid" time="0.51"/></proof>
-  </goal>
-  <goal name="WP_parameter divide_and_conquer.60" expl="60. assertion">
-  <proof prover="0" obsolete="true"><result status="timeout" time="2.38"/></proof>
-  <proof prover="1"><result status="valid" time="1.45"/></proof>
-  </goal>
-  <goal name="WP_parameter divide_and_conquer.61" expl="61. postcondition">
-  <proof prover="0" obsolete="true"><result status="valid" time="0.41" steps="336"/></proof>
-  <proof prover="1"><result status="valid" time="0.29"/></proof>
+  <goal name="WP_parameter divide_and_conquer.45" expl="45. postcondition">
+  <proof prover="1" obsolete="true"><result status="valid" time="0.29"/></proof>
+  <proof prover="3"><result status="valid" time="0.20"/></proof>
   </goal>
  </transf>
  </goal>
  <goal name="WP_parameter main_algorithm" expl="VC for main_algorithm">
  <transf name="split_goal_wp">
   <goal name="WP_parameter main_algorithm.1" expl="1. precondition">
-  <proof prover="0" obsolete="true"><result status="valid" time="0.02" steps="6"/></proof>
   <proof prover="1"><result status="valid" time="0.02"/></proof>
   </goal>
   <goal name="WP_parameter main_algorithm.2" expl="2. precondition">
-  <proof prover="0" obsolete="true"><result status="valid" time="0.01" steps="6"/></proof>
   <proof prover="1"><result status="valid" time="0.02"/></proof>
   </goal>
   <goal name="WP_parameter main_algorithm.3" expl="3. precondition">
-  <proof prover="0" obsolete="true"><result status="valid" time="0.01" steps="6"/></proof>
   <proof prover="1"><result status="valid" time="0.02"/></proof>
   </goal>
   <goal name="WP_parameter main_algorithm.4" expl="4. assertion">
-  <proof prover="0" obsolete="true"><result status="valid" time="0.02" steps="12"/></proof>
   <proof prover="1"><result status="valid" time="0.02"/></proof>
   </goal>
   <goal name="WP_parameter main_algorithm.5" expl="5. assertion">
-  <proof prover="0" obsolete="true"><result status="valid" time="0.21" steps="147"/></proof>
   <proof prover="1"><result status="valid" time="0.26"/></proof>
   </goal>
   <goal name="WP_parameter main_algorithm.6" expl="6. postcondition">
-  <proof prover="0" obsolete="true"><result status="valid" time="1.82" steps="599"/></proof>
   <proof prover="1"><result status="valid" time="0.30"/></proof>
   </goal>
  </transf>
  </goal>
  <goal name="WP_parameter too_many_points_in_square" expl="VC for too_many_points_in_square">
- <proof prover="0"><result status="timeout" time="5.58"/></proof>
- <proof prover="1"><result status="timeout" time="4.82"/></proof>
- <proof prover="2" obsolete="true"><result status="timeout" time="5.04"/></proof>
+ <proof prover="3" timelimit="20"><result status="valid" time="0.56"/></proof>
  </goal>
  <goal name="WP_parameter check_order_2" expl="VC for check_order_2">
  <transf name="split_goal_wp">
   <goal name="WP_parameter check_order_2.1" expl="1. assertion">
-  <proof prover="0" obsolete="true"><result status="valid" time="0.01" steps="6"/></proof>
   <proof prover="1"><result status="valid" time="0.02"/></proof>
   </goal>
   <goal name="WP_parameter check_order_2.2" expl="2. postcondition">
-  <proof prover="0" obsolete="true"><result status="valid" time="0.01" steps="10"/></proof>
   <proof prover="1"><result status="valid" time="0.02"/></proof>
   </goal>
  </transf>
@@ -1045,31 +892,24 @@
  <goal name="WP_parameter check_order_4" expl="VC for check_order_4">
  <transf name="split_goal_wp">
   <goal name="WP_parameter check_order_4.1" expl="1. precondition">
-  <proof prover="0" obsolete="true"><result status="valid" time="0.00" steps="7"/></proof>
   <proof prover="1"><result status="valid" time="0.02"/></proof>
   </goal>
   <goal name="WP_parameter check_order_4.2" expl="2. precondition">
-  <proof prover="0" obsolete="true"><result status="valid" time="0.02" steps="15"/></proof>
   <proof prover="1"><result status="valid" time="0.02"/></proof>
   </goal>
   <goal name="WP_parameter check_order_4.3" expl="3. precondition">
-  <proof prover="0" obsolete="true"><result status="valid" time="0.01" steps="9"/></proof>
   <proof prover="1"><result status="valid" time="0.02"/></proof>
   </goal>
   <goal name="WP_parameter check_order_4.4" expl="4. precondition">
-  <proof prover="0" obsolete="true"><result status="valid" time="0.01" steps="17"/></proof>
   <proof prover="1"><result status="valid" time="0.02"/></proof>
   </goal>
   <goal name="WP_parameter check_order_4.5" expl="5. precondition">
-  <proof prover="0" obsolete="true"><result status="valid" time="0.00" steps="12"/></proof>
   <proof prover="1"><result status="valid" time="0.02"/></proof>
   </goal>
   <goal name="WP_parameter check_order_4.6" expl="6. precondition">
-  <proof prover="0" obsolete="true"><result status="valid" time="0.01" steps="20"/></proof>
   <proof prover="1"><result status="valid" time="0.02"/></proof>
   </goal>
   <goal name="WP_parameter check_order_4.7" expl="7. postcondition">
-  <proof prover="0" obsolete="true"><result status="valid" time="0.01" steps="14"/></proof>
   <proof prover="1"><result status="valid" time="0.02"/></proof>
   </goal>
  </transf>
@@ -1077,389 +917,294 @@
  <goal name="WP_parameter pigeon_hole" expl="VC for pigeon_hole">
  <transf name="split_goal_wp">
   <goal name="WP_parameter pigeon_hole.1" expl="1. array creation size">
-  <proof prover="0" obsolete="true"><result status="valid" time="0.01" steps="3"/></proof>
   <proof prover="1"><result status="valid" time="0.01"/></proof>
   </goal>
   <goal name="WP_parameter pigeon_hole.2" expl="2. array creation size">
-  <proof prover="0" obsolete="true"><result status="valid" time="0.01" steps="4"/></proof>
   <proof prover="1"><result status="valid" time="0.01"/></proof>
   </goal>
   <goal name="WP_parameter pigeon_hole.3" expl="3. assertion">
-  <proof prover="0" obsolete="true"><result status="valid" time="0.01" steps="4"/></proof>
   <proof prover="1"><result status="valid" time="0.01"/></proof>
   </goal>
   <goal name="WP_parameter pigeon_hole.4" expl="4. assertion">
-  <proof prover="0" obsolete="true"><result status="valid" time="0.01" steps="4"/></proof>
   <proof prover="1"><result status="valid" time="0.01"/></proof>
   </goal>
   <goal name="WP_parameter pigeon_hole.5" expl="5. assertion">
-  <proof prover="0" obsolete="true"><result status="valid" time="0.01" steps="6"/></proof>
   <proof prover="1"><result status="valid" time="0.01"/></proof>
   </goal>
   <goal name="WP_parameter pigeon_hole.6" expl="6. assertion">
-  <proof prover="0" obsolete="true"><result status="valid" time="0.02" steps="6"/></proof>
   <proof prover="1"><result status="valid" time="0.01"/></proof>
   </goal>
   <goal name="WP_parameter pigeon_hole.7" expl="7. precondition">
-  <proof prover="0" obsolete="true"><result status="valid" time="0.02" steps="4"/></proof>
   <proof prover="1"><result status="valid" time="0.01"/></proof>
   </goal>
   <goal name="WP_parameter pigeon_hole.8" expl="8. precondition">
-  <proof prover="0" obsolete="true"><result status="valid" time="0.02" steps="6"/></proof>
   <proof prover="1"><result status="valid" time="0.02"/></proof>
   </goal>
   <goal name="WP_parameter pigeon_hole.9" expl="9. index in array bounds">
-  <proof prover="0" obsolete="true"><result status="valid" time="0.01" steps="11"/></proof>
   <proof prover="1"><result status="valid" time="0.01"/></proof>
   </goal>
   <goal name="WP_parameter pigeon_hole.10" expl="10. index in array bounds">
-  <proof prover="0" obsolete="true"><result status="valid" time="0.01" steps="13"/></proof>
   <proof prover="1"><result status="valid" time="0.01"/></proof>
   </goal>
   <goal name="WP_parameter pigeon_hole.11" expl="11. index in array bounds">
-  <proof prover="0" obsolete="true"><result status="valid" time="0.01" steps="15"/></proof>
   <proof prover="1"><result status="valid" time="0.01"/></proof>
   </goal>
   <goal name="WP_parameter pigeon_hole.12" expl="12. index in array bounds">
-  <proof prover="0" obsolete="true"><result status="valid" time="0.02" steps="17"/></proof>
   <proof prover="1"><result status="valid" time="0.02"/></proof>
   </goal>
   <goal name="WP_parameter pigeon_hole.13" expl="13. postcondition">
-  <proof prover="0" obsolete="true"><result status="valid" time="0.02" steps="19"/></proof>
   <proof prover="1"><result status="valid" time="0.02"/></proof>
   </goal>
   <goal name="WP_parameter pigeon_hole.14" expl="14. assertion">
-  <proof prover="0" obsolete="true"><result status="valid" time="0.02" steps="5"/></proof>
   <proof prover="1"><result status="valid" time="0.01"/></proof>
   </goal>
   <goal name="WP_parameter pigeon_hole.15" expl="15. assertion">
-  <proof prover="0" obsolete="true"><result status="valid" time="0.02" steps="7"/></proof>
   <proof prover="1"><result status="valid" time="0.01"/></proof>
   </goal>
   <goal name="WP_parameter pigeon_hole.16" expl="16. assertion">
-  <proof prover="0" obsolete="true"><result status="valid" time="0.01" steps="7"/></proof>
   <proof prover="1"><result status="valid" time="0.01"/></proof>
   </goal>
   <goal name="WP_parameter pigeon_hole.17" expl="17. precondition">
-  <proof prover="0" obsolete="true"><result status="valid" time="0.01" steps="5"/></proof>
   <proof prover="1"><result status="valid" time="0.01"/></proof>
   </goal>
   <goal name="WP_parameter pigeon_hole.18" expl="18. precondition">
-  <proof prover="0" obsolete="true"><result status="valid" time="0.01" steps="7"/></proof>
   <proof prover="1"><result status="valid" time="0.01"/></proof>
   </goal>
   <goal name="WP_parameter pigeon_hole.19" expl="19. index in array bounds">
-  <proof prover="0" obsolete="true"><result status="valid" time="0.01" steps="12"/></proof>
   <proof prover="1"><result status="valid" time="0.01"/></proof>
   </goal>
   <goal name="WP_parameter pigeon_hole.20" expl="20. index in array bounds">
-  <proof prover="0" obsolete="true"><result status="valid" time="0.02" steps="14"/></proof>
   <proof prover="1"><result status="valid" time="0.01"/></proof>
   </goal>
   <goal name="WP_parameter pigeon_hole.21" expl="21. index in array bounds">
-  <proof prover="0" obsolete="true"><result status="valid" time="0.02" steps="16"/></proof>
   <proof prover="1"><result status="valid" time="0.02"/></proof>
   </goal>
   <goal name="WP_parameter pigeon_hole.22" expl="22. index in array bounds">
-  <proof prover="0" obsolete="true"><result status="valid" time="0.01" steps="18"/></proof>
   <proof prover="1"><result status="valid" time="0.01"/></proof>
   </goal>
   <goal name="WP_parameter pigeon_hole.23" expl="23. postcondition">
-  <proof prover="0" obsolete="true"><result status="valid" time="0.01" steps="20"/></proof>
   <proof prover="1"><result status="valid" time="0.04"/></proof>
   </goal>
   <goal name="WP_parameter pigeon_hole.24" expl="24. loop invariant init">
-  <proof prover="0" obsolete="true"><result status="valid" time="0.02" steps="5"/></proof>
   <proof prover="1"><result status="valid" time="0.01"/></proof>
   </goal>
   <goal name="WP_parameter pigeon_hole.25" expl="25. loop invariant init">
-  <proof prover="0" obsolete="true"><result status="valid" time="0.01" steps="5"/></proof>
   <proof prover="1"><result status="valid" time="0.01"/></proof>
   </goal>
   <goal name="WP_parameter pigeon_hole.26" expl="26. loop invariant init">
-  <proof prover="0" obsolete="true"><result status="valid" time="0.01" steps="5"/></proof>
   <proof prover="1"><result status="valid" time="0.01"/></proof>
   </goal>
   <goal name="WP_parameter pigeon_hole.27" expl="27. loop invariant init">
-  <proof prover="0" obsolete="true"><result status="valid" time="0.01" steps="6"/></proof>
   <proof prover="1"><result status="valid" time="0.01"/></proof>
   </goal>
   <goal name="WP_parameter pigeon_hole.28" expl="28. loop invariant init">
-  <proof prover="0" obsolete="true"><result status="valid" time="0.02" steps="6"/></proof>
   <proof prover="1"><result status="valid" time="0.02"/></proof>
   </goal>
   <goal name="WP_parameter pigeon_hole.29" expl="29. loop invariant init">
-  <proof prover="0" obsolete="true"><result status="valid" time="0.02" steps="10"/></proof>
   <proof prover="1"><result status="valid" time="0.02"/></proof>
   </goal>
   <goal name="WP_parameter pigeon_hole.30" expl="30. loop invariant init">
-  <proof prover="0" obsolete="true"><result status="valid" time="0.02" steps="10"/></proof>
   <proof prover="1"><result status="valid" time="0.01"/></proof>
   </goal>
   <goal name="WP_parameter pigeon_hole.31" expl="31. loop invariant init">
-  <proof prover="0" obsolete="true"><result status="valid" time="0.01" steps="6"/></proof>
   <proof prover="1"><result status="valid" time="0.02"/></proof>
   </goal>
   <goal name="WP_parameter pigeon_hole.32" expl="32. index in array bounds">
-  <proof prover="0" obsolete="true"><result status="valid" time="0.01" steps="12"/></proof>
   <proof prover="1"><result status="valid" time="0.02"/></proof>
   </goal>
   <goal name="WP_parameter pigeon_hole.33" expl="33. assertion">
-  <proof prover="0" obsolete="true"><result status="valid" time="0.02" steps="24"/></proof>
   <proof prover="1"><result status="valid" time="0.02"/></proof>
   </goal>
   <goal name="WP_parameter pigeon_hole.34" expl="34. type invariant">
-  <proof prover="0" obsolete="true"><result status="valid" time="0.02" steps="15"/></proof>
   <proof prover="1"><result status="valid" time="0.02"/></proof>
   </goal>
   <goal name="WP_parameter pigeon_hole.35" expl="35. index in array bounds">
-  <proof prover="0" obsolete="true"><result status="valid" time="0.01" steps="15"/></proof>
   <proof prover="1"><result status="valid" time="0.02"/></proof>
   </goal>
   <goal name="WP_parameter pigeon_hole.36" expl="36. loop invariant preservation">
-  <proof prover="0" obsolete="true"><result status="valid" time="0.02" steps="18"/></proof>
   <proof prover="1"><result status="valid" time="0.02"/></proof>
   </goal>
   <goal name="WP_parameter pigeon_hole.37" expl="37. loop invariant preservation">
-  <proof prover="0" obsolete="true"><result status="valid" time="0.01" steps="18"/></proof>
   <proof prover="1"><result status="valid" time="0.02"/></proof>
   </goal>
   <goal name="WP_parameter pigeon_hole.38" expl="38. loop invariant preservation">
-  <proof prover="0" obsolete="true"><result status="valid" time="0.02" steps="18"/></proof>
   <proof prover="1"><result status="valid" time="0.02"/></proof>
   </goal>
   <goal name="WP_parameter pigeon_hole.39" expl="39. loop invariant preservation">
-  <proof prover="0" obsolete="true"><result status="valid" time="0.04" steps="24"/></proof>
   <proof prover="1"><result status="valid" time="0.03"/></proof>
   </goal>
   <goal name="WP_parameter pigeon_hole.40" expl="40. loop invariant preservation">
-  <proof prover="0" obsolete="true"><result status="valid" time="0.02" steps="21"/></proof>
   <proof prover="1"><result status="valid" time="0.02"/></proof>
   </goal>
   <goal name="WP_parameter pigeon_hole.41" expl="41. loop invariant preservation">
-  <proof prover="0" obsolete="true"><result status="valid" time="0.34" steps="38"/></proof>
   <proof prover="1"><result status="valid" time="0.04"/></proof>
   </goal>
   <goal name="WP_parameter pigeon_hole.42" expl="42. loop invariant preservation">
-  <proof prover="0" obsolete="true"><result status="valid" time="0.02" steps="32"/></proof>
   <proof prover="1"><result status="valid" time="0.02"/></proof>
   </goal>
   <goal name="WP_parameter pigeon_hole.43" expl="43. loop invariant preservation">
-  <proof prover="0" obsolete="true"><result status="valid" time="0.09" steps="24"/></proof>
   <proof prover="1"><result status="valid" time="0.03"/></proof>
   </goal>
   <goal name="WP_parameter pigeon_hole.44" expl="44. loop invariant preservation">
-  <proof prover="0" obsolete="true"><result status="valid" time="0.01" steps="23"/></proof>
   <proof prover="1"><result status="valid" time="0.03"/></proof>
   </goal>
   <goal name="WP_parameter pigeon_hole.45" expl="45. assertion">
-  <proof prover="0" obsolete="true"><result status="valid" time="0.03" steps="24"/></proof>
   <proof prover="1"><result status="valid" time="0.04"/></proof>
   </goal>
   <goal name="WP_parameter pigeon_hole.46" expl="46. type invariant">
-  <proof prover="0" obsolete="true"><result status="valid" time="0.01" steps="15"/></proof>
   <proof prover="1"><result status="valid" time="0.03"/></proof>
   </goal>
   <goal name="WP_parameter pigeon_hole.47" expl="47. index in array bounds">
-  <proof prover="0" obsolete="true"><result status="valid" time="0.01" steps="15"/></proof>
   <proof prover="1"><result status="valid" time="0.03"/></proof>
   </goal>
   <goal name="WP_parameter pigeon_hole.48" expl="48. loop invariant preservation">
-  <proof prover="0" obsolete="true"><result status="valid" time="0.01" steps="18"/></proof>
   <proof prover="1"><result status="valid" time="0.03"/></proof>
   </goal>
   <goal name="WP_parameter pigeon_hole.49" expl="49. loop invariant preservation">
-  <proof prover="0" obsolete="true"><result status="valid" time="0.02" steps="18"/></proof>
   <proof prover="1"><result status="valid" time="0.04"/></proof>
   </goal>
   <goal name="WP_parameter pigeon_hole.50" expl="50. loop invariant preservation">
-  <proof prover="0" obsolete="true"><result status="valid" time="0.02" steps="18"/></proof>
   <proof prover="1"><result status="valid" time="0.04"/></proof>
   </goal>
   <goal name="WP_parameter pigeon_hole.51" expl="51. loop invariant preservation">
-  <proof prover="0" obsolete="true"><result status="valid" time="0.02" steps="21"/></proof>
   <proof prover="1"><result status="valid" time="0.04"/></proof>
   </goal>
   <goal name="WP_parameter pigeon_hole.52" expl="52. loop invariant preservation">
-  <proof prover="0" obsolete="true"><result status="valid" time="0.04" steps="24"/></proof>
   <proof prover="1"><result status="valid" time="0.04"/></proof>
   </goal>
   <goal name="WP_parameter pigeon_hole.53" expl="53. loop invariant preservation">
-  <proof prover="0" obsolete="true"><result status="valid" time="0.03" steps="32"/></proof>
   <proof prover="1"><result status="valid" time="0.04"/></proof>
   </goal>
   <goal name="WP_parameter pigeon_hole.54" expl="54. loop invariant preservation">
-  <proof prover="0" obsolete="true"><result status="valid" time="0.26" steps="38"/></proof>
   <proof prover="1"><result status="valid" time="0.05"/></proof>
   </goal>
   <goal name="WP_parameter pigeon_hole.55" expl="55. loop invariant preservation">
-  <proof prover="0" obsolete="true"><result status="valid" time="0.02" steps="23"/></proof>
   <proof prover="1"><result status="valid" time="0.03"/></proof>
   </goal>
   <goal name="WP_parameter pigeon_hole.56" expl="56. loop invariant preservation">
-  <proof prover="0" obsolete="true"><result status="valid" time="0.10" steps="24"/></proof>
   <proof prover="1"><result status="valid" time="0.04"/></proof>
   </goal>
   <goal name="WP_parameter pigeon_hole.57" expl="57. assertion">
-  <proof prover="0" obsolete="true"><result status="valid" time="0.02" steps="10"/></proof>
   <proof prover="1"><result status="valid" time="0.02"/></proof>
   </goal>
   <goal name="WP_parameter pigeon_hole.58" expl="58. assertion">
-  <proof prover="0" obsolete="true"><result status="valid" time="0.02" steps="12"/></proof>
   <proof prover="1"><result status="valid" time="0.06"/></proof>
   </goal>
   <goal name="WP_parameter pigeon_hole.59" expl="59. assertion">
-  <proof prover="0" obsolete="true"><result status="valid" time="0.02" steps="21"/></proof>
   <proof prover="1"><result status="valid" time="0.04"/></proof>
   </goal>
   <goal name="WP_parameter pigeon_hole.60" expl="60. assertion">
-  <proof prover="0" obsolete="true"><result status="valid" time="0.03" steps="30"/></proof>
   <proof prover="1"><result status="valid" time="0.04"/></proof>
   </goal>
   <goal name="WP_parameter pigeon_hole.61" expl="61. type invariant">
-  <proof prover="0" obsolete="true"><result status="valid" time="0.01" steps="13"/></proof>
   <proof prover="1"><result status="valid" time="0.03"/></proof>
   </goal>
   <goal name="WP_parameter pigeon_hole.62" expl="62. precondition">
-  <proof prover="0" obsolete="true"><result status="valid" time="0.02" steps="13"/></proof>
   <proof prover="1"><result status="valid" time="0.04"/></proof>
   </goal>
   <goal name="WP_parameter pigeon_hole.63" expl="63. precondition">
-  <proof prover="0" obsolete="true"><result status="valid" time="0.02" steps="27"/></proof>
   <proof prover="1"><result status="valid" time="0.03"/></proof>
   </goal>
   <goal name="WP_parameter pigeon_hole.64" expl="64. index in array bounds">
-  <proof prover="0" obsolete="true"><result status="valid" time="0.02" steps="21"/></proof>
   <proof prover="1"><result status="valid" time="0.02"/></proof>
   </goal>
   <goal name="WP_parameter pigeon_hole.65" expl="65. index in array bounds">
-  <proof prover="0" obsolete="true"><result status="valid" time="0.01" steps="23"/></proof>
   <proof prover="1"><result status="valid" time="0.02"/></proof>
   </goal>
   <goal name="WP_parameter pigeon_hole.66" expl="66. index in array bounds">
-  <proof prover="0" obsolete="true"><result status="valid" time="0.01" steps="25"/></proof>
   <proof prover="1"><result status="valid" time="0.03"/></proof>
   </goal>
   <goal name="WP_parameter pigeon_hole.67" expl="67. index in array bounds">
-  <proof prover="0" obsolete="true"><result status="valid" time="0.01" steps="27"/></proof>
   <proof prover="1"><result status="valid" time="0.03"/></proof>
   </goal>
   <goal name="WP_parameter pigeon_hole.68" expl="68. postcondition">
   <transf name="split_goal_wp">
    <goal name="WP_parameter pigeon_hole.68.1" expl="1. postcondition">
-   <proof prover="0" obsolete="true"><result status="valid" time="0.02" steps="38"/></proof>
    <proof prover="1"><result status="valid" time="0.03"/></proof>
    </goal>
    <goal name="WP_parameter pigeon_hole.68.2" expl="2. postcondition">
-   <proof prover="0" obsolete="true"><result status="valid" time="0.02" steps="28"/></proof>
    <proof prover="1"><result status="valid" time="0.03"/></proof>
    </goal>
    <goal name="WP_parameter pigeon_hole.68.3" expl="3. postcondition">
-   <proof prover="0" obsolete="true"><result status="valid" time="0.03" steps="28"/></proof>
    <proof prover="1"><result status="valid" time="0.02"/></proof>
    </goal>
    <goal name="WP_parameter pigeon_hole.68.4" expl="4. postcondition">
-   <proof prover="0" obsolete="true"><result status="valid" time="0.01" steps="28"/></proof>
    <proof prover="1"><result status="valid" time="0.02"/></proof>
    </goal>
    <goal name="WP_parameter pigeon_hole.68.5" expl="5. postcondition">
-   <proof prover="0" obsolete="true"><result status="valid" time="0.01" steps="37"/></proof>
    <proof prover="1"><result status="valid" time="0.04"/></proof>
    </goal>
    <goal name="WP_parameter pigeon_hole.68.6" expl="6. postcondition">
-   <proof prover="0" obsolete="true"><result status="valid" time="0.02" steps="32"/></proof>
    <proof prover="1"><result status="valid" time="0.04"/></proof>
    </goal>
    <goal name="WP_parameter pigeon_hole.68.7" expl="7. postcondition">
-   <proof prover="0" obsolete="true"><result status="valid" time="0.02" steps="32"/></proof>
    <proof prover="1"><result status="valid" time="0.03"/></proof>
    </goal>
    <goal name="WP_parameter pigeon_hole.68.8" expl="8. postcondition">
-   <proof prover="0" obsolete="true"><result status="valid" time="0.02" steps="32"/></proof>
    <proof prover="1"><result status="valid" time="0.03"/></proof>
    </goal>
    <goal name="WP_parameter pigeon_hole.68.9" expl="9. postcondition">
-   <proof prover="0" obsolete="true"><result status="valid" time="0.02" steps="31"/></proof>
    <proof prover="1"><result status="valid" time="0.03"/></proof>
    </goal>
   </transf>
   </goal>
   <goal name="WP_parameter pigeon_hole.69" expl="69. assertion">
-  <proof prover="0" obsolete="true"><result status="valid" time="0.02" steps="12"/></proof>
   <proof prover="1"><result status="valid" time="0.02"/></proof>
   </goal>
   <goal name="WP_parameter pigeon_hole.70" expl="70. assertion">
-  <proof prover="0" obsolete="true"><result status="valid" time="0.03" steps="21"/></proof>
   <proof prover="1"><result status="valid" time="0.02"/></proof>
   </goal>
   <goal name="WP_parameter pigeon_hole.71" expl="71. assertion">
-  <proof prover="0" obsolete="true"><result status="valid" time="0.02" steps="30"/></proof>
   <proof prover="1"><result status="valid" time="0.03"/></proof>
   </goal>
   <goal name="WP_parameter pigeon_hole.72" expl="72. type invariant">
-  <proof prover="0" obsolete="true"><result status="valid" time="0.01" steps="13"/></proof>
   <proof prover="1"><result status="valid" time="0.02"/></proof>
   </goal>
   <goal name="WP_parameter pigeon_hole.73" expl="73. precondition">
-  <proof prover="0" obsolete="true"><result status="valid" time="0.02" steps="13"/></proof>
   <proof prover="1"><result status="valid" time="0.03"/></proof>
   </goal>
   <goal name="WP_parameter pigeon_hole.74" expl="74. precondition">
-  <proof prover="0" obsolete="true"><result status="valid" time="0.02" steps="27"/></proof>
   <proof prover="1"><result status="valid" time="0.03"/></proof>
   </goal>
   <goal name="WP_parameter pigeon_hole.75" expl="75. index in array bounds">
-  <proof prover="0" obsolete="true"><result status="valid" time="0.01" steps="21"/></proof>
   <proof prover="1"><result status="valid" time="0.03"/></proof>
   </goal>
   <goal name="WP_parameter pigeon_hole.76" expl="76. index in array bounds">
-  <proof prover="0" obsolete="true"><result status="valid" time="0.02" steps="23"/></proof>
   <proof prover="1"><result status="valid" time="0.02"/></proof>
   </goal>
   <goal name="WP_parameter pigeon_hole.77" expl="77. index in array bounds">
-  <proof prover="0" obsolete="true"><result status="valid" time="0.02" steps="25"/></proof>
   <proof prover="1"><result status="valid" time="0.02"/></proof>
   </goal>
   <goal name="WP_parameter pigeon_hole.78" expl="78. index in array bounds">
-  <proof prover="0" obsolete="true"><result status="valid" time="0.00" steps="27"/></proof>
   <proof prover="1"><result status="valid" time="0.03"/></proof>
   </goal>
   <goal name="WP_parameter pigeon_hole.79" expl="79. postcondition">
   <transf name="split_goal_wp">
    <goal name="WP_parameter pigeon_hole.79.1" expl="1. postcondition">
-   <proof prover="0" obsolete="true"><result status="valid" time="0.03" steps="38"/></proof>
    <proof prover="1"><result status="valid" time="0.03"/></proof>
    </goal>
    <goal name="WP_parameter pigeon_hole.79.2" expl="2. postcondition">
-   <proof prover="0" obsolete="true"><result status="valid" time="0.02" steps="28"/></proof>
    <proof prover="1"><result status="valid" time="0.03"/></proof>
    </goal>
    <goal name="WP_parameter pigeon_hole.79.3" expl="3. postcondition">
-   <proof prover="0" obsolete="true"><result status="valid" time="0.02" steps="28"/></proof>
    <proof prover="1"><result status="valid" time="0.04"/></proof>
    </goal>
    <goal name="WP_parameter pigeon_hole.79.4" expl="4. postcondition">
-   <proof prover="0" obsolete="true"><result status="valid" time="0.02" steps="28"/></proof>
    <proof prover="1"><result status="valid" time="0.03"/></proof>
    </goal>
    <goal name="WP_parameter pigeon_hole.79.5" expl="5. postcondition">
-   <proof prover="0" obsolete="true"><result status="valid" time="0.02" steps="37"/></proof>
    <proof prover="1"><result status="valid" time="0.06"/></proof>
    </goal>
    <goal name="WP_parameter pigeon_hole.79.6" expl="6. postcondition">
-   <proof prover="0" obsolete="true"><result status="valid" time="0.02" steps="32"/></proof>
    <proof prover="1"><result status="valid" time="0.05"/></proof>
    </goal>
    <goal name="WP_parameter pigeon_hole.79.7" expl="7. postcondition">
-   <proof prover="0" obsolete="true"><result status="valid" time="0.02" steps="32"/></proof>
    <proof prover="1"><result status="valid" time="0.04"/></proof>
    </goal>
    <goal name="WP_parameter pigeon_hole.79.8" expl="8. postcondition">
-   <proof prover="0" obsolete="true"><result status="valid" time="0.02" steps="32"/></proof>
    <proof prover="1"><result status="valid" time="0.04"/></proof>
    </goal>
    <goal name="WP_parameter pigeon_hole.79.9" expl="9. postcondition">
-   <proof prover="0" obsolete="true"><result status="valid" time="0.01" steps="31"/></proof>
    <proof prover="1"><result status="valid" time="0.03"/></proof>
    </goal>
   </transf>
@@ -1470,15 +1215,12 @@
  <transf name="split_goal_wp">
   <goal name="WP_parameter too_many_points_in_rectangle.1" expl="1. index in array bounds">
   <proof prover="0" timelimit="30"><result status="valid" time="0.02" steps="6"/></proof>
-  <proof prover="1" obsolete="true"><result status="valid" time="0.02"/></proof>
   </goal>
   <goal name="WP_parameter too_many_points_in_rectangle.2" expl="2. precondition">
   <proof prover="0" timelimit="30"><result status="valid" time="0.01" steps="7"/></proof>
-  <proof prover="1" obsolete="true"><result status="valid" time="0.04"/></proof>
   </goal>
   <goal name="WP_parameter too_many_points_in_rectangle.3" expl="3. precondition">
   <proof prover="0" timelimit="30"><result status="valid" time="0.02" steps="7"/></proof>
-  <proof prover="1" obsolete="true"><result status="valid" time="0.02"/></proof>
   </goal>
   <goal name="WP_parameter too_many_points_in_rectangle.4" expl="4. index in array bounds">
   <proof prover="0" timelimit="30"><result status="valid" time="0.11" steps="18"/></proof>
@@ -1536,51 +1278,39 @@
   </goal>
   <goal name="WP_parameter too_many_points_in_rectangle.22" expl="22. index in array bounds">
   <proof prover="0" timelimit="30"><result status="valid" time="0.02" steps="18"/></proof>
-  <proof prover="1" obsolete="true"><result status="valid" time="0.03"/></proof>
   </goal>
   <goal name="WP_parameter too_many_points_in_rectangle.23" expl="23. index in array bounds">
   <proof prover="0" timelimit="30"><result status="valid" time="0.02" steps="20"/></proof>
-  <proof prover="1" obsolete="true"><result status="valid" time="0.04"/></proof>
   </goal>
   <goal name="WP_parameter too_many_points_in_rectangle.24" expl="24. index in array bounds">
   <proof prover="0" timelimit="30"><result status="valid" time="0.01" steps="20"/></proof>
-  <proof prover="1" obsolete="true"><result status="valid" time="0.04"/></proof>
   </goal>
   <goal name="WP_parameter too_many_points_in_rectangle.25" expl="25. index in array bounds">
   <proof prover="0" timelimit="30"><result status="valid" time="0.02" steps="22"/></proof>
-  <proof prover="1" obsolete="true"><result status="valid" time="0.03"/></proof>
   </goal>
   <goal name="WP_parameter too_many_points_in_rectangle.26" expl="26. index in array bounds">
   <proof prover="0" timelimit="30"><result status="valid" time="0.02" steps="22"/></proof>
-  <proof prover="1" obsolete="true"><result status="valid" time="0.03"/></proof>
   </goal>
   <goal name="WP_parameter too_many_points_in_rectangle.27" expl="27. index in array bounds">
   <proof prover="0" timelimit="30"><result status="valid" time="0.04" steps="24"/></proof>
-  <proof prover="1" obsolete="true"><result status="valid" time="0.04"/></proof>
   </goal>
   <goal name="WP_parameter too_many_points_in_rectangle.28" expl="28. index in array bounds">
   <proof prover="0" timelimit="30"><result status="valid" time="0.02" steps="24"/></proof>
-  <proof prover="1" obsolete="true"><result status="valid" time="0.03"/></proof>
   </goal>
   <goal name="WP_parameter too_many_points_in_rectangle.29" expl="29. index in array bounds">
   <proof prover="0" timelimit="30"><result status="valid" time="0.02" steps="26"/></proof>
-  <proof prover="1" obsolete="true"><result status="valid" time="0.02"/></proof>
   </goal>
   <goal name="WP_parameter too_many_points_in_rectangle.30" expl="30. precondition">
   <proof prover="0" timelimit="30"><result status="valid" time="0.03" steps="57"/></proof>
-  <proof prover="1" obsolete="true"><result status="valid" time="0.05"/></proof>
   </goal>
   <goal name="WP_parameter too_many_points_in_rectangle.31" expl="31. precondition">
   <proof prover="0" timelimit="30"><result status="valid" time="0.04" steps="58"/></proof>
-  <proof prover="1" obsolete="true"><result status="valid" time="0.04"/></proof>
   </goal>
   <goal name="WP_parameter too_many_points_in_rectangle.32" expl="32. precondition">
   <proof prover="0" timelimit="30"><result status="valid" time="0.04" steps="58"/></proof>
-  <proof prover="1" obsolete="true"><result status="valid" time="0.04"/></proof>
   </goal>
   <goal name="WP_parameter too_many_points_in_rectangle.33" expl="33. precondition">
   <proof prover="0" timelimit="30"><result status="valid" time="0.03" steps="55"/></proof>
-  <proof prover="1" obsolete="true"><result status="valid" time="0.04"/></proof>
   </goal>
   <goal name="WP_parameter too_many_points_in_rectangle.34" expl="34. precondition">
   <proof prover="0" timelimit="30"><result status="valid" time="0.43" steps="133"/></proof>
@@ -1602,8 +1332,8 @@
   </goal>
  </transf>
  </goal>
- <goal name="WP_parameter search_strip_complexity" expl="VC for search_strip_complexity">
- <transf name="split_goal_wp">
+ <goal name="WP_parameter search_strip_complexity" expl="VC for search_strip_complexity" expanded="true">
+ <transf name="split_goal_wp" expanded="true">
   <goal name="WP_parameter search_strip_complexity.1" expl="1. postcondition">
   <proof prover="0"><result status="valid" time="0.01" steps="4"/></proof>
   </goal>
@@ -1980,7 +1710,7 @@
   <proof prover="0" timelimit="10"><result status="valid" time="0.02" steps="26"/></proof>
   </goal>
   <goal name="WP_parameter search_strip_complexity.126" expl="126. loop invariant preservation">
-  <proof prover="0" timelimit="60"><result status="valid" time="41.46" steps="2814"/></proof>
+  <proof prover="3"><result status="valid" time="1.43"/></proof>
   </goal>
   <goal name="WP_parameter search_strip_complexity.127" expl="127. loop invariant preservation">
   <proof prover="0" timelimit="10"><result status="valid" time="0.02" steps="27"/></proof>
