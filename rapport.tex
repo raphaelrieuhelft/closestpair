@@ -133,4 +133,34 @@ On utilise une assertion pour indiquer au prouveur d'utiliser que les tableaux \
 
 Les invariants dans la double boucle \texttt{for} sont encore les trois membres de la conjonction qui définit \clofor, à condition qu'on ait trouvé une paire espacée de moins de $\delta$. Si on atteint une différence d'ordonnée supérieure à \texttt{!m}, alors on peut affirmer que la distance entre \texttt{a[i]} et les points qui suivent est supérieure à \texttt{!m} et sortir de la boucle interne.
 
+Dans le cas où on a trouvé une paire de points espacée de moins de $\delta$, on indique au prouveur d'utiliser le fait que \texttt{a} et \texttt{b} sont égaux à permutation près pour montrer que toutes les paires de points sont éloignées d'au moins $\delta$. Les deux autres assertions ne sont pas nécessaires mais diminuent le temps de preuve. J'ai du mal à expliquer pourquoi, surtout pour l'assertion \texttt{ distinct\_indices\_in\_range f' s' 0 a.length } : elle est prouvée très rapidement, mais si on ne la met pas, il faut plusieurs secondes de plus pour montrer la postcondition.
+
+Si on n'a pas trouvé de paire espacée de moins de $\delta$, on conclut en utilisant que \texttt{b} est une permutation de \texttt{a}.
+
+\subsection*{Question 9}
+
+\textbf{left\_border}
+
+On peut simplement utiliser \texttt{!l} comme variant et les postconditions comme invariants.
+
+\vspace{1em}
+
+\textbf{right\_border}
+
+On parcourt encore la moitié de tableau de droite à gauche, ce qui permet d'utiliser les mêmes variants et invariants que dans \texttt{left\_border}.
+
+\subsection*{Question 10}
+
+On prend comme variant \texttt{high - low}. La variable \texttt{mu} calculée dans le corps de la fonction convient à la précondition de \texttt{search\_strip} : la première assertion sert à indiquer cela au prouveur. On doit ensuite montrer que toute paire de points est espacée de plus que le résultat. On introduit une disjonction de cas sur les positions des points de chaque paire avec la deuxième assertion. Deux de ces cas sont traités par les deux assertions qui suivent. On traite ensuite le cas où la paire est comprise entre \texttt{left} et \texttt{right} selon que la fonction \texttt{search\_strip} a réussi ou échoué à trouver une paire de points moins espacée que les résultats de chaque appel récursif. Dans le cas de succès, on ajoute aussi l'assertion \texttt{ forall i j. distinct\_indices\_in\_range i j 0 temp.length -> dist temp[i] temp[j] >=. res.delta }. C'est une postcondition de \texttt{search\_strip} (une conséquence du prédicat \clofor), mais la rappeler ici diminue beaucoup le temps de preuve.
+
+\subsection*{Question 11}
+
+On applique simplement la fonction précédente. L'assertion indique au prouveur d'utiliser le fait que \texttt{a} et \texttt{b} sont égaux à permutation près.
+
+\section{Complexity Analysis of the Processing of the Strip}
+
+\subsection*{Question 12}
+
+
+
 \end{document}
