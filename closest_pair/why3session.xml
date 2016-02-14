@@ -290,7 +290,7 @@
  </transf>
  </goal>
 </theory>
-<theory name="Dimension2" sum="7493b49f45c632bb457631fe5bdbc6da" expanded="true">
+<theory name="Dimension2" sum="b70765d863cd0d514a4edaaacf3de2e1" expanded="true">
  <goal name="WP_parameter search_strip" expl="VC for search_strip">
  <transf name="split_goal_wp">
   <goal name="WP_parameter search_strip.1" expl="1. postcondition">
@@ -563,189 +563,133 @@
  <goal name="WP_parameter divide_and_conquer" expl="VC for divide_and_conquer" expanded="true">
  <transf name="split_goal_wp" expanded="true">
   <goal name="WP_parameter divide_and_conquer.1" expl="1. precondition">
+  <proof prover="0"><result status="valid" time="0.02" steps="7"/></proof>
   <proof prover="1"><result status="valid" time="0.01"/></proof>
+  <proof prover="3"><result status="valid" time="0.10"/></proof>
   </goal>
   <goal name="WP_parameter divide_and_conquer.2" expl="2. postcondition">
+  <proof prover="0"><result status="valid" time="0.01" steps="10"/></proof>
   <proof prover="1"><result status="valid" time="0.02"/></proof>
+  <proof prover="3"><result status="valid" time="0.07"/></proof>
   </goal>
   <goal name="WP_parameter divide_and_conquer.3" expl="3. variant decrease">
+  <proof prover="0"><result status="valid" time="0.11" steps="12"/></proof>
   <proof prover="1"><result status="valid" time="0.02"/></proof>
+  <proof prover="3"><result status="valid" time="0.06"/></proof>
   </goal>
   <goal name="WP_parameter divide_and_conquer.4" expl="4. precondition">
+  <proof prover="0"><result status="valid" time="0.10" steps="14"/></proof>
   <proof prover="1"><result status="valid" time="0.02"/></proof>
+  <proof prover="3"><result status="valid" time="0.07"/></proof>
   </goal>
   <goal name="WP_parameter divide_and_conquer.5" expl="5. precondition">
+  <proof prover="0"><result status="valid" time="0.03" steps="7"/></proof>
   <proof prover="1"><result status="valid" time="0.03"/></proof>
+  <proof prover="3"><result status="valid" time="0.05"/></proof>
   </goal>
   <goal name="WP_parameter divide_and_conquer.6" expl="6. precondition">
+  <proof prover="0"><result status="valid" time="0.06" steps="13"/></proof>
   <proof prover="1"><result status="valid" time="0.04"/></proof>
+  <proof prover="3"><result status="valid" time="0.18"/></proof>
   </goal>
   <goal name="WP_parameter divide_and_conquer.7" expl="7. variant decrease">
+  <proof prover="0"><result status="valid" time="0.02" steps="11"/></proof>
   <proof prover="1"><result status="valid" time="0.04"/></proof>
+  <proof prover="3"><result status="valid" time="0.06"/></proof>
   </goal>
   <goal name="WP_parameter divide_and_conquer.8" expl="8. precondition">
+  <proof prover="0"><result status="valid" time="0.14" steps="29"/></proof>
   <proof prover="1"><result status="valid" time="0.04"/></proof>
+  <proof prover="3"><result status="valid" time="0.07"/></proof>
   </goal>
   <goal name="WP_parameter divide_and_conquer.9" expl="9. precondition">
+  <proof prover="0"><result status="valid" time="0.02" steps="11"/></proof>
   <proof prover="1"><result status="valid" time="0.03"/></proof>
+  <proof prover="3"><result status="valid" time="0.07"/></proof>
   </goal>
   <goal name="WP_parameter divide_and_conquer.10" expl="10. precondition">
+  <proof prover="0"><result status="valid" time="0.11" steps="29"/></proof>
   <proof prover="1"><result status="valid" time="0.04"/></proof>
+  <proof prover="3"><result status="valid" time="0.14"/></proof>
   </goal>
   <goal name="WP_parameter divide_and_conquer.11" expl="11. index in array bounds">
-  <proof prover="1" obsolete="true"><result status="valid" time="0.03"/></proof>
+  <proof prover="0"><result status="valid" time="0.04" steps="21"/></proof>
   <proof prover="3"><result status="valid" time="0.02"/></proof>
   </goal>
   <goal name="WP_parameter divide_and_conquer.12" expl="12. index in array bounds">
-  <proof prover="1" obsolete="true"><result status="valid" time="0.04"/></proof>
+  <proof prover="0"><result status="valid" time="0.02" steps="23"/></proof>
   <proof prover="3"><result status="valid" time="0.03"/></proof>
   </goal>
   <goal name="WP_parameter divide_and_conquer.13" expl="13. precondition">
-  <proof prover="1" obsolete="true"><result status="valid" time="0.02"/></proof>
+  <proof prover="0"><result status="valid" time="0.06" steps="27"/></proof>
   <proof prover="3"><result status="valid" time="0.03"/></proof>
   </goal>
   <goal name="WP_parameter divide_and_conquer.14" expl="14. precondition">
-  <proof prover="1" obsolete="true"><result status="valid" time="0.02"/></proof>
+  <proof prover="0"><result status="valid" time="0.03" steps="27"/></proof>
   <proof prover="3"><result status="valid" time="0.03"/></proof>
   </goal>
   <goal name="WP_parameter divide_and_conquer.15" expl="15. precondition">
-  <proof prover="1" obsolete="true"><result status="valid" time="0.02"/></proof>
+  <proof prover="0"><result status="valid" time="0.03" steps="31"/></proof>
   <proof prover="3"><result status="valid" time="0.03"/></proof>
   </goal>
   <goal name="WP_parameter divide_and_conquer.16" expl="16. precondition">
-  <proof prover="1" obsolete="true"><result status="valid" time="0.03"/></proof>
+  <proof prover="0"><result status="valid" time="0.03" steps="35"/></proof>
   <proof prover="3"><result status="valid" time="0.04"/></proof>
   </goal>
-  <goal name="WP_parameter divide_and_conquer.17" expl="17. assertion">
-  <proof prover="1" obsolete="true"><result status="valid" time="0.04"/></proof>
+  <goal name="WP_parameter divide_and_conquer.17" expl="17. precondition">
+  <proof prover="0"><result status="valid" time="0.01" steps="39"/></proof>
   <proof prover="3"><result status="valid" time="0.04"/></proof>
   </goal>
   <goal name="WP_parameter divide_and_conquer.18" expl="18. assertion">
-  <proof prover="0" obsolete="true"><result status="valid" time="1.45" steps="174"/></proof>
-  <proof prover="3"><result status="valid" time="0.09"/></proof>
+  <proof prover="3"><result status="valid" time="0.36"/></proof>
   </goal>
-  <goal name="WP_parameter divide_and_conquer.19" expl="19. assertion">
-  <proof prover="0" obsolete="true"><result status="valid" time="1.51" steps="170"/></proof>
-  <proof prover="3"><result status="valid" time="0.12"/></proof>
+  <goal name="WP_parameter divide_and_conquer.19" expl="19. precondition">
+  <transf name="inline_goal">
+   <goal name="WP_parameter divide_and_conquer.19.1" expl="1. precondition">
+   <proof prover="0"><result status="valid" time="2.96" steps="123"/></proof>
+   </goal>
+  </transf>
   </goal>
-  <goal name="WP_parameter divide_and_conquer.20" expl="20. assertion">
-  <proof prover="1" obsolete="true"><result status="valid" time="0.03"/></proof>
-  <proof prover="3"><result status="valid" time="0.05"/></proof>
+  <goal name="WP_parameter divide_and_conquer.20" expl="20. assertion" expanded="true">
+  <proof prover="0"><result status="valid" time="0.20" steps="201"/></proof>
   </goal>
-  <goal name="WP_parameter divide_and_conquer.21" expl="21. assertion">
-  <proof prover="1" obsolete="true"><result status="valid" time="0.02"/></proof>
-  <proof prover="3"><result status="valid" time="0.06"/></proof>
+  <goal name="WP_parameter divide_and_conquer.21" expl="21. assertion" expanded="true">
+  <proof prover="3"><result status="valid" time="0.42"/></proof>
   </goal>
   <goal name="WP_parameter divide_and_conquer.22" expl="22. assertion">
-  <proof prover="1" obsolete="true"><result status="valid" time="0.07"/></proof>
-  <proof prover="3"><result status="valid" time="0.06"/></proof>
+  <proof prover="3"><result status="valid" time="0.52"/></proof>
   </goal>
-  <goal name="WP_parameter divide_and_conquer.23" expl="23. precondition">
-  <proof prover="1" obsolete="true"><result status="valid" time="0.05"/></proof>
-  <proof prover="3"><result status="valid" time="0.04"/></proof>
+  <goal name="WP_parameter divide_and_conquer.23" expl="23. assertion" expanded="true">
+  <proof prover="3"><result status="valid" time="0.40"/></proof>
   </goal>
-  <goal name="WP_parameter divide_and_conquer.24" expl="24. assertion">
-  <proof prover="1" obsolete="true"><result status="valid" time="0.04"/></proof>
-  <proof prover="3"><result status="valid" time="0.07"/></proof>
+  <goal name="WP_parameter divide_and_conquer.24" expl="24. assertion" expanded="true">
+  <proof prover="3"><result status="valid" time="0.20"/></proof>
   </goal>
-  <goal name="WP_parameter divide_and_conquer.25" expl="25. assertion">
-  <proof prover="1" obsolete="true"><result status="valid" time="0.04"/></proof>
-  <proof prover="3"><result status="valid" time="0.05"/></proof>
-  </goal>
-  <goal name="WP_parameter divide_and_conquer.26" expl="26. assertion">
-  <proof prover="1" obsolete="true"><result status="valid" time="0.11"/></proof>
-  <proof prover="3"><result status="valid" time="0.08"/></proof>
-  </goal>
-  <goal name="WP_parameter divide_and_conquer.27" expl="27. assertion">
-  <proof prover="1" obsolete="true"><result status="valid" time="0.06"/></proof>
-  <proof prover="3"><result status="valid" time="0.06"/></proof>
-  </goal>
-  <goal name="WP_parameter divide_and_conquer.28" expl="28. precondition">
-  <proof prover="0"><result status="valid" time="0.88" steps="149"/></proof>
-  <proof prover="3"><result status="timeout" time="5.85"/></proof>
-  </goal>
-  <goal name="WP_parameter divide_and_conquer.29" expl="29. assertion">
-  <proof prover="1" obsolete="true"><result status="valid" time="0.05"/></proof>
-  <proof prover="3"><result status="valid" time="0.25"/></proof>
-  </goal>
-  <goal name="WP_parameter divide_and_conquer.30" expl="30. assertion">
-  <proof prover="1" obsolete="true"><result status="valid" time="0.06"/></proof>
-  <proof prover="3"><result status="valid" time="0.07"/></proof>
-  </goal>
-  <goal name="WP_parameter divide_and_conquer.31" expl="31. assertion">
-  <proof prover="0" obsolete="true"><result status="valid" time="0.54" steps="213"/></proof>
-  <proof prover="3"><result status="valid" time="0.09"/></proof>
-  </goal>
-  <goal name="WP_parameter divide_and_conquer.32" expl="32. assertion">
-  <proof prover="1" obsolete="true"><result status="valid" time="0.05"/></proof>
-  <proof prover="3"><result status="valid" time="0.06"/></proof>
-  </goal>
-  <goal name="WP_parameter divide_and_conquer.33" expl="33. assertion">
-  <proof prover="1" obsolete="true"><result status="valid" time="0.06"/></proof>
-  <proof prover="3"><result status="valid" time="0.07"/></proof>
-  </goal>
-  <goal name="WP_parameter divide_and_conquer.34" expl="34. assertion">
-  <proof prover="3"><result status="valid" time="0.10"/></proof>
-  </goal>
-  <goal name="WP_parameter divide_and_conquer.35" expl="35. assertion">
-  <proof prover="3"><result status="valid" time="0.08"/></proof>
-  </goal>
-  <goal name="WP_parameter divide_and_conquer.36" expl="36. assertion">
-  <proof prover="1" obsolete="true"><result status="valid" time="3.05"/></proof>
-  <proof prover="3"><result status="valid" time="0.14"/></proof>
-  </goal>
-  <goal name="WP_parameter divide_and_conquer.37" expl="37. assertion">
-  <proof prover="0" obsolete="true"><result status="valid" time="0.22" steps="181"/></proof>
-  <proof prover="3"><result status="valid" time="0.10"/></proof>
-  </goal>
-  <goal name="WP_parameter divide_and_conquer.38" expl="38. assertion">
-  <proof prover="1" obsolete="true"><result status="valid" time="0.15"/></proof>
-  <proof prover="3"><result status="valid" time="0.11"/></proof>
-  </goal>
-  <goal name="WP_parameter divide_and_conquer.39" expl="39. assertion">
-  <proof prover="0" obsolete="true"><result status="valid" time="0.54" steps="206"/></proof>
-  <proof prover="1" obsolete="true"><result status="valid" time="0.07"/></proof>
-  <proof prover="3"><result status="valid" time="0.11"/></proof>
-  </goal>
-  <goal name="WP_parameter divide_and_conquer.40" expl="40. assertion">
-  <proof prover="0" obsolete="true"><result status="valid" time="0.15" steps="185"/></proof>
-  <proof prover="1" obsolete="true"><result status="valid" time="0.07"/></proof>
-  <proof prover="3"><result status="valid" time="0.12"/></proof>
-  </goal>
-  <goal name="WP_parameter divide_and_conquer.41" expl="41. assertion">
-  <proof prover="1" obsolete="true"><result status="valid" time="0.42"/></proof>
-  <proof prover="3"><result status="valid" time="0.26"/></proof>
-  </goal>
-  <goal name="WP_parameter divide_and_conquer.42" expl="42. postcondition">
-  <transf name="inline_goal">
-   <goal name="WP_parameter divide_and_conquer.42.1" expl="1. postcondition">
-   <transf name="split_goal_wp">
-    <goal name="WP_parameter divide_and_conquer.42.1.1" expl="1. VC for divide_and_conquer">
-    <proof prover="3"><result status="valid" time="0.16"/></proof>
+  <goal name="WP_parameter divide_and_conquer.25" expl="25. postcondition" expanded="true">
+  <transf name="inline_goal" expanded="true">
+   <goal name="WP_parameter divide_and_conquer.25.1" expl="1. postcondition" expanded="true">
+   <transf name="split_goal_wp" expanded="true">
+    <goal name="WP_parameter divide_and_conquer.25.1.1" expl="1. VC for divide_and_conquer" expanded="true">
+    <proof prover="0"><result status="valid" time="0.44" steps="113"/></proof>
     </goal>
-    <goal name="WP_parameter divide_and_conquer.42.1.2" expl="2. VC for divide_and_conquer">
-    <proof prover="1"><result status="valid" time="0.38"/></proof>
-    <proof prover="3"><result status="timeout" time="5.66"/></proof>
+    <goal name="WP_parameter divide_and_conquer.25.1.2" expl="2. VC for divide_and_conquer" expanded="true">
+    <proof prover="1"><result status="valid" time="0.47"/></proof>
     </goal>
-    <goal name="WP_parameter divide_and_conquer.42.1.3" expl="3. VC for divide_and_conquer">
-    <proof prover="3"><result status="valid" time="0.37"/></proof>
+    <goal name="WP_parameter divide_and_conquer.25.1.3" expl="3. VC for divide_and_conquer" expanded="true">
+    <proof prover="3"><result status="valid" time="0.87"/></proof>
     </goal>
    </transf>
    </goal>
   </transf>
   </goal>
-  <goal name="WP_parameter divide_and_conquer.43" expl="43. assertion">
-  <proof prover="0" obsolete="true"><result status="timeout" time="4.70"/></proof>
-  <proof prover="1" obsolete="true"><result status="timeout" time="4.98"/></proof>
+  <goal name="WP_parameter divide_and_conquer.26" expl="26. assertion">
   <proof prover="3"><result status="valid" time="0.13"/></proof>
   </goal>
-  <goal name="WP_parameter divide_and_conquer.44" expl="44. assertion">
-  <proof prover="1" obsolete="true"><result status="valid" time="0.36"/></proof>
-  <proof prover="3"><result status="valid" time="0.25"/></proof>
+  <goal name="WP_parameter divide_and_conquer.27" expl="27. assertion" expanded="true">
+  <proof prover="3"><result status="valid" time="0.46"/></proof>
   </goal>
-  <goal name="WP_parameter divide_and_conquer.45" expl="45. postcondition">
-  <proof prover="1" obsolete="true"><result status="valid" time="0.29"/></proof>
-  <proof prover="3"><result status="valid" time="0.20"/></proof>
+  <goal name="WP_parameter divide_and_conquer.28" expl="28. postcondition" expanded="true">
+  <proof prover="0"><result status="valid" time="0.75" steps="263"/></proof>
   </goal>
  </transf>
  </goal>

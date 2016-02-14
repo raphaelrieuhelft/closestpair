@@ -404,46 +404,28 @@ let rec divide_and_conquer (a:array point) (low high:int) : closest_pair_result
       let mu = (a[middle - 1].x +. a[middle].x) /. 2.0 in
       let left = left_border a low middle mu d in
       let right = right_border a middle high mu d in
-      assert { 0 <= low <= left <= middle <= right <= high <= a.length };
-      assert { forall i. middle <= i < right -> a[middle].x <=. a[i].x };
-      assert { forall i. left <= i < middle -> a[i].x <=. a[middle].x };
-      assert { forall i. left <= i < middle -> a[i].x >. mu -. d };
-      assert { forall i. middle <= i < right -> a[i].x <. mu +. d };
-      assert { forall i. left <= i < right -> mu -. d <. a[i].x <. mu +. d };
       let temp = Array.sub a left (right - left) in
       (* temp is the sub-array a[left..right-1] *) 
-      assert { forall i. 0 <= i < temp.length -> temp[i] = a[left + i] };
-      assert { forall i. 0 <= i < temp.length -> left <= left + i < right };
       assert { forall i. 0 <= i < temp.length -> mu -. d <. temp[i].x <. mu +. d };
+      let res = search_strip temp d in
       assert { forall i j . distinct_indices_in_range i j low high /\ i < j -> 
   	      distinct_indices_in_range i j low middle \/
 	      distinct_indices_in_range i j middle high \/
 	      distinct_indices_in_range i j left right \/
 	      i < left <= middle <= j \/
-	      i <= middle-1 < right <= j
+	     ( i < middle /\ right <= j)
 	      };
-      let res = search_strip temp d in
-      assert { forall k l. 0 <= k <= l < a.length -> proj_x a[k] <=. proj_x a[l] };
-      assert { forall j. left <= middle <= j < high -> a[middle].x <=. a[j].x }; 
-      assert { forall i j. distinct_indices_in_range i j low high /\ i < left <= middle <= j ->  a[middle].x <=. a[j].x };
-      assert { a[middle].x >=. mu };
-      assert { forall i j. distinct_indices_in_range i j low high /\ i < left <= middle <= j -> a[i].x <=. mu -. d };
       assert { forall i j. distinct_indices_in_range i j low high /\ i < left <= middle <= j -> dist a[i] a[j] >=. d  };
-      assert { forall i j. distinct_indices_in_range i j low high /\ i < middle /\ right <= j -> a[i].x <=. mu /\ a[j].x >=. mu +. d };
-      assert { forall i j. distinct_indices_in_range i j low high /\ i < middle /\ right <= j -> dist a[i] a[j] >=. d };  
+      assert { forall i j. distinct_indices_in_range i j low high /\ i < middle /\ right <= j -> dist a[i] a[j] >=. d };
       if res.delta <. d then
         begin
-	  assert { forall i j. distinct_indices_in_range i j 0 temp.length -> dist temp[i] temp[j] >=. res.delta };
-	  assert { forall i j. distinct_indices_in_range i j left right -> dist a[i] a[j] = dist temp[i-left] temp [j-left]  >=. res.delta};
-	  assert { forall i j. distinct_indices_in_range i j low high /\ i < left <= middle <= j -> dist a[i] a[j] >=. d >=. res.delta };
-	  assert { forall i j. distinct_indices_in_range i j low high /\ i <= middle-1 < right <= j -> dist a[i] a[j] >=. d >=. res.delta };
-	  assert { forall i j. distinct_indices_in_range i j low high -> dist a[i] a[j] >=. res.delta };
-	  { res with first = left + res.first; second = left + res.second }
+     	 assert { forall i j. distinct_indices_in_range i j 0 temp.length -> dist temp[i] temp[j] >=. res.delta };  
+     	 assert { forall i j. distinct_indices_in_range i j left right -> dist a[i] a[j] = dist temp[i-left] temp [j-left]  >=. res.delta};
+	 { res with first = left + res.first; second = left + res.second }
         end
       else 
         begin
 	  assert { forall i j. distinct_indices_in_range i j left right -> dist a[i] a[j] = dist temp[i-left] temp[j-left] >=. d };
-	  assert { forall i j. distinct_indices_in_range i j low high -> dist a[i] a[j] >=. res.delta };
       	  r
         end
     end
@@ -460,7 +442,6 @@ let main_algorithm (a:array point) : closest_pair_result
 = let b = Array.copy a in
   let p = sort proj_x b in
   let r = divide_and_conquer b 0 b.length in 
-  assert { closest_pair_post b r } ;
   assert { forall i j . distinct_indices_in_range i j 0 a.length -> dist a[i] a[j] = dist b[p.reciprocal i] b[p.reciprocal j] >=. r.delta };
   { delta = r.delta ; first = p.direct r.first ; second = p.direct r.second }
 
@@ -519,18 +500,6 @@ let ghost too_many_points_in_square (delta:real) (a b c d : point) : unit
     [i1] to [i4] are four distinct indices in the range [k,k+6], and
     [r] is the 'common side' of them. *)
 
-let ghost check_order_2 (a:array int) (bound i j:int)
-  requires { 0 <= i < j < bound <= a.length }
-  requires { forall u v. distinct_indices_in_range u v 0 bound /\ u < v -> a[u] < a[v] }
-  ensures { a[i] < a[j] }
-= assert { distinct_indices_in_range i j 0 bound }; ()
-
-let ghost check_order_4 (a:array int) (bound i j k l:int)
-  requires { 0 <= i < j < k < l < bound <= a.length }
-  requires { forall u v. distinct_indices_in_range u v 0 bound /\ u < v -> a[u] < a[v] }
-  ensures { a[i] < a[j] < a[k] < a[l] }
-= check_order_2 a bound i j; check_order_2 a bound j k; check_order_2 a bound k l; ()
-
 
 let ghost pigeon_hole (side:array bool) (k:int) : (int,int,int,int,bool)
   requires { 0 <= k }
@@ -554,29 +523,18 @@ let ghost pigeon_hole (side:array bool) (k:int) : (int,int,int,int,bool)
     invariant { forall j. 0 <= j < !nl -> k <= left[j] < i }
     invariant { forall j. 0 <= j < !nr -> k <= right[j] < i }
     if side[i] then begin
-		    assert { forall u v. distinct_indices_in_range u v 0 (!nl + 1) /\ u < v -> distinct_indices_in_range u v 0 !nl \/ v = !nl };
 		    left[!nl] <- i; 
 		    nl := !nl + 1
 		    end
                else begin
-		    assert { forall u v. distinct_indices_in_range u v 0 (!nr + 1) /\ u < v -> distinct_indices_in_range u v 0 !nr \/ v = !nr };
 	       	    right[!nr] <- i; 
 		    nr := !nr + 1
 		    end
   done;
-  assert { !nl + !nr = 7 };
   if !nl > !nr then begin
-     	       	    assert { !nl >= 4 };
-		    assert { forall u v. distinct_indices_in_range u v 0 4 /\ u < v -> distinct_indices_in_range u v 0 !nl /\ u < v };
-		    assert { forall u v. distinct_indices_in_range u v 0 4 /\ u < v -> left[u] < left[v] };
-		    check_order_4 left !nl 0 1 2 3;
      	       	    (left[0],left[1],left[2],left[3],True)
 		    end
                else begin
-	       	    assert { !nr >= 4 };
-		    assert { forall u v. distinct_indices_in_range u v 0 4 /\ u < v -> distinct_indices_in_range u v 0 !nr /\ u < v };
-		    assert { forall u v. distinct_indices_in_range u v 0 4 /\ u < v -> right[u] < right[v] };
-		    check_order_4 right !nr 0 1 2 3;
 	       	    (right[0],right[1],right[2],right[3],False)
 		    end
 
