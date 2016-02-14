@@ -323,9 +323,10 @@ let search_strip (a:array point) (delta:real) : closest_pair_result
   done; 
   if !m <. delta then
      begin
-     assert { closest_pair_post b { delta = !m; first = !f; second = !s } }; 
      assert { forall i j. distinct_indices_in_range i j 0 a.length ->  dist a[i] a[j] = dist b[p.reciprocal i] b[p.reciprocal j] >=. !m };
      let f' = p.direct !f in let s' = p.direct !s in 
+     assert { distinct_indices_in_range f' s' 0 a.length };
+     assert { dist a[f'] a[s'] = dist b[!f] b[!s] = !m };
      { delta = !m ; first = f'; second = s' }
      end
   else begin
