@@ -1,0 +1,136 @@
+\documentclass[11pt, openany, a4paper]{article}
+
+\usepackage{etex}
+%\usepackage{fullpage}
+\usepackage{pstricks,pstricks-add,pst-math,pst-xkey}
+%\usepackage[frenchb]{babel} % à enlever
+%\usepackage{slashbox}
+\usepackage{graphicx}
+\usepackage{amsmath,amssymb,amstext,amsthm}
+%\usepackage{comment}
+\usepackage[utf8]{inputenc}
+\usepackage[OT1]{fontenc}
+\usepackage{pgf,tikz}
+\usepackage{pgfplots}
+\usepackage{floatpag}
+\usepackage{url}
+%\usepgfmodule{shapes}
+\usetikzlibrary{arrows,patterns}
+\usepackage{floatflt}
+\usepackage{import}
+\usepackage{xcolor}
+\usepackage{natbib}
+%\usepackage{fourier-orns}
+\usepackage{listings}
+\usepackage{color}
+\usepackage{rotating}
+\usepackage{notoccite}
+\usepackage{pbox}
+\usepackage{enumitem}
+\definecolor{dkgreen}{rgb}{0,0.6,0}
+\definecolor{gray}{rgb}{0.5,0.5,0.5}
+\definecolor{mauve}{rgb}{0.58,0,0.82}
+
+\lstset{frame=,
+	language=C,
+	aboveskip=3mm,
+	belowskip=3mm,
+	showstringspaces=false,
+	columns=flexible,
+	basicstyle={\small\ttfamily},
+	numbers=none,
+	numberstyle=\tiny\color{gray},
+	keywordstyle=\color{blue},
+	commentstyle=\color{dkgreen},
+	stringstyle=\color{mauve},
+	breaklines=true,
+	breakatwhitespace=true,
+	tabsize=3
+}
+
+%\definecolor{bleuclair}{rgb}{0.75,0.75,1.0}
+%\newcommand{\ANNOT}[1]{
+%  ~\linebreak
+%  \centerline{
+%    %{\Huge{\danger}}
+%    \large\fcolorbox{black}{bleuclair}{
+%      \begin{minipage}[h]{.8\linewidth}
+%      #1
+%      \end{minipage}
+%    }
+%    %{\Huge{\danger}}
+%  }
+%}
+%
+%\newcommand\tikzmark[1]{%
+%  \tikz[overlay,remember picture,baseline] 
+%  \node[anchor=base](#1){};}
+
+\newcommand\MyLine[3][]{%
+	\begin{tikzpicture}[overlay,remember picture]
+	\draw[#1] (#2.north west) -- (#3.south east);
+	\end{tikzpicture}}
+\setlength\parindent{0pt}
+
+\newcommand{\e}[1]{$\times 10^{#1}$}
+\newcommand{\low}{\texttt{low} }
+\newcommand{\high}{\texttt{high} }
+\newcommand{\alength}{\texttt{a.length} }
+\newcommand{\distinrange}{\texttt{distinct\_indices\_in\_range}}
+\newcommand{\dist}{\texttt{dist} }
+\newcommand{\clofor}{\texttt{closest\_pair\_post\_for}}
+\setcounter{section}{1}
+\begin{document}
+
+{\LARGE\center{\textbf{Divide-and-Conquer Algorithms\\
+	Application to the Closest Pair Problem}}}
+
+\vspace{2em}
+	
+\section{Specification and Brute-Force Algorithm}
+
+\subsection*{Question 1}
+
+On spécifie simplement que les deux indices sont dans les bornes et sont distincts.
+
+\subsection*{Question 2}
+
+Les deux points d'un résultat correct entre \texttt{low} et \texttt{high} doivent être espacés de la distance $\delta$ indiquée dans le résultat, leurs indices doivent vérifier \texttt{distinct\_indices\_in\_range} dans l'intervalle (\texttt{low}, \texttt{high}), et toute paire de points d'indices vérifiant \texttt{distinct\_indices\_in\_range} entre \texttt{low} et \texttt{high} doit être espacée d'au moins $\delta$.
+
+\subsection*{Question 3}
+
+\texttt{closest\_pair\_post} est simplement \texttt{closest\_pair\_post\_for} entre $0$ et la longueur du tableau.
+
+\subsection*{Question 4}
+
+On impose $0 \leq \low < \high \leq \alength$ comme précondition évidente à \texttt{brute\_force\_search\_sub\_array}. On veut aussi spécifier que \low et \high sont espacés d'au moins $2$ : j'ai choisi de le faire en imposant $\low < \low+1 < \high$ pour que l'initialisation de l'invariant \distinrange soit plus claire. 
+
+On utilise comme invariants de boucle les trois membres de la conjonction qui définit \texttt{closest\_pair\_post\_for}, et on les répète dans la boucle interne (avec les changements nécessaires à la quantification).
+
+Pour \texttt{brute\_force\_search}, la seule précondition nécessaire est $\alength < 2$ comme voulu. 
+
+\section{Closest Pair in 1D}
+
+On introduit le lemme \texttt{middle\_are\_closer} qui est utile pour toute la section. Il justifie de ne considérer que les paires de points voisins dans un tableau trié par abscisse, et aussi de ne considérer qu'une paire de points venant de deux moitiés de tableau différentes dans l'algorithme diviser pour régner.
+
+J'ai choisi de ne pas définir ce lemme en tant que fonction ghost pour ne pas avoir à l'appeler manuellement : il se trouve que les prouveurs arrivent assez bien à l'utiliser automatiquement en peu de temps pour prouver des invariants de forme $\dist \texttt{ a[i] a[l]} \geq \dist \texttt{ a[j] a[k]}$, probablement parce qu'il existe peu d'autres façons d'arriver à un résultat de cette forme.
+
+\subsection*{Question 5}
+
+Comme le tableau est trié par abscisse, on peut se contenter d'explorer les paires de points voisins. On utilise comme invariants de boucle les trois membres de la conjonction qui définit \clofor, en donnant une indication $\dist \texttt{ a[k] a[l]} \geq \dist \texttt{ a[k] a[k+1]} \geq \texttt{min}$ pour inciter les prouveurs à utiliser le lemme \texttt{middle\_are\_closer}.
+
+\subsection*{Question 6}
+
+La première assertion introduit une disjonction de cas sur les positions d'une paire de points dans le tableau, l'idée étant de prouver que toute paire de points est espacée de plus que le résultat dans chaque cas séparément. Les trois assertions suivantes traitent chacune un cas. Selon la distance la plus petite parmi \texttt{d}, \texttt{r1.delta} et \texttt{r2.delta}, on conclut la disjonction de cas avec une dernière assertion. Cette dernière n'est pas nécessaire pour la preuve, mais diminue beaucoup le temps de calcul.
+
+\subsection*{Question 7} 
+
+On utilise une assertion pour indiquer au prouveur d'utiliser que les tableaux \texttt{a} et \texttt{b} sont égaux à permutation près pour montrer que toutes les paires de points sont éloignées d'au moins \texttt{r.delta}.
+
+\section{Closest Pair in 2D}
+
+\subsection*{Question 8}
+
+Les invariants dans la double boucle \texttt{for} sont encore les trois membres de la conjonction qui définit \clofor, à condition qu'on ait trouvé une paire espacée de moins de $\delta$. Si on atteint une différence d'ordonnée supérieure à \texttt{!m}, alors on peut affirmer que la distance entre \texttt{a[i]} et les points qui suivent est supérieure à \texttt{!m} et sortir de la boucle interne.
+
+\end{document}
