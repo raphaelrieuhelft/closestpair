@@ -82,6 +82,7 @@
 \setcounter{section}{1}
 \begin{document}
 
+
 {\LARGE\center{\textbf{Divide-and-Conquer Algorithms\\
 	Application to the Closest Pair Problem}}}
 
@@ -121,7 +122,7 @@ Comme le tableau est trié par abscisse, on peut se contenter d'explorer les pai
 
 \subsection*{Question 6}
 
-La première assertion introduit une disjonction de cas sur les positions d'une paire de points dans le tableau, l'idée étant de prouver que toute paire de points est espacée de plus que le résultat dans chaque cas séparément. Les trois assertions suivantes traitent chacune un cas. Selon la distance la plus petite parmi \texttt{d}, \texttt{r1.delta} et \texttt{r2.delta}, on conclut la disjonction de cas avec une dernière assertion. Cette dernière n'est pas nécessaire pour la preuve, mais diminue beaucoup le temps de calcul.
+La première assertion introduit une disjonction de cas sur les positions d'une paire de points dans le tableau, l'idée étant de prouver que toute paire de points est espacée de plus que le résultat dans chaque cas séparément. Les trois assertions suivantes traitent chacune un cas. Selon la distance la plus petite parmi \texttt{d}, \texttt{r1.delta} et \texttt{r2.delta}, on conclut la disjonction de cas avec une dernière assertion. Ces assertions ne sont pas strictement nécessaires pour la preuve, mais diminuent beaucoup le temps de calcul et permettent de ne pas utiliser CVC3.
 
 \subsection*{Question 7} 
 
@@ -151,7 +152,7 @@ On parcourt encore la moitié de tableau de droite à gauche, ce qui permet d'ut
 
 \subsection*{Question 10}
 
-On prend comme variant \texttt{high - low}. La variable \texttt{mu} calculée dans le corps de la fonction convient à la précondition de \texttt{search\_strip} : la première assertion sert à indiquer cela au prouveur. On doit ensuite montrer que toute paire de points est espacée de plus que le résultat. On introduit une disjonction de cas sur les positions des points de chaque paire avec la deuxième assertion. Deux de ces cas sont traités par les deux assertions qui suivent. On traite ensuite le cas où la paire est comprise entre \texttt{left} et \texttt{right} selon que la fonction \texttt{search\_strip} a réussi ou échoué à trouver une paire de points moins espacée que les résultats de chaque appel récursif. Dans le cas de succès, on ajoute aussi l'assertion \texttt{ forall i j. distinct\_indices\_in\_range i j 0 temp.length -> dist temp[i] temp[j] >=. res.delta }. C'est une postcondition de \texttt{search\_strip} (une conséquence du prédicat \clofor), mais la rappeler ici diminue beaucoup le temps de preuve.
+On prend comme variant \texttt{high - low}. La variable \texttt{mu} calculée dans le corps de la fonction convient à la précondition de \texttt{search\_strip} : la première assertion sert à indiquer cela au prouveur. On doit ensuite montrer que toute paire de points est espacée de plus que le résultat. On introduit une disjonction de cas sur les positions des points de chaque paire avec la deuxième assertion. Deux de ces cas sont traités par les deux assertions qui suivent. On traite ensuite le cas où la paire est comprise entre \texttt{left} et \texttt{right} selon que la fonction \texttt{search\_strip} a réussi ou échoué à trouver une paire de points moins espacée que les résultats de chaque appel récursif. Dans le cas de succès, on ajoute aussi l'assertion \texttt{ forall i j. distinct\_indices\_in\_range i j 0 temp.length} \texttt{ -> dist temp[i] temp[j] >=. res.delta }. C'est une postcondition de \texttt{search\_strip} (une conséquence du prédicat \clofor), mais la rappeler ici diminue beaucoup le temps de preuve.
 
 \subsection*{Question 11}
 
@@ -160,6 +161,16 @@ On applique simplement la fonction précédente. L'assertion indique au prouveur
 \section{Complexity Analysis of the Processing of the Strip}
 
 \subsection*{Question 12}
+
+On utilise les invariants de boucle suivants : les tableaux \texttt{left} et \texttt{right} sont strictement ordonnés, leur contenu décrit le tableau \texttt{side}, et contiennent des indices compris entre $k$ et $i$ ($k+6$ à la fin de la boucle). On doit aussi maintenir que les longueurs des tableaux sont comprises entre $0$ et $7$ et de somme $i-k$ ($7$ à la fin de la boucle). Ceci sert à montrer qu'un des tableaux est de longueur supérieure ou égale à $4$ à la fin de la boucle.
+
+\subsection*{Question 13}
+
+On applique simplement une translation dans le cas où \texttt{side} est vrai et une symétrie et une translation (qui se combinent exactement en une utilisation de l'axiome \texttt{dist\_inv\_by\_symmetry}) dans le cas contraire.
+
+\subsection*{Question 14}
+
+On introduit le tableau ghost \texttt{bside}, qui est une copie de \texttt{side} à laquelle on a appliqué la permutation $p$. On montre également que \texttt{bside} est à \texttt{b} ce que \texttt{side} est à \texttt{a}, ce qui est une des préconditions de \texttt{too\_many\_points\_in\_rectangle} plus tard. En plus de l'invariant \texttt{j <= i + 6}, on ajoute aussi à la boucle principale l'invariant \texttt{ !m <=. delta }. Ceci est nécessaire pour montrer une des préconditions de \texttt{too\_many\_points\_in\_rectangle}, à savoir que la différence d'ordonnée entre \texttt{b[i]} et les points de \texttt{b} entre les indices $i$ et $i+6$ est inférieure à $\delta$ (c'est clairement vrai pour \texttt{!m}). Les deux assertions dans la boucle interne permettent chacune de démontrer une précondition de \texttt{too\_many\_points\_in\_rectangle} en utilisant le fait que \texttt{b} est une permutation de \texttt{a}.
 
 
 
