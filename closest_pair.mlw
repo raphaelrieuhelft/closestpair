@@ -585,6 +585,8 @@ let ghost too_many_points_in_rectangle (a:array point) (mu delta:real)
     [j <= i + 6], that the number of iterations of the inner loop is
     bounded, from which we derive by a meta-argument that its
     worst-case time complexity is linear in the length of [a]. *)
+
+
 let search_strip_complexity (a:array point) (delta : real)
     (ghost mu : real) (ghost side:array bool)
     : closest_pair_result
@@ -604,44 +606,35 @@ let search_strip_complexity (a:array point) (delta : real)
   else
   let b = Array.copy a in
   let p = sort proj_y b in
-  let bside = Array.copy side in
+  let ghost bside = Array.copy side in
   for i = 0 to b.length-1 do
     invariant { forall j. 0 <= j < i -> if bside[j] then b[j].x >=. mu else b[j].x <=. mu }
     invariant { forall j. 0 <= j < i -> bside[j] = side[p.direct j] }
     bside[i] <- side [p.direct i];
-    assert { b[i] = a[p.direct i] /\ if bside[i] then b[i].x >=. mu else b[i].x <=. mu }
   done;
   let f = ref 0 in
   let s = ref 0 in
   let m = ref delta in
   for i = 0 to b.length - 2 do
-    invariant { distinct_indices_in_range !f !s 0 a.length -> dist b[!f] b[!s] = !m }
-    invariant { forall k l . distinct_indices_in_range k l 0 a.length /\ k < i /\ k < l -> dist b[k] b[l] >=. !m }
+    invariant { !m <. delta -> dist b[!f] b[!s] = !m }
+    invariant { forall k l . distinct_indices_in_range k l 0 a.length /\ k < i -> dist b[k] b[l] >=. !m }
     invariant { !m <. delta -> distinct_indices_in_range !f !s 0 a.length }
     invariant { !m <=. delta }
     try
       for j = i+1 to b.length - 1 do
-        invariant { distinct_indices_in_range !f !s 0 a.length -> dist b[!f] b[!s] = !m }
-        invariant { forall k l . distinct_indices_in_range k l 0 a.length /\ (k < i \/ (k = i /\ (l < j))) /\ k < l 
+        invariant { !m <. delta -> dist b[!f] b[!s] = !m }
+        invariant { forall k l . distinct_indices_in_range k l 0 a.length /\ (k < i \/ (k = i /\ (l < j)))
 		  -> dist b[k] b[l] >=. !m }
         invariant { !m <. delta -> distinct_indices_in_range !f !s 0 a.length }
-	invariant { !m <=. delta }
 	invariant { j <= i + 6 }
-	invariant { forall k. i+1 <= k < j -> b[i].y <=. b[k].y <. b[i].y +. delta }
+	invariant { !m <=. delta }
         if b[j].y >=. b[i].y +. !m then
           begin
             assert { dist b[i] b[j] >=. !m };
             raise Break;
           end;
-	assert { b[i].y <=. b[j].y <. b[i].y +. !m <=. b[i].y +. delta };
-	assert { forall k. 0 <= k < a.length -> mu -. delta <. a[k].x <. mu +. delta };
-	assert { forall k. 0 <= k < b.length -> b[k] = a[p.direct k] };
-	assert { forall k. 0 <= k < b.length -> 0 <= p.direct k < a.length };
-	assert { forall k. 0 <= k < b.length -> mu -. delta <. b[k].x <. mu +. delta };
-	assert { forall i j. distinct_indices_in_range i j 0 b.length -> dist b[i] b[j] = dist a[p.direct i] a[p.direct j] };
-	assert { forall i j. distinct_indices_in_range i j 0 b.length -> bside[i] = bside[j] -> side[p.direct i] = bside[i] = bside[j] = side[p.direct j] };
-	assert { forall i j. distinct_indices_in_range i j 0 b.length -> bside[i] = bside[j] -> delta <=. dist  a[p.direct i] a[p.direct j] };
-	assert { forall i j. distinct_indices_in_range i j 0 b.length -> bside[i] = bside[j] -> delta <=. dist b[i] b[j] };
+	assert { forall k. 0 <= k < b.length -> mu -. delta <. a[p.direct k].x <. mu +. delta && b[k] = a[p.direct k]};
+	assert { forall i j. distinct_indices_in_range i j 0 b.length -> bside[i] = bside[j] -> delta <=. dist a[p.direct i] a[p.direct j] = dist b[i] b[j] };
         if j = i + 6 then too_many_points_in_rectangle b mu delta i bside;
         let d = dist b[i] b[j] in
         if d <. !m then (m := d; f := i; s := j);
@@ -651,17 +644,18 @@ let search_strip_complexity (a:array point) (delta : real)
   done; 
   if !m <. delta then
      begin
-     assert { closest_pair_post b { delta = !m; first = !f; second = !s } }; 
      assert { forall i j. distinct_indices_in_range i j 0 a.length ->  dist a[i] a[j] = dist b[p.reciprocal i] b[p.reciprocal j] >=. !m };
      let f' = p.direct !f in let s' = p.direct !s in 
+     assert { distinct_indices_in_range f' s' 0 a.length };
+     assert { dist a[f'] a[s'] = dist b[!f] b[!s] = !m };
      { delta = !m ; first = f'; second = s' }
      end
   else begin
-     assert { forall k l. distinct_indices_in_range k l 0 a.length /\ k < b.length -1 /\ k < l -> dist b[k] b[l] >=. delta };
-     assert { forall k l. distinct_indices_in_range k l 0 a.length /\ k < l -> k < b.length - 1 };
      assert { forall k l. distinct_indices_in_range k l 0 a.length -> dist a[k] a[l] = dist b[p.reciprocal k] b[p.reciprocal l] >=. delta };
      { delta = delta ; first = 0; second = 0 }
      end
+
+end
 
 
 (* take code from search_strip and insert :
@@ -675,6 +669,3 @@ let search_strip_complexity (a:array point) (delta : real)
         if j = i + 6 then too_many_points_in_rectangle ...;
 
 *)
-
-end
-
